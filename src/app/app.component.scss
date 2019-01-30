@@ -1,0 +1,44 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #777;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(61, 192, 220, 0.84);
+  padding: 10px;
+  text-align: center;
+
+  .logo__site {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    font-size: 25px;
+    font-style: italic;
+    color: #fff;
+    margin-right: auto;
+
+    .img__logo {
+      width: 100%;
+    }
+  }
+  .logo__text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #719127;
+    margin: 0;
+  }
+
+  .title__site {
+    flex-grow: 2;
+  }
+}
+
+
