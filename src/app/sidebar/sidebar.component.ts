@@ -1,17 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {SidebarService} from './sidebar.service';
 import {SIDEBARS} from './const';
-
-// export enum SidebarType {
-//   DefaultSb,
-//   ContainerSb,
-//   ElementsSb,
-//   ElementSb
-// }
-
-@Injectable({
-  providedIn: 'root',
-})
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,22 +10,13 @@ import {SIDEBARS} from './const';
 })
 
 export class SidebarComponent implements OnInit {
-  sidebar_selection = '';
+  sidebar$ = of([]);
   sidebars = SIDEBARS;
 
   constructor(private sidebarService: SidebarService) {
+    this.sidebar$ = this.sidebarService.sidebar$;
   }
-
   ngOnInit() {
-    // this.sidebar_selection = this.sidebarService.getActiveSidebar();
-    this.sidebar_selection = this.sidebarService.getActiveSidebar();
-  }
-
-  showSidebar(event, sidebarType) {
-    // console.log(sidebarType);
-    this.sidebarService.setActiveSidebar(sidebarType);
-     this.sidebar_selection = sidebarType;
-
+    this.sidebarService.sidebar$.subscribe(sidebars => this.sidebar$);
   }
 }
-

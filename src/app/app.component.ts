@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {mock1} from './mock';
 
 @Component({
   selector: 'app-root',

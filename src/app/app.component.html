@@ -1,11 +1,11 @@
 <div class="wrap">
   <div class="header">
-    <a href="/" class="logo__site"><img src="../assets/ddd.jpg" alt="EasyBlog" class="img__logo"><span class="logo__text">EasyBlog</span></a>
+    <a routerLink="/" class="logo__site"><img src="../assets/ddd.jpg" alt="EasyBlog" class="img__logo"><span class="logo__text">EasyBlog</span></a>
     <h1 class="title__site">easy create your blog</h1>
     <nav class="nav__header">
       <ul class="nav__list">
         <li *ngFor='let item of navSidebar' class="nav__item">
-          <a href="{{item.url}}" class="nav__link">{{item.title}}</a>
+          <a routerLink="{{item.url}}" class="nav__link">{{item.title}}</a>
         </li>
       </ul>
     </nav>

@@ -1,6 +1,7 @@
-export const SIDEBARS = {
-  defaultSb: 'default-sidebar',
-  containerSb: 'container-sidebar',
-  elementsSb: 'elements-sidebar',
-  elementSb: 'element-sidebar'
-};
+export enum SIDEBARS {
+  DEFAULT = 'default-sidebar',
+  CONTAINER = 'container-sidebar',
+  ELEMENTS = 'elements-sidebar',
+  ELEMENT = 'element-sidebar'
+}
+

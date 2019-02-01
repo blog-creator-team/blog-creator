@@ -1,10 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {SidebarService} from '../sidebar/sidebar.service';
 import {SIDEBARS} from '../sidebar/const';
-
-@Injectable({
-  providedIn: 'root',
-})
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-page',
@@ -12,21 +9,23 @@ import {SIDEBARS} from '../sidebar/const';
   styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit {
-  sidebar_selection = '';
+  // sidebar_selection = '';
   sidebars = SIDEBARS;
-  // blocks = [1, 2, 4];
-  constructor(private sidebarService: SidebarService) { }
-  // addLayoutBlock (e) {
+  sidebar$ = of([]);
+  // blocks = [];
+  constructor(public sidebarService: SidebarService) {
+  }
+
+  ngOnInit() {
+  }
+
+  showSidebar(event, sidebarType) {
+    this.sidebarService.setSidebar(sidebarType);
+    this.sidebar$ = sidebarType;
+  }
+
+  // addLayoutBlock(e) {
   //   e.preventDefault();
   //   this.blocks.push(Math.random());
   // }
-  ngOnInit() {
-    this.sidebar_selection = this.sidebarService.getActiveSidebar();
-  }
-  showSidebar(event, sidebarType) {
-    console.log(sidebarType);
-    this.sidebarService.setActiveSidebar(sidebarType);
-    this.sidebar_selection = sidebarType;
-  }
-
 }
