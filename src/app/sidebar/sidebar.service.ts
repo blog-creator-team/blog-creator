@@ -7,7 +7,8 @@ import {SIDEBARS} from './const';
 })
 export class SidebarService {
   public sidebar$ = new BehaviorSubject<any>(SIDEBARS.DEFAULT);
-    setSidebar(sidebarType) {
+
+  setSidebar(sidebarType) {
     this.sidebar$.next(sidebarType);
   }
- }
+}

@@ -10,13 +10,14 @@ import {of} from 'rxjs';
 })
 
 export class SidebarComponent implements OnInit {
-  sidebar$ = of([]);
+  sidebar$ = of();
   sidebars = SIDEBARS;
 
   constructor(private sidebarService: SidebarService) {
     this.sidebar$ = this.sidebarService.sidebar$;
   }
+
   ngOnInit() {
-    this.sidebarService.sidebar$.subscribe(sidebars => this.sidebar$);
+    this.sidebarService.sidebar$.subscribe(() => this.sidebar$);
   }
 }

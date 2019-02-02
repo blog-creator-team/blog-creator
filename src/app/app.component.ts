@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {mock1} from './mock';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,6 @@ import {mock1} from './mock';
 
 })
 export class AppComponent {
-  title = 'blog-creator';
 
   constructor() {
   }
