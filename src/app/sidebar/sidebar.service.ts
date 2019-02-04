@@ -12,3 +12,4 @@ export class SidebarService {
     this.sidebar$.next(sidebarType);
   }
 }
+

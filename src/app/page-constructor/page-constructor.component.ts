@@ -3,11 +3,11 @@ import {SidebarService} from '../sidebar/sidebar.service';
 import {SIDEBARS} from '../sidebar/const';
 
 @Component({
-  selector: 'app-page',
-  templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss']
+  selector: 'app-page-constructor',
+  templateUrl: './page-constructor.component.html',
+  styleUrls: ['./page-constructor.component.scss']
 })
-export class PageComponent {
+export class PageConstructorComponent {
   sidebars = SIDEBARS;
 
   constructor(public sidebarService: SidebarService) {

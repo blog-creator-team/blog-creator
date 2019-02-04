@@ -1,8 +1,4 @@
-<div [ngSwitch]="sidebar$ | async" class="aside">
-  <!--<button (click)="showSidebar($event, sidebars.defaultSb)">Edit</button>-->
-  <!--<div [ngSwitch]="sidebar$">-->
-  <!--<div *ngFor="let sidebar of sidebar$ | async"></div>-->
-  <!--[ngSwitch]="sidebar$ | async"-->
+<div [ngSwitch]="sidebar$ | async" class="sidebar">
   <app-sidebar-default
     *ngSwitchCase="sidebars.DEFAULT"></app-sidebar-default>
   <app-sidebar-container

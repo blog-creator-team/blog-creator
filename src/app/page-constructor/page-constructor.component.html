@@ -1,0 +1,23 @@
+  <div class="page page_constructor">
+    <div class="aside">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main">
+      <div class="constructor__content">
+        <!--<div class="constructor__block" *ngFor="let block of blocks">-->
+        <!--{{block}}-->
+        <!--</div>-->
+      </div>
+      <!--<div class="btn__block"><button (click)="addLayoutBlock($event)">add block</button></div>-->
+      <div class="btn__block">
+        <button (click)="showSidebar($event, sidebars.CONTAINER)">add container</button>
+      </div>
+      <div class="btn__block">
+        <button (click)="showSidebar($event, sidebars.ELEMENTS)">add elements</button>
+      </div>
+      <div class="btn__block">
+        <button (click)="showSidebar($event, sidebars.ELEMENT)">add element</button>
+      </div>
+    </div>
+  </div>

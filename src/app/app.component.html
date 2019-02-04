@@ -2,7 +2,7 @@
   <div class="header">
     <a routerLink="/" class="logo__site"><img src="../assets/ddd.jpg" alt="EasyBlog" class="img__logo"><span
       class="logo__text">EasyBlog</span></a>
-    <h1 class="title__site">easy create your blog</h1>
+    <h1 class="title__site">Easy create your blog</h1>
     <nav class="nav__header">
       <ul class="nav__list">
         <li *ngFor='let item of navList' class="nav__item">
@@ -11,13 +11,8 @@
       </ul>
     </nav>
   </div>
-  <div class="inner-wrap">
-    <div class="page">
 
-      <app-page></app-page>
+    <app-page-constructor></app-page-constructor>
 
-
-    </div>
-  </div>
 </div>
 <router-outlet></router-outlet>

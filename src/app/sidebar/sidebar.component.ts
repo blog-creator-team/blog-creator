@@ -9,15 +9,11 @@ import {of} from 'rxjs';
   styleUrls: ['./sidebar.component.scss'],
 })
 
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   sidebar$ = of();
   sidebars = SIDEBARS;
 
   constructor(private sidebarService: SidebarService) {
     this.sidebar$ = this.sidebarService.sidebar$;
-  }
-
-  ngOnInit() {
-    this.sidebarService.sidebar$.subscribe(() => this.sidebar$);
   }
 }
