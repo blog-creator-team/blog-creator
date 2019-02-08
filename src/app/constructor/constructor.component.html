@@ -1,0 +1,25 @@
+<div class="constructor">
+
+  <app-sidebar class="aside"></app-sidebar>
+
+  <div class="main">
+    <div class="constructor__content">
+
+      <!--<div class="constructor__elements" *ngFor="let element of elements">-->
+        <!--{{element}}-->
+      <!--</div>-->
+
+    <div class="btn__block">
+      <button (click)="showSidebar($event, sidebars.CONTAINER)">add container</button>
+    </div>
+    <div class="btn__block">
+      <button (click)="showSidebar($event, sidebars.ELEMENTS)">add elements</button>
+    </div>
+    <div class="btn__block">
+      <button (click)="showSidebar($event, sidebars.ELEMENT)">add element</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
