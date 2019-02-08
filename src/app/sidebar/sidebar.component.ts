@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {SidebarService} from './sidebar.service';
 import {SIDEBARS} from './const';
-import {of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +10,7 @@ import {of} from 'rxjs';
 })
 
 export class SidebarComponent {
-  sidebar$ = of();
+  sidebar$: Observable<SIDEBARS>;
   sidebars = SIDEBARS;
 
   constructor(private sidebarService: SidebarService) {

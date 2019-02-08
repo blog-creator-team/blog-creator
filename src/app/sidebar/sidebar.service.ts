@@ -1,15 +1,19 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, of} from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import {SIDEBARS} from './const';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
-  public sidebar$ = new BehaviorSubject<any>(SIDEBARS.DEFAULT);
+  private _sidebar$ = new BehaviorSubject<SIDEBARS>(SIDEBARS.DEFAULT);
 
-  setSidebar(sidebarType) {
-    this.sidebar$.next(sidebarType);
+  get sidebar$(): Observable<SIDEBARS> {
+    return this._sidebar$.asObservable();
+  }
+
+  set sidebar(sidebarType: SIDEBARS) {
+    this._sidebar$.next(sidebarType);
   }
 }
 

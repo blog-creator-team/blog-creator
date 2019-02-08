@@ -1,4 +1,5 @@
-<div [ngSwitch]="sidebar$ | async" class="sidebar">
+<aside [ngSwitch]="sidebar$ | async" class="sidebar">
+
   <app-sidebar-default
     *ngSwitchCase="sidebars.DEFAULT"></app-sidebar-default>
   <app-sidebar-container
@@ -7,4 +8,4 @@
     *ngSwitchCase="sidebars.ELEMENTS"></app-sidebar-elements>
   <app-sidebar-element
     *ngSwitchCase="sidebars.ELEMENT"></app-sidebar-element>
-</div>
+</aside>

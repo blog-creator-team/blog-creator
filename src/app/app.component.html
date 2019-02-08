@@ -1,18 +1,28 @@
 <div class="wrap">
   <div class="header">
-    <a routerLink="/" class="logo__site"><img src="../assets/ddd.jpg" alt="EasyBlog" class="img__logo"><span
-      class="logo__text">EasyBlog</span></a>
+
+    <div class="wrap-logo">
+      <a routerLink="/" class="logo__site"><img src="../assets/ddd.jpg" alt="EasyBlog" class="img__logo"><span
+        class="logo__text">EasyBlog</span></a>
+    </div>
+
     <h1 class="title__site">Easy create your blog</h1>
+
     <nav class="nav__header">
       <ul class="nav__list">
-        <li *ngFor='let item of navList' class="nav__item">
-          <a [routerLink]="item.url" class="nav__link">{{item.title}}</a>
+        <li class="nav__item">
+          <a routerLink="/home" routerLinkActive="active" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item">
+          <a routerLink="/constructor" routerLinkActive="active" class="nav__link">Constructor</a>
+        </li>
+        <li class="nav__item">
+          <a routerLink="/blog" routerLinkActive="active" class="nav__link">Blog</a>
         </li>
       </ul>
     </nav>
+
   </div>
-
-    <app-page-constructor></app-page-constructor>
-
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
+

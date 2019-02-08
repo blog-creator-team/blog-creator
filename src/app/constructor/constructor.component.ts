@@ -3,17 +3,17 @@ import {SidebarService} from '../sidebar/sidebar.service';
 import {SIDEBARS} from '../sidebar/const';
 
 @Component({
-  selector: 'app-page-constructor',
-  templateUrl: './page-constructor.component.html',
-  styleUrls: ['./page-constructor.component.scss']
+  selector: 'app-constructor',
+  templateUrl: './constructor.component.html',
+  styleUrls: ['./constructor.component.scss']
 })
-export class PageConstructorComponent {
+export class ConstructorComponent {
   sidebars = SIDEBARS;
 
   constructor(public sidebarService: SidebarService) {
   }
 
   showSidebar(event, sidebarType) {
-    this.sidebarService.setSidebar(sidebarType);
+    this.sidebarService.sidebar = sidebarType;
   }
 }
