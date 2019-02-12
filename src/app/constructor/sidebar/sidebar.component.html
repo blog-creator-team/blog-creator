@@ -5,7 +5,11 @@
   <app-sidebar-container
     *ngSwitchCase="sidebars.CONTAINER"></app-sidebar-container>
   <app-sidebar-elements
-    *ngSwitchCase="sidebars.ELEMENTS"></app-sidebar-elements>
+    *ngSwitchCase="sidebars.ELEMENTS" (onElementSelect)="onElementSelect($event)"></app-sidebar-elements>
   <app-sidebar-element
     *ngSwitchCase="sidebars.ELEMENT"></app-sidebar-element>
+
+  <button>Preview</button>
+  <button>Publish</button>
+
 </aside>
