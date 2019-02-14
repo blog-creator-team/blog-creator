@@ -1,7 +1,7 @@
 export enum SIDEBARS {
-  DEFAULT = 'default-sidebar',
   CONTAINER = 'container-sidebar',
   ELEMENTS = 'elements-sidebar',
-  ELEMENT = 'element-sidebar'
+  ELEMENT = 'element-sidebar',
+  DEFAULT = 'default-sidebar'
 }
 

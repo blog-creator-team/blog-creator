@@ -7,8 +7,10 @@
 .elements__item {
   width: 100%;
   margin-bottom: 20px;
-  box-shadow: 3px 4px 10px rgba(154, 147, 140, 0.4);
-  background: #EEE;
+  box-shadow: 3px 4px 10px rgba(191, 158, 172, 0.5);
+  //box-shadow: 3px 4px 10px rgba(154, 147, 140, 0.4);
+  //background: #EEE;
+  border: 2px solid #EEE;
   padding: 10px;
   border-radius: 5px;
 }

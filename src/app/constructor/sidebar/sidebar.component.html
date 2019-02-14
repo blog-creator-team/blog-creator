@@ -1,13 +1,13 @@
 <aside [ngSwitch]="sidebar$ | async" class="sidebar">
 
-  <app-sidebar-default
-    *ngSwitchCase="sidebars.DEFAULT"></app-sidebar-default>
+
   <app-sidebar-container
     *ngSwitchCase="sidebars.CONTAINER"></app-sidebar-container>
   <app-sidebar-elements
     *ngSwitchCase="sidebars.ELEMENTS" (onElementSelect)="onElementSelect($event)"></app-sidebar-elements>
   <app-sidebar-element
     *ngSwitchCase="sidebars.ELEMENT"></app-sidebar-element>
+  <app-sidebar-default *ngSwitchDefault></app-sidebar-default>
 
   <button>Preview</button>
   <button>Publish</button>

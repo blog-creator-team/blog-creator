@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {SidebarService} from './sidebar/sidebar.service';
 import {SIDEBARS} from './sidebar/const';
+import {SidebarRequest} from "../models/sidebar-request";
 
 @Component({
   selector: 'app-constructor',
@@ -14,15 +15,18 @@ export class ConstructorComponent {
 
   constructor(public sidebarService: SidebarService) {
     this.selectedElements = [];
-
   }
 
   showSidebar(event, sidebarType) {
     this.sidebarService.sidebar = sidebarType;
   }
 
+  openElements() {
+    this.sidebarService.sidebar = new SidebarRequest(SIDEBARS.ELEMENTS, this.onElementSelect)
+  }
+
   onElementSelect = (response: string) => {
-    this.selectedElements.push(response)
+    this.selectedElements.push(response);
   }
 }
 
