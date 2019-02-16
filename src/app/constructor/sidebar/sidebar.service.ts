@@ -14,9 +14,13 @@ export class SidebarService {
   }
   //метод позволяет подписаться на свойство _sidebar$ как Observable.
 
-  set sidebar(sidebarType: SidebarRequest) {
-    this._sidebar$.next(sidebarType);
-  }
+  set sidebar(request: SidebarRequest) {
+    this._sidebar$.next(request);
+    }
 //способ позволяет компонентам обновлять значение состояния, хранящегося в службе.
+
+  openDefault(): void {
+    this.sidebar = new SidebarRequest(SIDEBARS.DEFAULT);
+  }
 }
 

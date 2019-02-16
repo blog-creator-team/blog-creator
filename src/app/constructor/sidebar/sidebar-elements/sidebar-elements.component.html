@@ -1,9 +1,8 @@
 <h3 class="sidebar__title">Elements</h3>
 
 <ul class="elements__list"  >
-
-  <li *ngFor="let element of elements" class="elements__item" (click)="addElement($event, element.type)">
-    {{element.type}}
-  </li>
-
+  <li class="elements__item" (click)="onSelect('text')">text</li>
+  <li class="elements__item" (click)="onSelect('image')">image</li>
+  <li class="elements__item" (click)="onSelect('link')">link</li>
+  <li class="elements__item" (click)="onSelect('blank')">blank</li>
 </ul>

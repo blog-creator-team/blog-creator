@@ -1,5 +1,7 @@
-export class Element {
-  type: string;
+export enum Elements {
+  TEXT = 'text',
+  BLANK = 'blank',
+  IMAGE = 'image',
+  LINK = 'link',
 }
-
 

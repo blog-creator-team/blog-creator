@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-sidebar-element',
   templateUrl: './sidebar-element.component.html',

@@ -17,16 +17,20 @@ export class ConstructorComponent {
     this.selectedElements = [];
   }
 
-  showSidebar(event, sidebarType) {
+  showSidebar(sidebarType) {
     this.sidebarService.sidebar = sidebarType;
   }
 
   openElements() {
-    this.sidebarService.sidebar = new SidebarRequest(SIDEBARS.ELEMENTS, this.onElementSelect)
+    this.sidebarService.sidebar = new SidebarRequest(
+      SIDEBARS.ELEMENTS,
+      this.onElementSelect.bind(this)
+    );
   }
 
-  onElementSelect = (response: string) => {
+  onElementSelect(response: string) {
     this.selectedElements.push(response);
+    this.sidebarService.openDefault();
   }
 }
 

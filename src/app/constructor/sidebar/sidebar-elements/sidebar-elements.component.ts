@@ -1,28 +1,15 @@
-import {Component, Output, EventEmitter} from '@angular/core';
-import {ELEMENTS} from "../../../mocks/elements-mock";
-import {SidebarService} from "../sidebar.service";
+import {Component, Input} from '@angular/core';
+import {SidebarRequest} from "../../../models/sidebar-request";
 
 @Component({
   selector: 'app-sidebar-elements',
   templateUrl: './sidebar-elements.component.html',
   styleUrls: ['./sidebar-elements.component.scss']
 })
-
 export class SidebarElementsComponent {
-  private elements = ELEMENTS;
+  public onSelect: Function;
 
-  constructor(public sidebarService: SidebarService) {
-    // this.selectedElements = [];
+  @Input() set request({ onSubmit }: SidebarRequest) {
+    this.onSelect = onSubmit;
   }
-
-
-  @Output() onElementSelect = new EventEmitter<string>();
-
-  addElement(event, elementType): void {
-    //service call to server
-    // this.service.getElement(elementType).then(res => {this.onElementSelect.emit(res)})
-    this.onElementSelect.emit(elementType);
-  }
-
-
 }
