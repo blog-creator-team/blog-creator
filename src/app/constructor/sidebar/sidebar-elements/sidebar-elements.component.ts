@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {SidebarRequest} from "../../../models/sidebar-request";
-import {Elements} from "@angular/compiler";
+import {Elements} from "../../../models/element";
 
 @Component({
   selector: 'app-sidebar-elements',
