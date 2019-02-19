@@ -15,6 +15,10 @@ import {ConstructorComponent} from './constructor/constructor.component';
 import {SidebarService} from './constructor/sidebar/sidebar.service';
 import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
+import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
+import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
+import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
 
 
 const appRoutes: Routes = [ ];
@@ -30,6 +34,10 @@ const appRoutes: Routes = [ ];
     ConstructorComponent,
     BlogComponent,
     NotFoundComponent,
+    SidebarElemTextComponent,
+    SidebarElemImageComponent,
+    SidebarElemLinkComponent,
+    SidebarElemBlankComponent,
    ],
   imports: [
     BrowserModule,

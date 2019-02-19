@@ -16,9 +16,9 @@ export class SidebarComponent implements OnDestroy {
 
   constructor(private sidebarService: SidebarService) {
     this._sidebarChangeListener = this.sidebarService.sidebar$
-      .subscribe((request: SidebarRequest)=> {
-      this.request = request;
-    });
+      .subscribe((request: SidebarRequest) => {
+        this.request = request;
+      });
   }
 
   ngOnDestroy(): void {

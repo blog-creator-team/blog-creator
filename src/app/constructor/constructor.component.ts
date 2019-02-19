@@ -12,13 +12,18 @@ import {SidebarRequest} from "../models/sidebar-request";
 export class ConstructorComponent {
   sidebars = SIDEBARS;
   selectedElements: Array<string>;
+  // selectedSidebarElement: Array<string>;
 
   constructor(public sidebarService: SidebarService) {
     this.selectedElements = [];
+    // this.selectedSidebarElement = [];
   }
 
-  showSidebar(sidebarType) {
-    this.sidebarService.sidebar = sidebarType;
+  showSidebar() {
+    this.sidebarService.sidebar = new SidebarRequest(
+      SIDEBARS.CONTAINER,
+      this.onElementSelect.bind(this)
+    );
   }
 
   openElements() {
@@ -28,9 +33,20 @@ export class ConstructorComponent {
     );
   }
 
+  showSidebar1() {
+    this.sidebarService.sidebar = new SidebarRequest(
+      SIDEBARS.ELEMENT,
+      this.onElementSelect.bind(this)
+    );
+  }
+
   onElementSelect(response: string) {
     this.selectedElements.push(response);
     this.sidebarService.openDefault();
+  }
+
+  onSidebarElementSelect(){
+
   }
 }
 
