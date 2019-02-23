@@ -20,7 +20,6 @@ import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element
 import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
 import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
 
-
 const appRoutes: Routes = [ ];
 
 @NgModule({
