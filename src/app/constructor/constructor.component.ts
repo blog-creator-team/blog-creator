@@ -43,9 +43,9 @@ export class ConstructorComponent {
     );
   }
 
-  // onSidebarElementSelect(response: string) {
-  //   this.selectedElements.push(response);
-  //   this.sidebarService.openDefault();
-  // }
+  onSidebarElementSelect(response: string) {
+    this.selectedElements.push(response);
+    this.sidebarService.openDefault();
+  }
 }
 

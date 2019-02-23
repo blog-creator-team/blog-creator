@@ -62,13 +62,13 @@
   .btn--left {
     left: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -50%);
   }
 
   .btn--right {
     right: 0;
     top: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(100%, -50%);
   }
 
   .btn--top,
@@ -78,11 +78,11 @@
 
 .btn--top {
   top: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
 }
 .btn--bottom {
   bottom: 0;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 100%);
 }
 
   .btn--edit {
