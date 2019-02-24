@@ -14,16 +14,20 @@ export class ConstructorComponent {
   selectedElements: Array<string>;
   elements: Array<string> = [];
 
+  onPressed = true;
+
   constructor(public sidebarService: SidebarService) {
     this.selectedElements = [];
   }
 
   openElements() {
+    this.onPressed = false;
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENTS,
       this.onElementSelect.bind(this)
     );
   }
+
   onElementSelect(elementType) {
     this.selectedElements.push(elementType);
     this.sidebarService.openDefault();
@@ -43,9 +47,17 @@ export class ConstructorComponent {
     );
   }
 
+  // onSidebarElementSelect(response: string) {
+  //   this.selectedElements.push(response);
+  //   this.sidebarService.openDefault();
+  // }
   onSidebarElementSelect(response: string) {
     this.selectedElements.push(response);
     this.sidebarService.openDefault();
   }
 }
+
+
+
+
 
