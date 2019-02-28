@@ -33,7 +33,7 @@
           <!--<div *ngFor="let block of container.blocks" class="block">-->
           <!--{{block.id}}-->
           <div class="block">
-            <button class="btn btn--big btn--center" (click)="openElements()">add elements</button>
+            <button *ngIf="onPressed" class="btn btn--big btn--center" (click)="openElements()">add elements</button>
             <button
               class="btn btn--small btn--left block__btn"
               (click)="addBlock(container.id, 'left')">+
