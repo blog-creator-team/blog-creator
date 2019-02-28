@@ -1,18 +1,18 @@
-<P>SB el-t works</P>
 
-<div [ngSwitch]="element" class="sidebar">
-  <app-sidebar-elem-text *ngSwitchCase="element.SB_TEXT">
+<div [ngSwitch]="elements.type" class="sidebar">
+  <app-sidebar-elem-text *ngSwitchCase="elements.SB_TEXT">
   </app-sidebar-elem-text>
 
-  <app-sidebar-elem-image *ngSwitchCase="element.SB_IMAGE">
+  <app-sidebar-elem-image *ngSwitchCase="elements.SB_IMAGE">
   </app-sidebar-elem-image>
 
-  <app-sidebar-elem-link *ngSwitchCase="element.SB_LINK">
-  </app-sidebar-elem-link>
+  <app-sidebar-elem-link *ngSwitchCase="elements.SB_LINK">
+</app-sidebar-elem-link>
 
-  <app-sidebar-elem-blank *ngSwitchCase="element.SB_BLANK">
-  </app-sidebar-elem-blank>
+<app-sidebar-elem-blank *ngSwitchCase="elements.SB_BLANK">
+</app-sidebar-elem-blank>
 
-  <div *ngSwitchDefault>General settings</div>
+  <app-sidebar-default *ngSwitchDefault></app-sidebar-default>
 </div>
+
 

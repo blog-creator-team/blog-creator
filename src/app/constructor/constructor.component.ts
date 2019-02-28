@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {SidebarService} from './sidebar/sidebar.service';
 import {SIDEBARS} from './sidebar/const';
 import {SidebarRequest} from "../models/sidebar-request";
+import {SIDEBAR_ELEMENT} from "./sidebar/sidebar-element/const-element";
 
 @Component({
   selector: 'app-constructor',
@@ -13,11 +14,17 @@ export class ConstructorComponent {
   sidebars = SIDEBARS;
   selectedElements: Array<string>;
   elements: Array<string> = [];
-
   onPressed = true;
 
   constructor(public sidebarService: SidebarService) {
     this.selectedElements = [];
+  }
+
+  showSidebar() {
+    this.sidebarService.sidebar = new SidebarRequest(
+      SIDEBARS.CONTAINER,
+      this.onElementSelect.bind(this)
+    );
   }
 
   openElements() {
@@ -33,28 +40,17 @@ export class ConstructorComponent {
     this.sidebarService.openDefault();
   }
 
-  showSidebar() {
-    this.sidebarService.sidebar = new SidebarRequest(
-      SIDEBARS.CONTAINER,
-      this.onElementSelect.bind(this)
-    );
-  }
-
   openElementEdit() {
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENT,
-      this.onElementSelect.bind(this)
-    );
+    this.onElementSelect.bind(this)
+      );
   }
 
-  // onSidebarElementSelect(response: string) {
-  //   this.selectedElements.push(response);
+  // onSbElSelect(sbElementType) {
+  //   this.selectedSb.push(sbElementType);
   //   this.sidebarService.openDefault();
   // }
-  onSidebarElementSelect(response: string) {
-    this.selectedElements.push(response);
-    this.sidebarService.openDefault();
-  }
 }
 
 

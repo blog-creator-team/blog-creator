@@ -9,6 +9,7 @@
   height: 100%;
   flex: auto;
   padding: 40px;
+  overflow-x: auto;
 }
 
 .aside {
@@ -17,35 +18,34 @@
   height: 100%;
   box-shadow: 0 10px 20px 0 rgba(191, 158, 172, 0.5);
   padding: 60px 25px;
+  overflow-x: auto;
 }
 
 .block,
-.container {
+.container,
+.element__wrap {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 5px;
   background: #F5F5F5;
   border: 2px solid transparent;
 }
 
-.container:hover {
+.container:hover,
+.block:hover,
+.element__wrap:hover {
   border: 2px solid #9198E5;
   transition: .35s;
-  .container__btn {
-    display: block;
-  }
 }
 
-.block:hover {
-  border: 2px solid #9198E5;
-  transition: .35s;
-  .block__btn {
-    display: block;
-  }
+.container:hover > .container__btn,
+.block:hover > .block__btn,
+.element__wrap:hover > .btn--edit {
+  display: block;
 }
 
 .btn {
-  display: inline-block;
+  display: block;
   padding: 15px;
   text-align: center;
   font-size: 16px;
@@ -93,9 +93,16 @@
 
 .btn--edit {
   padding: 5px;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
   svg {
     width: 22px;
     height: 18px;
   }
+}
+
+.btn--center {
+  margin: auto;
 }
 
