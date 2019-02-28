@@ -1,0 +1,17 @@
+<aside [ngSwitch]="request.type" class="sidebar">
+  <button class="btn-sidebar">Preview</button>
+  <button class="btn-sidebar">Publish</button>
+
+  <app-sidebar-container *ngSwitchCase="sidebars.CONTAINER">
+  </app-sidebar-container>
+
+  <app-sidebar-elements *ngSwitchCase="sidebars.ELEMENTS" [request]="request">
+  </app-sidebar-elements>
+
+  <app-sidebar-element *ngSwitchCase="sidebars.ELEMENT">
+  </app-sidebar-element>
+
+  <app-sidebar-default *ngSwitchDefault></app-sidebar-default>
+
+  <button class="btn-sidebar">delete</button>
+</aside>

@@ -6,27 +6,21 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SidebarComponent} from './sidebar/sidebar.component';
-import {SidebarContainerComponent} from './sidebar/sidebar-container/sidebar-container.component';
-import {SidebarElementsComponent} from './sidebar/sidebar-elements/sidebar-elements.component';
-import {SidebarElementComponent} from './sidebar/sidebar-element/sidebar-element.component';
-import {SidebarDefaultComponent} from './sidebar/sidebar-default/sidebar-default.component';
+import {SidebarComponent} from './constructor/sidebar/sidebar.component';
+import {SidebarContainerComponent} from './constructor/sidebar/sidebar-container/sidebar-container.component';
+import {SidebarElementsComponent} from './constructor/sidebar/sidebar-elements/sidebar-elements.component';
+import {SidebarElementComponent} from './constructor/sidebar/sidebar-element/sidebar-element.component';
+import {SidebarDefaultComponent} from './constructor/sidebar/sidebar-default/sidebar-default.component';
 import {ConstructorComponent} from './constructor/constructor.component';
-import {SidebarService} from './sidebar/sidebar.service';
+import {SidebarService} from './constructor/sidebar/sidebar.service';
 import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
+import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
+import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
+import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
 
-const appRoutes: Routes = [
-  {
-    path: 'constructor', component: ConstructorComponent
-  },
-  {
-    path: 'blog', component: BlogComponent
-  },
-  {
-    path: '**', component: NotFoundComponent
-  },
-];
+const appRoutes: Routes = [ ];
 
 @NgModule({
   declarations: [
@@ -39,7 +33,11 @@ const appRoutes: Routes = [
     ConstructorComponent,
     BlogComponent,
     NotFoundComponent,
-  ],
+    SidebarElemTextComponent,
+    SidebarElemImageComponent,
+    SidebarElemLinkComponent,
+    SidebarElemBlankComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

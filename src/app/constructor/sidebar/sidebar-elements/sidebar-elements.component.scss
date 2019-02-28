@@ -7,10 +7,10 @@
 .elements__item {
   width: 100%;
   margin-bottom: 20px;
-  border: none;
-  background: #EEE;
+  box-shadow: 3px 4px 10px rgba(191, 158, 172, 0.5);
+  border: 2px solid #EEE;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .sidebar__title {
