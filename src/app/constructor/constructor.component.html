@@ -5,35 +5,33 @@
   <div class="main">
     <div class="constructor__content">
       <div class="constructor__elements">
-        <button class="btn btn--big" (click)="showSidebar(sidebars.CONTAINER)">add container</button>
+        <div *ngIf="containers.length === 0 " class="substrate">
+          <button *ngIf="containers.length===0 "
+                  class="btn btn--big btn--center"
+                  (click)="addContainer(0, 'append')">Create new
+          </button>
+        </div>
 
-        <!--<button class="btn btn&#45;&#45;big" (click)="openElements()">add elements</button>-->
-
-        <!--<button class="btn btn&#45;&#45;edit" (click)="openElementEdit(sidebars.ELEMENT)">-->
-          <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="FFF">-->
-            <!--<title>pencil</title>-->
-            <!--<path-->
-              <!--d="M30.173 7.542l-0.314 0.314-5.726-5.729 0.313-0.313c0 0 1.371-1.813 3.321-1.813 0.859 0 1.832 0.353 2.849 1.37 3.354 3.354-0.443 6.171-0.443 6.171zM27.979 9.737l-19.499 19.506-8.48 2.757 2.756-8.485v-0.003h0.002l19.496-19.505 0.252 0.253zM2.76 29.239l4.237-1.219-2.894-3.082-1.343 4.301z"-->
-              <!--fill="#FFF">-->
-            <!--</path>-->
-          <!--</svg>-->
-        <!--</button>-->
-        <div class="container">
-          <!--<div *ngFor="let container of containers" class="container">-->
+        <div *ngFor="let container of containers; let i = index" class="container">
           <button
             class="container__btn btn btn--small btn--top"
-            (click)="addBlock(container.id, 'top')">+
+            (click)="addContainer(i, 'prepend')">+
           </button>
+
+          {{container.id}}
 
           <button
             class="container__btn btn btn--small btn--bottom"
-            (click)="addBlock(container.id, 'bottom')">+
+            (click)="addContainer(i, 'append')">+
           </button>
 
-          <!--<div *ngFor="let block of container.blocks" class="block">-->
-          <!--{{block.id}}-->
-          <div class="block">
-            <button *ngIf="onPressed" class="btn btn--big btn--center" (click)="openElements()">add elements</button>
+          <div *ngFor="let block of container.blocks" class="block">
+
+            {{block.id}}
+
+            <button *ngIf="onPressed"
+                    class="btn btn--big btn--center"
+                    (click)="openElements()">add elements</button>
             <button
               class="btn btn--small btn--left block__btn"
               (click)="addBlock(container.id, 'left')">+
@@ -42,13 +40,15 @@
             <button class="btn block__btn btn--small btn--right"
                     (click)="addBlock(container.id, 'right')">+
             </button>
+
             <div *ngIf="!onPressed && selectedElements.length === 0" class="constructor__msg">
               There is no elements. You can start adding new elements in sidebar.
             </div>
 
             <div *ngFor="let selectedElement of selectedElements" class="element__wrap">
               <button class="btn btn--small btn--edit" (click)="openElementEdit()">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="FFF">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                     fill="FFF" class="icon">
                   <title>pencil</title>
                   <path
                     d="M30.173 7.542l-0.314 0.314-5.726-5.729 0.313-0.313c0 0 1.371-1.813 3.321-1.813 0.859 0 1.832 0.353 2.849 1.37 3.354 3.354-0.443 6.171-0.443 6.171zM27.979 9.737l-19.499 19.506-8.48 2.757 2.756-8.485v-0.003h0.002l19.496-19.505 0.252 0.253zM2.76 29.239l4.237-1.219-2.894-3.082-1.343 4.301z"
@@ -56,14 +56,15 @@
                   </path>
                 </svg>
               </button>
+
               {{selectedElement}}
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--</div>-->
-    <!--</div>-->
   </div>
+  <!--</div>-->
 </div>
 
