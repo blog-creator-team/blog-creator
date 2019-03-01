@@ -19,6 +19,7 @@ import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/
 import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
 import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
 import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
+import { ContainerComponent } from './constructor/container/container.component';
 
 const appRoutes: Routes = [ ];
 
@@ -37,6 +38,7 @@ const appRoutes: Routes = [ ];
     SidebarElemImageComponent,
     SidebarElemLinkComponent,
     SidebarElemBlankComponent,
+    ContainerComponent,
    ],
   imports: [
     BrowserModule,

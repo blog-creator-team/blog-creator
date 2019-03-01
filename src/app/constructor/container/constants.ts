@@ -1,5 +1,6 @@
+
 export const CONTAINER_DEFAULT_SETTINGS = {
-  "id": null,
+  "id":null,
   "offset_top": "20px",
   "offset_right": "10%",
   "offset_bottom": "20px",
