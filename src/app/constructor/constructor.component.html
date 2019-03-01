@@ -5,7 +5,7 @@
   <div class="main">
     <div class="constructor__content">
       <div class="constructor__elements">
-        <div *ngIf="containers.length === 0 " class="substrate">
+        <div *ngIf="containers.length === 0 " class="wrap__btn">
           <button *ngIf="containers.length===0 "
                   class="btn btn--big btn--center"
                   (click)="addContainer(0, 'append')">Create new
@@ -65,6 +65,5 @@
       </div>
     </div>
   </div>
-  <!--</div>-->
 </div>
 
