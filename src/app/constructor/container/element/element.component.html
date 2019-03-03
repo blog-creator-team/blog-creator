@@ -1,9 +1,11 @@
 <button *ngIf="onPressed" class="container__btn btn btn--big btn--center"
         (click)="openElements()">add elements
 </button>
+
 <div *ngIf="!onPressed && selectedElements.length === 0">
   You can start adding new elements in sidebar.
 </div>
+
 <div *ngFor="let selectedElement of selectedElements" class="element__block">
   <button class="btn btn--small btn--left"
           *ngIf="selectedElements.length < 2"
