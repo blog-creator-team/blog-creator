@@ -1,8 +1,6 @@
-import {Component, Input, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {Container} from "./container";
 import {CONTAINER_DEFAULT_SETTINGS} from "./constants";
-import {Elements} from "../../models/elements";
-import {SidebarService} from "../sidebar/sidebar.service";
 
 @Component({
   selector: 'app-container',
@@ -11,11 +9,8 @@ import {SidebarService} from "../sidebar/sidebar.service";
 })
 export class ContainerComponent {
   containers: Container[] = [];
- containerId: number;
-  selectedElements: Array<Elements>;
 
-  constructor(public sidebarService: SidebarService) {
-    this.selectedElements = []
+  constructor() {
   }
 
   addContainer(index: number, type: string) {

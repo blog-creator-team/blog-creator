@@ -58,18 +58,6 @@
   transform: translate(100%, -50%);
 }
 
-.btn--top {
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -100%);
-}
-
-.btn--bottom {
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 100%);
-}
-
 .btn--edit {
   padding: 5px;
   top: 0;
@@ -81,7 +69,8 @@
   margin: auto;
 }
 
-.icon {
+.svg-icon {
   width: 22px;
   height: 18px;
+  fill: #FFF;
 }

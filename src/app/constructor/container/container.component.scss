@@ -2,36 +2,18 @@
   display: flex;
 }
 
-.container,
-.element__block {
+.app-element {
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 12;
+}
+
+.container {
   position: relative;
   width: 100%;
   padding: 20px;
   background: #F5F5F5;
   border: 2px solid transparent;
-}
-
-.element__block:hover {
-  border: 2px solid #9198E5;
-  transition: .35s;
-}
-
-.element__block {
-  &:hover > .btn--right,
-  &:hover > .btn--left,
-  &:hover > .btn--edit {
-    display: block;
-  }
-}
-
-.wrap__element--12 {
-  flex-basis: 100%;
-  flex-grow: 12;
-}
-
-.wrap__element--6 {
-  flex-basis: 50%;
-  flex-grow: 6;
 }
 
 .container:hover {
@@ -49,15 +31,6 @@
 }
 
 .btn {
-  display: block;
-  padding: 15px;
-  text-align: center;
-  font-size: 16px;
-  color: #FFF;
-  border: 1px solid #9198e5;
-  background: #9198e5;
-  transition: background-color .35s ease-in-out, border-color .35s ease-in-out;
-
   &:hover {
     background: #BCA9F5;
     border: 1px solid #BCA9F5;
@@ -69,18 +42,6 @@
   display: none;
   padding: 5px 10px;
   z-index: 1;
-}
-
-.btn--left {
-  left: 0;
-  top: 50%;
-  transform: translate(-100%, -50%);
-}
-
-.btn--right {
-  right: 0;
-  top: 50%;
-  transform: translate(100%, -50%);
 }
 
 .btn--top {
@@ -95,18 +56,6 @@
   transform: translate(-50%, 100%);
 }
 
-.btn--edit {
-  padding: 5px;
-  top: 0;
-  right: 0;
-  transform: translateY(-100%);
-}
-
 .btn--center {
   margin: auto;
-}
-
-.icon {
-  width: 22px;
-  height: 18px;
 }

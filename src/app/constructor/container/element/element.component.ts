@@ -2,8 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
-import {Container} from "../container";
-import {ELEMENT_DATA_MOCK} from "./mock-element";
 import {Elements} from "../../../models/elements";
 
 @Component({
@@ -15,10 +13,9 @@ export class ElementComponent implements OnInit {
   selectedElements: Array<Elements>;
   elements: Elements[] = [];
   onPressed = true;
-  containerId: number;
 
   constructor(public sidebarService: SidebarService) {
-    this.selectedElements = []
+    this.selectedElements = [];
   }
 
   ngOnInit() {
@@ -35,10 +32,10 @@ export class ElementComponent implements OnInit {
 
   onElementSelect(elementKind) {
     this.selectedElements.push(elementKind);
-    this.sidebarService.openDefault();
+       this.sidebarService.openDefault();
   }
 
-  /*-----------------------------------------*/
+  /*--------------  Element Edit  --------------------*/
   openElementEdit() {
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENT,

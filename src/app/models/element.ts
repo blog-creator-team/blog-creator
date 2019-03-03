@@ -2,7 +2,7 @@ interface Params {
   object: object;
   string: string;
   number: number;
-  id: number ;
+  id: number;
   offset_top: string;
   offset_right: string;
   offset_bottom: string;
