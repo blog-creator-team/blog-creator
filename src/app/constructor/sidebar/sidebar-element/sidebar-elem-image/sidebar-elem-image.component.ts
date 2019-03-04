@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Elements} from "../../../../models/elements";
-import {SidebarRequest} from "../../../../models/sidebar-request";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-elem-image',
@@ -8,12 +6,7 @@ import {SidebarRequest} from "../../../../models/sidebar-request";
   styleUrls: ['./sidebar-elem-image.component.scss']
 })
 export class SidebarElemImageComponent implements OnInit {
-  public elements = Elements;
-  public onSelect: Function;
 
-  @Input() set request({ onSubmit }: SidebarRequest) {
-    this.onSelect = onSubmit;
-  }
   constructor() { }
 
   ngOnInit() {

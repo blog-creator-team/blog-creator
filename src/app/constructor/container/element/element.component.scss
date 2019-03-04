@@ -16,15 +16,14 @@
   flex-grow: 6;
 }
 
+.btn--hide {
+  display: none;
+}
+
 .element__block:hover {
   border: 2px solid #9198E5;
   transition: .35s;
-}
-
-.element__block{
-  &:hover > .btn--right,
-  &:hover > .btn--left,
-  &:hover > .btn--edit {
+  .btn--hide {
     display: block;
   }
 }
@@ -41,7 +40,6 @@
 
 .btn--small {
   position: absolute;
-  display: none;
   padding: 5px 10px;
   z-index: 1;
 }

@@ -32,7 +32,7 @@ export class ElementComponent implements OnInit {
 
   onElementSelect(elementKind) {
     this.selectedElements.push(elementKind);
-       this.sidebarService.openDefault();
+    this.sidebarService.openDefault();
   }
 
   /*--------------  Element Edit  --------------------*/

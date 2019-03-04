@@ -1,18 +1,14 @@
-
-<div [ngSwitch]="elements.type" class="sidebar">
-  <app-sidebar-elem-text *ngSwitchCase="elements.SB_TEXT">
+<div [ngSwitch]="request.type" class="sidebar">
+  <app-sidebar-elem-text *ngSwitchCase="elements.TEXT">
   </app-sidebar-elem-text>
 
-  <app-sidebar-elem-image *ngSwitchCase="elements.SB_IMAGE">
+  <app-sidebar-elem-image *ngSwitchCase="elements.IMAGE">
   </app-sidebar-elem-image>
 
-  <app-sidebar-elem-link *ngSwitchCase="elements.SB_LINK">
-</app-sidebar-elem-link>
+  <app-sidebar-elem-link *ngSwitchCase="elements.LINK">
+  </app-sidebar-elem-link>
 
-<app-sidebar-elem-blank *ngSwitchCase="elements.SB_BLANK">
-</app-sidebar-elem-blank>
-
-  <app-sidebar-default *ngSwitchDefault></app-sidebar-default>
+  <app-sidebar-elem-blank *ngSwitchCase="elements.BLANK">
+  </app-sidebar-elem-blank>
 </div>
-
 

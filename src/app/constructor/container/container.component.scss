@@ -1,19 +1,16 @@
 .container {
   display: flex;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  background: #F5F5F5;
+  border: 2px solid transparent;
 }
 
 .app-element {
   display: flex;
   flex-basis: 100%;
   flex-grow: 12;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  background: #F5F5F5;
-  border: 2px solid transparent;
 }
 
 .container:hover {

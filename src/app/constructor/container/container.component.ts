@@ -8,7 +8,7 @@ import {CONTAINER_DEFAULT_SETTINGS} from "./constants";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent {
-  containers: Container[] = [];
+  containers: Container [] = [];
 
   constructor() {
   }

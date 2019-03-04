@@ -1,6 +1,6 @@
 import {Element} from '../../models/element';
 
-interface Params {
+export  interface ParamsContainer {
   id: number | null;
   offset_top: string;
   offset_right: string;
@@ -25,7 +25,7 @@ export class Container {
   position: number;
   elements: Element[];
 
-  constructor(params: Params) {
+  constructor(params: ParamsContainer) {
     this.id = params.id;
     this.offset_top = params.offset_top;
     this.offset_right = params.offset_right;

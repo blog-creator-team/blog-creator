@@ -1,4 +1,4 @@
-interface Params {
+export interface Params {
   object: object;
   string: string;
   number: number;
@@ -11,7 +11,6 @@ interface Params {
   bg_image: string;
   post_id: number | null;
   position: number;
-  main_settings: object
 }
 
 export class Element {
@@ -26,7 +25,6 @@ export class Element {
   size: number;
   position: number;
   kind: string;
-  main_settings: object;
 
   constructor(params: Params) {
     this.id = params.number;
@@ -40,6 +38,5 @@ export class Element {
     this.size = params.number;
     this.position = params.number;
     this.kind = params.string;
-    this.main_settings = params.object;
   }
 }
