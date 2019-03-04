@@ -11,8 +11,6 @@ export class SidebarElementComponent {
   public elements = Elements;
   public onSelect: Function;
 
-  request: SidebarRequest;
-
   @Input() set ({ onSubmit}: SidebarRequest) {
     this.onSelect = onSubmit;
   }

@@ -9,8 +9,8 @@
 
   {{container.id}}
 
-  <button class="container__btn btn btn--small btn--top" (click)="addContainer(i, 'prepend')">+</button>
-  <button class="container__btn btn btn--small btn--bottom" (click)="addContainer(i, 'append')">+</button>
+  <button class="container__btn btn btn--small btn--top" (click)="addContainer(i)">+</button>
+  <button class="container__btn btn btn--small btn--bottom" (click)="addContainer(i + 1)">+</button>
 
   <app-element class="app-element"></app-element>
 

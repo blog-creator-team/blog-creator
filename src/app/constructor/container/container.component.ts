@@ -8,36 +8,22 @@ import {CONTAINER_DEFAULT_SETTINGS} from "./constants";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent {
-  containers: Container [] = [];
+  containers: Container[] = [];
 
   constructor() {
   }
 
-  addContainer(index: number, type: string) {
+  addContainer(index: number) {
     const container = new Container(CONTAINER_DEFAULT_SETTINGS);
 
-    if (index === this.containers.length) {
-      this.containers.push(container);
-    } else if (type === 'prepend') {
-      const updatedData = [];
-      this.containers.forEach((item, itemIndex) => {
-        if (itemIndex === index) {
-          updatedData.push(container, item)
-        } else {
-          updatedData.push(item)
-        }
-      });
-      this.containers = updatedData;
-    } else if (type === 'append') {
-      const updatedData = [];
-      this.containers.forEach((item, itemIndex) => {
-        if (itemIndex === index) {
-          updatedData.push(item, container)
-        } else {
-          updatedData.push(item)
-        }
-      });
-      this.containers = updatedData;
-    }
+    this.containers = [
+      ...this.containers.slice(0, index),
+      container,
+      ...this.containers.slice(index, this.containers.length),
+    ];
+    /*  имеем массив контейнеров и заполняем его
+     ...елементы до текущего индекса,
+     новый контейнер и
+      ...елементы после текущего индекса */
   }
 }
