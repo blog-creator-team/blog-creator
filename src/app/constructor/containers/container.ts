@@ -1,11 +1,11 @@
 import {Element} from '../../models/element';
 
 export  interface ParamsContainer {
-  id: number | null;
-  offset_top: string;
-  offset_right: string;
-  offset_bottom: string;
-  offset_left: string;
+  id: number;
+  offset_top: number;
+  offset_right: number;
+  offset_bottom: number;
+  offset_left: number;
   bg_color: string;
   bg_image: string;
   post_id: number | null;
@@ -14,11 +14,11 @@ export  interface ParamsContainer {
 }
 
 export class Container {
-  id: number | null;
-  offset_top: string;
-  offset_right: string;
-  offset_bottom: string;
-  offset_left: string;
+  id: number;
+  offset_top: number;
+  offset_right: number;
+  offset_bottom: number;
+  offset_left: number;
   bg_color: string;
   bg_image: string;
   post_id: number | null;

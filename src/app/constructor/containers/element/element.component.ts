@@ -11,7 +11,7 @@ import {Elements} from "../../../models/elements";
 })
 export class ElementComponent implements OnInit {
   selectedElements: Array<Elements>;
-  elements: Elements[] = [];
+  elements: Elements;
   onPressed = true;
 
   constructor(public sidebarService: SidebarService) {

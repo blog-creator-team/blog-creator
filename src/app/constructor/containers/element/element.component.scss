@@ -1,12 +1,13 @@
 .element__block {
   position: relative;
+  display: flex;
   width: 100%;
   padding: 20px;
   background: #F5F5F5;
   border: 2px solid transparent;
 }
 
-.element__block--12 {
+.element__grid--12 {
   flex-basis: 100%;
   flex-grow: 12;
 }

@@ -15,4 +15,3 @@ export class SidebarElementComponent {
     this.onSelect = onSubmit;
   }
 }
-

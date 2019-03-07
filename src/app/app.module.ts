@@ -18,8 +18,9 @@ import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/
 import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
 import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
 import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
-import { ContainerComponent } from './constructor/container/container.component';
-import { ElementComponent } from './constructor/container/element/element.component';
+import { ContainersComponent } from './constructor/containers/containers.component';
+import { ElementComponent } from './constructor/containers/element/element.component';
+import { ContainerComponent } from './constructor/containers/container/container.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,9 @@ import { ElementComponent } from './constructor/container/element/element.compon
     SidebarElemImageComponent,
     SidebarElemLinkComponent,
     SidebarElemBlankComponent,
-    ContainerComponent,
+    ContainersComponent,
     ElementComponent,
+    ContainerComponent,
    ],
   imports: [
     BrowserModule,

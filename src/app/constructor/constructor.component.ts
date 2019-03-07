@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Container} from "./containers/container";
 
 @Component({
   selector: 'app-constructor',
@@ -7,8 +8,9 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class ConstructorComponent implements OnInit {
-
+  // post: Post = MOCK_POST_DATA
   constructor() {
+
   }
 
   ngOnInit() {
