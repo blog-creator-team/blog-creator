@@ -1,29 +1,3 @@
-<button *ngIf="onPressed" class="container__btn btn btn--big btn--center"
-        (click)="openElements()">add elements
-</button>
 
-<div *ngIf="!onPressed && selectedElements.length === 0" class="element__block">
-  You can start adding new elements in sidebar.
-</div>
-
-<div *ngFor="let selectedElement of selectedElements" class="element__block">
-  <button class="btn btn--small btn--left btn--hide"
-          *ngIf="selectedElements.length < 2"
-          (click)="openElements('left')">+
-  </button>
-
-  <button class="btn btn--small btn--right btn--hide"
-          *ngIf="selectedElements.length < 2"
-          (click)="openElements('right')">+
-  </button>
-
-  <button class="btn btn--small btn--edit btn--hide" (click)="openElementEdit()">
-    <svg class="svg-icon">
-      <use xlink:href="../../../../assets/icons/constructor-svg/icons.svg#icon-pencil"></use>
-    </svg>
-  </button>
-
-  {{selectedElement}}
-
-</div>
+{{element}}
 
