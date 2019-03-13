@@ -1,0 +1,86 @@
+
+.app-element {
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 12;
+}
+
+.element__block {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  background: #F5F5F5;
+  border: 2px solid transparent;
+}
+
+.container__wrap {
+  display: flex;
+}
+
+.element__block:hover{
+  border: 2px solid #9198E5;
+  transition: .35s;
+  .btn--hide {
+    display: block;
+  }
+}
+
+.container:hover > .container__btn {
+  display: block;
+}
+
+.wrap__btn {
+  background: #F5F5F5;
+  padding: 40px;
+}
+
+.btn {
+  &:hover {
+    background: #BCA9F5;
+    border: 1px solid #BCA9F5;
+  }
+}
+
+.btn--small {
+  position: absolute;
+  display: none;
+  padding: 5px 10px;
+  z-index: 1;
+}
+.btn--hide {
+  display: none;
+}
+
+.btn--left {
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+
+.btn--right {
+  right: 0;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+.btn--center {
+  margin: auto;
+}
+
+.btn--hide {
+  display: none;
+}
+
+.btn--edit {
+  padding: 5px;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+}
+
+.svg-icon {
+  width: 22px;
+  height: 18px;
+  fill: #FFF;
+}

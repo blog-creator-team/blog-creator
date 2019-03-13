@@ -1,7 +1,5 @@
-import {Component} from '@angular/core';
-import {SidebarService} from './sidebar/sidebar.service';
-import {SIDEBARS} from './sidebar/const';
-import {SidebarRequest} from "../models/sidebar-request";
+import {Component, Input, OnInit} from '@angular/core';
+import {Container} from "./containers/container";
 
 @Component({
   selector: 'app-constructor',
@@ -9,55 +7,14 @@ import {SidebarRequest} from "../models/sidebar-request";
   styleUrls: ['./constructor.component.scss']
 })
 
-export class ConstructorComponent {
-  sidebars = SIDEBARS;
-  selectedElements: Array<string>;
-  elements: Array<string> = [];
+export class ConstructorComponent implements OnInit {
+  // post: Post = MOCK_POST_DATA
+  constructor() {
 
-  onPressed = true;
-
-  constructor(public sidebarService: SidebarService) {
-    this.selectedElements = [];
   }
 
-  openElements() {
-    this.onPressed = false;
-    this.sidebarService.sidebar = new SidebarRequest(
-      SIDEBARS.ELEMENTS,
-      this.onElementSelect.bind(this)
-    );
+  ngOnInit() {
   }
 
-  onElementSelect(elementType) {
-    this.selectedElements.push(elementType);
-    this.sidebarService.openDefault();
-  }
 
-  showSidebar() {
-    this.sidebarService.sidebar = new SidebarRequest(
-      SIDEBARS.CONTAINER,
-      this.onElementSelect.bind(this)
-    );
-  }
-
-  openElementEdit() {
-    this.sidebarService.sidebar = new SidebarRequest(
-      SIDEBARS.ELEMENT,
-      this.onElementSelect.bind(this)
-    );
-  }
-
-  // onSidebarElementSelect(response: string) {
-  //   this.selectedElements.push(response);
-  //   this.sidebarService.openDefault();
-  // }
-  onSidebarElementSelect(response: string) {
-    this.selectedElements.push(response);
-    this.sidebarService.openDefault();
-  }
 }
-
-
-
-
-

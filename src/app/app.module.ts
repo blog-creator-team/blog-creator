@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {HttpClientModule} from '@angular/common/http';
-import {Routes, RouterModule} from '@angular/router';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -19,8 +18,9 @@ import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/
 import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
 import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
 import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
-
-const appRoutes: Routes = [ ];
+import { ContainersComponent } from './constructor/containers/containers.component';
+import { ElementComponent } from './constructor/containers/element/element.component';
+import { ContainerComponent } from './constructor/containers/container/container.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +37,13 @@ const appRoutes: Routes = [ ];
     SidebarElemImageComponent,
     SidebarElemLinkComponent,
     SidebarElemBlankComponent,
+    ContainersComponent,
+    ElementComponent,
+    ContainerComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [SidebarService],
   bootstrap: [AppComponent]

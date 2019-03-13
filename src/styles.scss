@@ -18,4 +18,17 @@ app-constructor {
   height: 100%;
 }
 
+.btn {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: background-color .35s ease-in-out;
+  color: #FFF;
+  border: 1px solid #9198e5;
+  background: #9198e5;
+}
+
 

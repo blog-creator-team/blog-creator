@@ -17,7 +17,7 @@ export class SidebarService {
   set sidebar(request: SidebarRequest) {
     this._sidebar$.next(request);
     }
-//способ позволяет компонентам обновлять значение состояния, хранящегося в службе.
+//способ позволяет компонентам обновлять значение состояния, хранящегося в сервисе.
 
   openDefault(): void {
     this.sidebar = new SidebarRequest(SIDEBARS.DEFAULT);

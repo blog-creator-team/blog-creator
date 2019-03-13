@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-elem-link',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-elem-link.component.scss']
 })
 export class SidebarElemLinkComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

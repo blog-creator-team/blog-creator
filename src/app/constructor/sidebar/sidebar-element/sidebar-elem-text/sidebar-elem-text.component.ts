@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-elem-text',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-elem-text.component.scss']
 })
 export class SidebarElemTextComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

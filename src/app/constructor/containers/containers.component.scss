@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  background: #F5F5F5;
+  border: 2px solid transparent;
+}
+
+.container:hover {
+  border: 2px solid #9198E5;
+  transition: .35s;
+}
+
+.container:hover > .container__btn {
+  display: block;
+}
+
+.wrap__btn {
+  background: #F5F5F5;
+  padding: 40px;
+}
+
+.btn {
+  &:hover {
+    background: #BCA9F5;
+    border: 1px solid #BCA9F5;
+  }
+}
+
+.btn--small {
+  position: absolute;
+  display: none;
+  padding: 5px 10px;
+  z-index: 1;
+}
+
+.btn--top {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.btn--bottom {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+}
+
+.btn--center {
+  margin: auto;
+}
