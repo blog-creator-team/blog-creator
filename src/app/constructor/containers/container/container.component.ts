@@ -15,7 +15,7 @@ import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 export class ContainerComponent implements OnInit {
   elements: Array<object>;
   element: Element;
-  onPressed = true;
+  showButton = true;
 
   @Input() container: Container;
 
@@ -28,7 +28,7 @@ export class ContainerComponent implements OnInit {
 
   /*--------  open sidebar-elements  --------*/
   openElements() {
-    this.onPressed = false;
+    this.showButton = false;
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENTS,
       this.onElementSelect.bind(this)
@@ -38,21 +38,10 @@ export class ContainerComponent implements OnInit {
   onElementSelect(elementType) {
     this.elements.push(elementType);
     this.sidebarService.openDefault();
+    console.log(this.elements)
   }
 
   /*--------------  Element Edit  --------------------*/
-  elementEdit(element) {
-
-    this.sidebarService.sidebar = new ElementSidebarRequest(
-      this.element = element
-    )
-    this. onTypeSelect.bind(this)
-    console.log(33)
+  elementEdit() {
   }
-
-  onTypeSelect(element) {
-    this.element.kind = element.kind;
-    console.log(22)
-  }
-
 }
