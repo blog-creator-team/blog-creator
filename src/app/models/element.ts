@@ -1,8 +1,10 @@
 export interface Params {
+  size: number;
   object: object;
   string: string;
   number: number;
   id: number;
+  container_id: number;
   offset_top: number;
   offset_right: number;
   offset_bottom: number;
@@ -11,6 +13,7 @@ export interface Params {
   bg_image: string;
   post_id: number | null;
   position: number;
+  kind: string;
 }
 
 export class Element {
@@ -27,16 +30,16 @@ export class Element {
   kind: string;
 
   constructor(params: Params) {
-    this.id = params.number;
-    this.container_id = params.number;
-    this.offset_top = params.number;
-    this.offset_right = params.number;
-    this.offset_bottom = params.number;
-    this.offset_left = params.number;
-    this.bg_image = params.string;
-    this.bg_color = params.string;
-    this.size = params.number;
-    this.position = params.number;
-    this.kind = params.string;
+    this.id = params.id;
+    this.container_id = params.container_id;
+    this.offset_top = params.offset_top;
+    this.offset_right = params.offset_right;
+    this.offset_bottom = params.offset_bottom;
+    this.offset_left = params.offset_left;
+    this.bg_image = params.bg_image;
+    this.bg_color = params.bg_color;
+    this.size = params.size;
+    this.position = params.position;
+    this.kind = params.kind;
   }
 }

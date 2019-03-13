@@ -1,15 +1,16 @@
-<div [ngSwitch]="elements.kind" class="sidebar">
-  <app-sidebar-elem-text *ngSwitchCase="elements.TEXT">
+<div [ngSwitch]="request.kind" class="sidebar">
+  <app-sidebar-elem-text *ngSwitchCase="elementKind.TEXT">
   </app-sidebar-elem-text>
 
-  <app-sidebar-elem-image *ngSwitchCase="elements.IMAGE">
+  <app-sidebar-elem-image *ngSwitchCase="elementKind.IMAGE">
   </app-sidebar-elem-image>
 
-  <app-sidebar-elem-link *ngSwitchCase="elements.LINK">
+  <app-sidebar-elem-link *ngSwitchCase="elementKind.LINK">
   </app-sidebar-elem-link>
 
-  <app-sidebar-elem-blank *ngSwitchCase="elements.BLANK">
+  <app-sidebar-elem-blank *ngSwitchCase="elementKind.BLANK">
   </app-sidebar-elem-blank>
 </div>
 
 <p>works</p>
+

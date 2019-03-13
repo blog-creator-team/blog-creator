@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {SidebarRequest} from "../../../models/sidebar-request";
-import {ELEMENTS_TYPE} from '../../../models/elements-type';
+import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
+import {Element} from "../../../models/element"
+import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
 @Component({
   selector: 'app-sidebar-element',
@@ -8,10 +9,11 @@ import {ELEMENTS_TYPE} from '../../../models/elements-type';
   styleUrls: ['./sidebar-element.component.scss']
 })
 export class SidebarElementComponent {
-  public elements = ELEMENTS_TYPE;
-  public onSelect: Function;
+  elementKind = ELEMENTS_TYPE;
+  onSubmit: (kind: string) => void;
+  element: Element;
 
-  @Input() set ({ onSubmit}: SidebarRequest) {
-    this.onSelect = onSubmit;
+  @Input() set request({onSubmit}: ElementSidebarRequest) {
+    this.onSubmit = onSubmit
   }
 }

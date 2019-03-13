@@ -9,7 +9,7 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 })
 export class SidebarElementsComponent {
   public onSelect: Function;
-  public elements = ELEMENTS_TYPE;
+  public elementsType = ELEMENTS_TYPE;
 
   @Input() set request({ onSubmit }: SidebarRequest) {
     this.onSelect = onSubmit;

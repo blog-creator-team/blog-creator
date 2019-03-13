@@ -5,6 +5,7 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
+import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 
 @Component({
   selector: 'app-container',
@@ -12,21 +13,19 @@ import {SidebarService} from "../../sidebar/sidebar.service";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  elements: Array<ELEMENTS_TYPE>;
-  element: Element[]= [];
-  // element: Element;
+  elements: Array<object>;
+  element: Element;
   onPressed = true;
-
 
   @Input() container: Container;
 
   constructor(public sidebarService: SidebarService) {
     this.elements = [];
-
   }
 
   ngOnInit() {
   }
+
   /*--------  open sidebar-elements  --------*/
   openElements() {
     this.onPressed = false;
@@ -36,16 +35,24 @@ export class ContainerComponent implements OnInit {
     );
   }
 
-  onElementSelect(elementKind) {
-    this.elements.push(elementKind);
+  onElementSelect(elementType) {
+    this.elements.push(elementType);
     this.sidebarService.openDefault();
   }
 
   /*--------------  Element Edit  --------------------*/
-  openElementEdit() {
-    this.sidebarService.sidebar = new SidebarRequest(
-      SIDEBARS.ELEMENT,
-      this.onElementSelect.bind(this)
-    );
+  elementEdit(element) {
+
+    this.sidebarService.sidebar = new ElementSidebarRequest(
+      this.element = element
+    )
+    this. onTypeSelect.bind(this)
+    console.log(33)
   }
+
+  onTypeSelect(element) {
+    this.element.kind = element.kind;
+    console.log(22)
+  }
+
 }

@@ -1,4 +1,4 @@
-export const ELEMENT_DATA_MOCK  = [
+export const ELEMENTS_DATA_MOCK  = [
   {
     "id": 59,
     "container_id": 43,
@@ -51,7 +51,6 @@ export const ELEMENT_DATA_MOCK  = [
       "src": "https://d1y0dpztrh9xjz.cloudfront.net/assets/placeholder.png"
     }
   },
-  {},
   {
     "id": 58,
     "container_id": 42,
@@ -67,5 +66,5 @@ export const ELEMENT_DATA_MOCK  = [
     "main_settings": {
       "content": "Hey! Your text will be here"
     }
-  }
+  },
 ]

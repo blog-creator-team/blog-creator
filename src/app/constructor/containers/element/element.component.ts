@@ -10,7 +10,6 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 export class ElementComponent implements OnInit {
   @Input() element: Element;
 
-
   constructor() {
 
   }
