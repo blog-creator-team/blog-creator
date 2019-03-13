@@ -13,7 +13,7 @@ import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  elements: Array<object>;
+  elements: Array<Element>;
   element: Element;
   showButton = true;
 
@@ -36,9 +36,9 @@ export class ContainerComponent implements OnInit {
   }
 
   onElementSelect(elementType) {
-    this.elements.push(elementType);
+    this.elements.push(new Element(elementType));
     this.sidebarService.openDefault();
-    console.log(this.elements)
+    console.log(elementType)
   }
 
   /*--------------  Element Edit  --------------------*/
