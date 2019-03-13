@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
+import {PreviewModule} from './preview/preview.module';
 import {AppComponent} from './app.component';
 import {SidebarComponent} from './constructor/sidebar/sidebar.component';
 import {SidebarContainerComponent} from './constructor/sidebar/sidebar-container/sidebar-container.component';
@@ -44,6 +45,7 @@ import { ContainerComponent } from './constructor/containers/container/container
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PreviewModule
   ],
   providers: [SidebarService],
   bootstrap: [AppComponent]

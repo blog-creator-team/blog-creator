@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {ConstructorComponent} from './constructor/constructor.component';
 import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {PreviewComponent} from './preview/preview.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'blog', component: BlogComponent
+  },
+  {
+    path: 'preview', component: PreviewComponent
   },
   {
     path: '**', component: NotFoundComponent
