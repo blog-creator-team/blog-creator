@@ -1,11 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Container} from "../container";
 import {Element} from "../../../models/element";
-import {ELEMENTS_TYPE} from "../../../models/elements-type";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
-import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
+import {ELEMENT_DEFAULT_SETTINGS} from "../constants";
 
 @Component({
   selector: 'app-container',
@@ -36,9 +35,12 @@ export class ContainerComponent implements OnInit {
   }
 
   onElementSelect(elementType) {
-    this.elements.push(new Element(elementType));
+    this.elements.push(new Element({
+      ...ELEMENT_DEFAULT_SETTINGS,
+      kind: elementType,
+      container_id: this.container.id
+    }));
     this.sidebarService.openDefault();
-    console.log(elementType)
   }
 
   /*--------------  Element Edit  --------------------*/

@@ -1,24 +1,36 @@
 <!--<div class="form-group">-->
-<!--<label for="link">Settings link</label>-->
-<!--<select class="form-control" id="link"-->
-<!--required-->
-<!--[(ngModel)]="model.link" name="link">-->
-<!--<option *ngFor="let link of links" [value]="link">{{link}}</option>-->
-<!--</select>-->
+  <!--<label for="link">Settings link</label>-->
+  <!--<select class="form-control" id="link"-->
+          <!--required-->
+          <!--[(ngModel)]="model.link" name="link">-->
+    <!--<option *ngFor="let link of links" [value]="link">{{link}}</option>-->
+  <!--</select>-->
 <!--</div>-->
-<div>
-  <select class="custom-select">
-    <option selected>Open this for select link</option>
+<!--<div>-->
+  <!--<select class="custom-select">-->
+    <!--<option selected>Open this for select link</option>-->
+  <!--</select>-->
+<!--</div>-->
+
+<div class="form-group">
+  <label for="link" class="">Settings link</label>
+  <select name="link" id="link"
+          class="form-control">
+    <option value="link">lorem</option>
+    <option value="link">lorem</option>
+    <option value="link">lorem</option>
   </select>
-
-  <div class="form-group">
-    <label for="colorText">Text color</label>
-    <input type="color" class="form-control" id="colorText">
-  </div>
-
-  <div class="form-group">
-    <label for="backgroundColor">Background color</label>
-    <input type="color" class="form-control" id="backgroundColor">
-  </div>
 </div>
+
+<div class="form-group">
+  <label for="colorText">Text color</label>
+  <input type="color" class="form-control" id="colorText">
+</div>
+
+<div class="form-group">
+  <label for="backgroundColor">Background color</label>
+  <input type="color" class="form-control" id="backgroundColor">
+</div>
+
+
 

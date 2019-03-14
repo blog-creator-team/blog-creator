@@ -1,3 +1,21 @@
+<div [ngSwitch]="element.kind" style="width: 100%">
+  <div class="element__item" *ngSwitchCase="'text'">
+    <p>Your text will be here...</p>
+  </div>
 
-{{element.kind}}
+  <div class="element__item" *ngSwitchCase="'link'">
+    <p class="fake-link">https://metanit.com/web/</p>
+  </div>
 
+  <div class="element__item" *ngSwitchCase="'image'">
+
+    <div class="photo__wrap" style="margin: auto">
+      <img src="../../../../assets/icons/constructor-svg/picture.svg" alt="photo" class="img-default">
+    </div>
+
+  </div>
+
+  <div class="element__item" *ngSwitchCase="'blank'">
+    <p>This block will be empty on published page</p>
+  </div>
+</div>

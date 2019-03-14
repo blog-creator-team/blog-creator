@@ -1,9 +1,6 @@
 export interface Params {
   size: number;
-  object: object;
-  string: string;
-  number: number;
-  id: number;
+  id: number|null;
   container_id: number;
   offset_top: number;
   offset_right: number;
@@ -17,7 +14,7 @@ export interface Params {
 }
 
 export class Element {
-  id: number;
+  id: number |null;
   container_id: number;
   offset_top: number;
   offset_right: number;

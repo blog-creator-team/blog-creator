@@ -1,0 +1,20 @@
+.element__item {
+  width: 100%;
+}
+.fake-link {
+  cursor: pointer;
+  &:hover {
+    color: #0000FF;
+    text-decoration: underline;
+  }
+}
+
+.img-default {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+
