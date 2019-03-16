@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Element} from "../../../models/element";
+import {ElementBlank, ElementImage, ElementLink, ElementText,} from "../../../models/elements-classes";
+
 
 @Component({
   selector: 'app-element',
@@ -7,8 +9,8 @@ import {Element} from "../../../models/element";
   styleUrls: ['./element.component.scss']
 })
 export class ElementComponent implements OnInit {
-  @Input() element: Element;
-  elements: Element [];
+  @Input() element: ElementText | ElementLink | ElementImage | ElementBlank;
+  elements: Element[];
 
   constructor() {
   }
