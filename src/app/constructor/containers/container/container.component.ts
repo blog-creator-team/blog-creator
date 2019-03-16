@@ -5,7 +5,6 @@ import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementBlank, ElementImage, ElementLink, ElementText} from "../../../models/elements-classes";
-import {logger} from "codelyzer/util/logger";
 import {CONTAINER_DEFAULT_SETTINGS} from "../../../models/default-settings";
 
 @Component({
@@ -52,7 +51,7 @@ export class ContainerComponent implements OnInit {
       element = new ElementBlank(elementParams);
     }
     this.elements.push(element);
-    console.log(CONTAINER_DEFAULT_SETTINGS)
+    console.log(CONTAINER_DEFAULT_SETTINGS);
     this.sidebarService.openDefault();
   }
 
