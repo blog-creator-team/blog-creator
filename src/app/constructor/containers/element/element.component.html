@@ -1,17 +1,9 @@
 <div [ngSwitch]="element.kind" style="width: 100%">
-  <div class="element__content" *ngSwitchCase="'text'">
-    <p [innerHTML]="element.main_settings.content"></p>
-  </div>
+  <app-text class="element__content" *ngSwitchCase="'text'" [element]="element"></app-text>
 
-  <div class="element__content" *ngSwitchCase="'link'">
-    <a class="fake-link">{{element.main_settings.text}}</a>
-  </div>
+  <app-link class="element__content" *ngSwitchCase="'link'" [element]="element"></app-link>
 
-  <div class="element__content" *ngSwitchCase="'image'">
-    <div class="photo__wrap">
-      <img [src]="element.main_settings.src" [alt]="element.main_settings.alt" class="img-default">
-    </div>
-  </div>
+  <app-image class="element__content" *ngSwitchCase="'image'" [element]="element"></app-image>
 
-  <div class="element__content" *ngSwitchCase="'blank'" ></div>
+  <app-blank class="element__content" *ngSwitchCase="'blank'" [element]="element"></app-blank>
 </div>

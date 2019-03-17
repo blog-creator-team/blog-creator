@@ -1,8 +1,11 @@
 import {ELEMENT_DEFAULT_SETTINGS} from "./default-settings";
+import {ELEMENTS_TYPE} from "./elements-type";
 
 export interface ElementParams {
   id: null | number;
   container_id: number;
+  kind: ELEMENTS_TYPE;
+  main_settings: {};
 }
 
 export class Element {
@@ -17,9 +20,13 @@ export class Element {
 
   id: null | number;
   container_id: number;
+  kind: string;
+  main_settings: {};
 
   constructor(params: ElementParams) {
     this.id = params.id;
     this.container_id = params.container_id;
+    this.kind = params.kind;
+    this.main_settings = {};
   }
 }
