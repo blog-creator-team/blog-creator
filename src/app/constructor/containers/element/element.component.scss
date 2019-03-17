@@ -1,4 +1,4 @@
-.element__item {
+.element__content {
   width: 100%;
 }
 .fake-link {
@@ -10,8 +10,8 @@
 }
 
 .img-default {
-  width: 300px;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
   margin: auto;
 }

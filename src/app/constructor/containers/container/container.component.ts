@@ -5,7 +5,7 @@ import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementBlank, ElementImage, ElementLink, ElementText} from "../../../models/elements-classes";
-import {CONTAINER_DEFAULT_SETTINGS} from "../../../models/default-settings";
+import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
 @Component({
   selector: 'app-container',
@@ -17,9 +17,25 @@ export class ContainerComponent implements OnInit {
   element: Element;
   showButton = true;
 
+  private _getElementConstructor(elementKind: ELEMENTS_TYPE) {
+    switch (elementKind) {
+      case ELEMENTS_TYPE.TEXT:
+        return ElementText;
+
+      case ELEMENTS_TYPE.IMAGE:
+        return ElementImage;
+
+      case ELEMENTS_TYPE.LINK:
+        return ElementLink;
+
+      case ELEMENTS_TYPE.BLANK:
+        return ElementBlank;
+    }
+  }
   @Input() container: Container;
 
-  constructor(public sidebarService: SidebarService) {}
+  constructor(public sidebarService: SidebarService) {
+  }
 
   ngOnInit() {
     this.elements = this.container.elements;
@@ -36,22 +52,9 @@ export class ContainerComponent implements OnInit {
   }
 
   onElementSelect(elementType) {
-    const elementParams = {id: 0, container_id: this.container.id };
-    let element;
-    if (elementType === 'text') {
-      element = new ElementText(elementParams);
-    }
-    else if (elementType === 'link') {
-      element = new ElementLink(elementParams);
-    }
-    else if (elementType === 'image') {
-      element = new ElementImage(elementParams);
-    }
-    else if (elementType === 'blank') {
-      element = new ElementBlank(elementParams);
-    }
+    const ElementConstructor = this._getElementConstructor(elementType);
+    const element = new ElementConstructor({id: 0, container_id: this.container.id});
     this.elements.push(element);
-    console.log(CONTAINER_DEFAULT_SETTINGS);
     this.sidebarService.openDefault();
   }
 
