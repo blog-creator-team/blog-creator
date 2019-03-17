@@ -11,7 +11,7 @@ export const MOCK_POST_DATA = {
   "offset_left": null,
   "containers": [
     {
-      "id": null,
+      "id": 14,
       "bg_color": "#FFF",
       "bg_image": null,
       "position": 0,
@@ -56,7 +56,7 @@ export const MOCK_POST_DATA = {
       ]
     },
     {
-      "id": null,
+      "id": 15,
       "bg_color": "#FFF",
       "bg_image": null,
       "position": 1,
