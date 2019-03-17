@@ -1,3 +1,9 @@
+<div [ngSwitch]="element.kind" style="width: 100%">
+  <app-text class="element__content" *ngSwitchCase="'text'" [element]="element"></app-text>
 
-{{element.kind}}
+  <app-link class="element__content" *ngSwitchCase="'link'" [element]="element"></app-link>
 
+  <app-image class="element__content" *ngSwitchCase="'image'" [element]="element"></app-image>
+
+  <app-blank class="element__content" *ngSwitchCase="'blank'" [element]="element"></app-blank>
+</div>

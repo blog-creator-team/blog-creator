@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Container} from "./containers/container";
+import {Component, OnInit} from '@angular/core';
+import {MOCK_POST_DATA} from "../mocks/mock-post-data";
+import {Post} from "../models/post"
 
 @Component({
   selector: 'app-constructor',
@@ -8,7 +9,8 @@ import {Container} from "./containers/container";
 })
 
 export class ConstructorComponent implements OnInit {
-  // post: Post = MOCK_POST_DATA
+  post: Post = MOCK_POST_DATA;
+
   constructor() {
 
   }

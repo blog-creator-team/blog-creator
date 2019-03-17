@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Element} from "../../../models/element";
-import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
 @Component({
   selector: 'app-element',
@@ -9,9 +8,9 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 })
 export class ElementComponent implements OnInit {
   @Input() element: Element;
+  elements: Element[];
 
   constructor() {
-
   }
 
   ngOnInit() {

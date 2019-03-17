@@ -15,13 +15,18 @@ import {ConstructorComponent} from './constructor/constructor.component';
 import {SidebarService} from './constructor/sidebar/sidebar.service';
 import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
-import { SidebarElemTextComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
-import { SidebarElemImageComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
-import { SidebarElemLinkComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
-import { SidebarElemBlankComponent } from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
-import { ContainersComponent } from './constructor/containers/containers.component';
-import { ElementComponent } from './constructor/containers/element/element.component';
-import { ContainerComponent } from './constructor/containers/container/container.component';
+import {SidebarElemTextComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
+import {SidebarElemImageComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
+import {SidebarElemLinkComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
+import {SidebarElemBlankComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
+import {ContainersComponent} from './constructor/containers/containers.component';
+import {ElementComponent} from './constructor/containers/element/element.component';
+import {ContainerComponent} from './constructor/containers/container/container.component';
+import { TextComponent } from './constructor/containers/element/text/text.component';
+import { ImageComponent } from './constructor/containers/element/image/image.component';
+import { LinkComponent } from './constructor/containers/element/link/link.component';
+import { BlankComponent } from './constructor/containers/element/blank/blank.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { ContainerComponent } from './constructor/containers/container/container
     ContainersComponent,
     ElementComponent,
     ContainerComponent,
-   ],
+    TextComponent,
+    ImageComponent,
+    LinkComponent,
+    BlankComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,5 +59,6 @@ import { ContainerComponent } from './constructor/containers/container/container
   providers: [SidebarService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

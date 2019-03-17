@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
-import {Container} from "./container";
-import {CONTAINER_DEFAULT_SETTINGS} from "./constants";
+import {Component, Input} from '@angular/core';
+import {Container} from "../../models/container";
 
 @Component({
   selector: 'app-containers',
@@ -8,14 +7,13 @@ import {CONTAINER_DEFAULT_SETTINGS} from "./constants";
   styleUrls: ['./containers.component.scss']
 })
 export class ContainersComponent {
-  // @Input containers: Container[] = [];
-  containers: Container[] = [];
+  @Input() containers: Container[] = [];
 
   constructor() {
   }
 
   addContainer(index: number) {
-    const container = new Container(CONTAINER_DEFAULT_SETTINGS);
+    const container = new Container({id: null, position: 0});
     this.containers.splice(index, 0, container);
   }
 }
