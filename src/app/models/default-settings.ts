@@ -13,7 +13,7 @@ export const CONTAINER_DEFAULT_SETTINGS = {
 export const ELEMENT_DEFAULT_SETTINGS = {
   "bg_color": "#FFF",
   "bg_image": null,
-  "size": 1,
+  "size": 6,
   "position": 0,
   "offset_top": 5,
   "offset_right": 5,
