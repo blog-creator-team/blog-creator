@@ -8,10 +8,10 @@ import {catchError, tap} from "rxjs/operators";
 
 @Injectable()
 export class PostService {
-  private postUrl = environment.apiUrl;
+  private postsApiUrl = environment.apiUrl;
 
   public getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postUrl)
+    return this.http.get<Post[]>(this.postsApiUrl)
   }
 
   constructor(private http: HttpClient) {
@@ -19,9 +19,9 @@ export class PostService {
   }
 
   getPost(id): Observable<{ post: Post }> {
-    return this.http.get<{ post: Post }>(`${this.postUrl}/v1/posts/${id}`)
+    return this.http.get<{ post: Post }>(`${this.postsApiUrl}/v1/posts/${id}`)
       .pipe(
-        tap(() =>
+        tap(   () =>
           catchError(this.handleError<Post>('getPost')))
       );
   }

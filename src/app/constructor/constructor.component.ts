@@ -2,25 +2,20 @@ import {Component, OnInit} from '@angular/core';
 import {Post} from "../models/post"
 import {switchMap} from "rxjs/operators";
 import {PostService} from "../post-service";
-import {Observable} from "rxjs";
-
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {MOCK_POST_DATA} from "../mocks/mock-post-data";
-import {HttpService} from "../http-service";
-import {HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-constructor',
   templateUrl: './constructor.component.html',
   styleUrls: ['./constructor.component.scss'],
 
-  providers: [HttpService]
 })
 
 export class ConstructorComponent implements OnInit {
   post: Post;
 
-  constructor(private http: HttpService,
+  constructor(  private http: HttpClient,
               private  postService: PostService,
               private route: ActivatedRoute) {
   }

@@ -25,7 +25,6 @@ import {LinkComponent} from './constructor/containers/element/link/link.componen
 import {BlankComponent} from './constructor/containers/element/blank/blank.component';
 import { HttpClientModule } from '@angular/common/http';
 import {PostService} from "./post-service";
-import {HttpService} from "./http-service";
 
 @NgModule({
   declarations: [
@@ -59,7 +58,6 @@ import {HttpService} from "./http-service";
   providers: [
     SidebarService,
     PostService,
-    HttpService,
   ],
   bootstrap: [AppComponent]
 })
