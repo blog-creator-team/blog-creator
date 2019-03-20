@@ -21,7 +21,7 @@ export class PostService {
   }
 
   getPost(id): Observable<{post:Post}> {
-    return this.http.get<{post:Post}>(`${this.postsUrl}/g/${id}`)
+    return this.http.get<{post:Post}>(`${this.postsUrl}/${id}`)
       .pipe(catchError(this.handleError<{post:Post}>('getPost id=${id}'))
       );
   }
