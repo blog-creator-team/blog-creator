@@ -6,6 +6,7 @@ import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementBlank, ElementImage, ElementLink, ElementText} from "../../../models/elements-classes";
 import {ELEMENTS_TYPE} from "../../../models/elements-type";
+import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 
 @Component({
   selector: 'app-container',
@@ -32,6 +33,7 @@ export class ContainerComponent implements OnInit {
         return ElementBlank;
     }
   }
+
   @Input() container: Container;
 
   constructor(public sidebarService: SidebarService) {
@@ -59,7 +61,6 @@ export class ContainerComponent implements OnInit {
   }
 
   /*--------------  Element Edit  --------------------*/
-  elementEdit(el) {
-    console.log(el)
+  elementEdit(elementType) {
   }
 }

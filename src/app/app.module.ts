@@ -1,8 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-import {HttpClientModule} from '@angular/common/http';
-
 import {AppRoutingModule} from './app-routing.module';
 import {PreviewModule} from './preview/preview.module';
 import {AppComponent} from './app.component';
@@ -22,11 +19,12 @@ import {SidebarElemBlankComponent} from './constructor/sidebar/sidebar-element/s
 import {ContainersComponent} from './constructor/containers/containers.component';
 import {ElementComponent} from './constructor/containers/element/element.component';
 import {ContainerComponent} from './constructor/containers/container/container.component';
-import { TextComponent } from './constructor/containers/element/text/text.component';
-import { ImageComponent } from './constructor/containers/element/image/image.component';
-import { LinkComponent } from './constructor/containers/element/link/link.component';
-import { BlankComponent } from './constructor/containers/element/blank/blank.component';
-
+import {TextComponent} from './constructor/containers/element/text/text.component';
+import {ImageComponent} from './constructor/containers/element/image/image.component';
+import {LinkComponent} from './constructor/containers/element/link/link.component';
+import {BlankComponent} from './constructor/containers/element/blank/blank.component';
+import { HttpClientModule } from '@angular/common/http';
+import {PostService} from "./post-service";
 
 @NgModule({
   declarations: [
@@ -54,9 +52,13 @@ import { BlankComponent } from './constructor/containers/element/blank/blank.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     PreviewModule
   ],
-  providers: [SidebarService],
+  providers: [
+    SidebarService,
+    PostService,
+  ],
   bootstrap: [AppComponent]
 })
 
