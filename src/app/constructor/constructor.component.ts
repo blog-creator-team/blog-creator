@@ -13,9 +13,8 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 })
 
 export class ConstructorComponent implements OnInit {
-  post: Post;
-
-  constructor(  private http: HttpClient,
+post: Post;
+  constructor(private http: HttpClient,
               private  postService: PostService,
               private route: ActivatedRoute) {
   }
