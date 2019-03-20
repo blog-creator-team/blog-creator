@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
+import {PreviewModule} from './preview/preview.module';
 import {AppComponent} from './app.component';
 import {SidebarComponent} from './constructor/sidebar/sidebar.component';
 import {SidebarContainerComponent} from './constructor/sidebar/sidebar-container/sidebar-container.component';
@@ -53,6 +54,7 @@ import {HttpService} from "./http-service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    PreviewModule
   ],
   providers: [
     SidebarService,
