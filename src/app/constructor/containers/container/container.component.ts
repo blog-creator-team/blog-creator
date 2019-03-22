@@ -6,7 +6,6 @@ import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementBlank, ElementImage, ElementLink, ElementText} from "../../../models/elements-classes";
 import {ELEMENTS_TYPE} from "../../../models/elements-type";
-import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 
 @Component({
   selector: 'app-container',

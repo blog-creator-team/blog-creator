@@ -3,7 +3,7 @@ import {Post} from "../models/post"
 import {switchMap} from "rxjs/operators";
 import {PostService} from "../post-service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-constructor',
@@ -14,8 +14,7 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 export class ConstructorComponent implements OnInit {
 post: Post;
-  constructor(private http: HttpClient,
-              private  postService: PostService,
+  constructor(private  postService: PostService,
               private route: ActivatedRoute) {
   }
 

@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Container} from "../../models/container";
+import {PostService} from "../../post-service";
 
 @Component({
   selector: 'app-containers',
@@ -9,11 +10,21 @@ import {Container} from "../../models/container";
 export class ContainersComponent {
   @Input() containers: Container[] = [];
 
-  constructor() {
+  constructor(private postService: PostService) {
   }
 
-  addContainer(index: number) {
-    const container = new Container({id: null, position: 0});
-    this.containers.splice(index, 0, container);
+  add(position: number): void {
+    this.postService
+      .addContainer({position} as Container)
+      .subscribe((response => {
+          response.container.elements = [],
+          this.containers.splice(position, 0, response.container)}
+      ));
+    console.log(this.containers)
+  }
+
+  delete(container: Container): void {
+    this.containers = this.containers.filter(c => c !== container);
+    this.postService.deleteContainer(container).subscribe();
   }
 }
