@@ -23,7 +23,6 @@ export class ContainerService {
   /** POST: add a new container  ------------------------------------------------------------------- */
 
   addContainer(position, postsId): Observable<ContainerResponse> {
-    console.log(position)
     return this.http.post<ContainerResponse>(`${this.postsUrl}/${postsId}/containers`,
       {position})
       .pipe(catchError((handleError<ContainerResponse>('addContainer'))));
