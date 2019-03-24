@@ -1,6 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {Container} from "../../models/container";
+import {Container, ContainerResponse} from "../../models/container";
+import {ContainerService} from "./container.service";
+import {ActivatedRoute} from "@angular/router";
 import {PostService} from "../../post-service";
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-containers',
@@ -9,22 +12,34 @@ import {PostService} from "../../post-service";
 })
 export class ContainersComponent {
   @Input() containers: Container[] = [];
+  private container: ContainerResponse;
+  postId: number;
 
-  constructor(private postService: PostService) {
+  constructor(private containerService: ContainerService,
+              private  postService: PostService,
+              private route: ActivatedRoute) {
   }
 
-  add(position: number): void {
-    this.postService
-      .addContainer({position} as Container)
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.postId = +params.get('id');
+    })
+  }
+
+  add(position): void {
+    this.containerService
+      .addContainer(position, this.postId)
       .subscribe((response => {
-          response.container.elements = [],
-          this.containers.splice(position, 0, response.container)}
+          response.container.elements = [];
+          this.containers.splice(position, 0, response.container)
+        }
       ));
-    console.log(this.containers)
   }
 
-  delete(container: Container): void {
-    this.containers = this.containers.filter(c => c !== container);
-    this.postService.deleteContainer(container).subscribe();
+  delete(containerId: number): void {
+    this.containerService.deleteContainer(containerId).subscribe(response => {
+      this.containers = this.containers.filter(c => c.id !== containerId);
+    });
   }
 }
+

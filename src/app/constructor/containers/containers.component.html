@@ -9,7 +9,7 @@
 <div *ngFor="let container of containers"  class="container">
 
   <app-container [container]="container"></app-container>
-  <button class="container__btn btn btn--small btn--delete" (click)="delete(container)">delete</button>
+  <button class="container__btn btn btn--small btn--delete" (click)="delete(container.id)">delete</button>
 
   <button class="container__btn btn btn--small btn--top" (click)="add(container.position)">+</button>
   <button class="container__btn btn btn--small btn--bottom" (click)="add(container.position + 1)">+</button>

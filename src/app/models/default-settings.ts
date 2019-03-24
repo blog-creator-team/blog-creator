@@ -9,7 +9,6 @@ export const CONTAINER_DEFAULT_SETTINGS = {
   "offset_left": 10,
   "elements": []
 };
-
 export const ELEMENT_DEFAULT_SETTINGS = {
   "bg_color": "#FFF",
   "bg_image": null,

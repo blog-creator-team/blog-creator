@@ -1,7 +1,7 @@
 import {Element} from './element';
 
 export  interface ContainerResponse {
-  container: Container
+  container: Container,
 }
 
 export  interface ContainerParams {

@@ -1,8 +1,9 @@
 import {ELEMENTS_TYPE} from "../models/elements-type";
 import {ElementBlank, ElementImage, ElementLink, ElementText} from "../models/elements-classes";
+import {Observable, of} from "rxjs";
 
 
-export   function getElementConstructor(elementKind: ELEMENTS_TYPE) {
+export   function _getElementConstructor(elementKind: ELEMENTS_TYPE) {
   switch (elementKind) {
     case ELEMENTS_TYPE.TEXT:
       return ElementText;
@@ -17,3 +18,12 @@ export   function getElementConstructor(elementKind: ELEMENTS_TYPE) {
       return ElementBlank;
   }
 }
+
+export function  handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+    console.error(error);
+    return of(result as T);
+  };
+}
+
+
