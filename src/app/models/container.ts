@@ -1,25 +1,30 @@
 import {Element} from './element';
-import {CONTAINER_DEFAULT_SETTINGS} from "./default-settings";
+
+export  interface ContainerResponse {
+  container: Container,
+}
 
 export  interface ContainerParams {
   id: null | number;
   position: number;
+  elements: Element[];
 }
 
 export class Container {
-  bg_color: string = CONTAINER_DEFAULT_SETTINGS.bg_color;
-  bg_image: string = CONTAINER_DEFAULT_SETTINGS.bg_image;
-  offset_top: number = CONTAINER_DEFAULT_SETTINGS.offset_top;
-  offset_right: number = CONTAINER_DEFAULT_SETTINGS.offset_right;
-  offset_bottom: number = CONTAINER_DEFAULT_SETTINGS.offset_bottom;
-  offset_left: number = CONTAINER_DEFAULT_SETTINGS.offset_left;
-  elements: Element[] = [];
+  bg_color: string ;
+  bg_image: string;
+  offset_top: number;
+  offset_right: number;
+  offset_bottom: number;
+  offset_left: number;
 
   id: null | number;
   position: number;
+  elements: Element[];
 
   constructor(params: ContainerParams) {
     this.id = params.id;
     this.position = params.position;
+    this.elements = params.elements;
   }
 }
