@@ -1,7 +1,7 @@
 <div class="container__wrap">
 
   <button *ngIf="showButton" class="container__btn btn btn--big btn--center"
-          (click)="openElements()">add elements
+          (click)="openElements(elements.length)">add elements
   </button>
 
   <div *ngIf="!showButton && elements.length === 0">
@@ -11,12 +11,12 @@
   <div class="element__block"  *ngFor="let element of elements">
     <button class="btn btn--small btn--left btn--hide"
             *ngIf="elements.length < 2"
-            (click)="openElements('left')">+
+            (click)="openElements(element.position)">+
     </button>
 
     <button class="btn btn--small btn--right btn--hide"
             *ngIf="elements.length < 2"
-            (click)="openElements('right')">+
+            (click)="openElements(element.position + 1)">+
     </button>
 
     <button class="btn btn--small btn--edit btn--hide" (click)="elementEdit()">

@@ -5,7 +5,6 @@ import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementsService} from "./elements.service";
-import {element} from "protractor";
 
 @Component({
   selector: 'app-container',
@@ -20,7 +19,8 @@ export class ContainerComponent implements OnInit {
   @Input() container: Container;
 
 
-  constructor(public sidebarService: SidebarService, public elementsService: ElementsService) {
+  constructor(public sidebarService: SidebarService,
+              public elementsService: ElementsService) {
   }
 
   ngOnInit() {
@@ -29,19 +29,18 @@ export class ContainerComponent implements OnInit {
   }
 
   /*--------  open sidebar-elements  --------*/
-  openElements() {
+  openElements(position) {
     this.showButton = false;
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENTS,
-      this.addElement.bind(this)
+      elementType => this.addElement(elementType, position)
     );
   }
 
-  addElement(elementType) {
+  addElement(elementType, position) {
     this.elementsService
-      .createElement(elementType, this.elements.length, this.container.id).subscribe(response => {
-      // this.elements.splice(position, 0, response.element)
-      this.elements.push(response.element);
+      .createElement(elementType, position, this.container.id).subscribe(response => {
+      this.elements.splice(position, 0, response.element);
       this.sidebarService.openDefault();
     })
   }

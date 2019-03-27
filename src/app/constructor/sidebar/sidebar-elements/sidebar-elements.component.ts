@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
