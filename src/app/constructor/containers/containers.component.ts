@@ -3,7 +3,6 @@ import {Container, ContainerResponse} from "../../models/container";
 import {ContainerService} from "./container.service";
 import {ActivatedRoute} from "@angular/router";
 import {PostService} from "../../post-service";
-import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-containers',
@@ -37,7 +36,7 @@ export class ContainersComponent {
   }
 
   delete(containerId: number): void {
-    this.containerService.deleteContainer(containerId).subscribe(response => {
+    this.containerService.deleteContainer(containerId).subscribe(() => {
       this.containers = this.containers.filter(c => c.id !== containerId);
     });
   }

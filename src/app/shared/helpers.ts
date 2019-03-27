@@ -3,7 +3,7 @@ import {ElementBlank, ElementImage, ElementLink, ElementText} from "../models/el
 import {Observable, of} from "rxjs";
 
 
-export   function _getElementConstructor(elementKind: ELEMENTS_TYPE) {
+export   function getElementConstructor(elementKind: ELEMENTS_TYPE) {
   switch (elementKind) {
     case ELEMENTS_TYPE.TEXT:
       return ElementText;

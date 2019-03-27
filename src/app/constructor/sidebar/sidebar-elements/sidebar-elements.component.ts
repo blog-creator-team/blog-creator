@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
@@ -7,11 +7,15 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
   templateUrl: './sidebar-elements.component.html',
   styleUrls: ['./sidebar-elements.component.scss']
 })
-export class SidebarElementsComponent {
+export class SidebarElementsComponent implements OnInit {
   public onSelect: Function;
   public elementsType = ELEMENTS_TYPE;
 
   @Input() set request({ onSubmit }: SidebarRequest) {
     this.onSelect = onSubmit;
+  }
+
+  ngOnInit(): void {
+    console.log(this.onSelect)
   }
 }
