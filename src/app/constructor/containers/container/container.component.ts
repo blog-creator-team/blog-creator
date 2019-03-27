@@ -4,7 +4,7 @@ import {Element} from "../../../models/element";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
-import {_getElementConstructor} from "../../../shared/helpers";
+import {ElementsService} from "./elements.service";
 
 @Component({
   selector: 'app-container',
@@ -18,7 +18,9 @@ export class ContainerComponent implements OnInit {
 
   @Input() container: Container;
 
-  constructor(public sidebarService: SidebarService) {
+
+  constructor(public sidebarService: SidebarService,
+              public elementsService: ElementsService) {
   }
 
   ngOnInit() {
@@ -27,19 +29,21 @@ export class ContainerComponent implements OnInit {
   }
 
   /*--------  open sidebar-elements  --------*/
-  openElements() {
+  openElements(position) {
     this.showButton = false;
     this.sidebarService.sidebar = new SidebarRequest(
       SIDEBARS.ELEMENTS,
-      this.onElementSelect.bind(this)
+      elementType => this.addElement(elementType, position)
     );
   }
 
-  onElementSelect(elementType) {
-    const ElementConstructor = _getElementConstructor(elementType);
-    const element = new ElementConstructor({id: 0, container_id: this.container.id});
-    this.elements.push(element);
-    this.sidebarService.openDefault();
+  addElement(elementType, position) {
+    this.elementsService
+      .createElement(elementType, position, this.container.id).subscribe(response => {
+      this.elements.splice(position, 0, response.element);
+      this.sidebarService.openDefault();
+      console.log(position)
+    })
   }
 
   /*--------------  Element Edit  --------------------*/

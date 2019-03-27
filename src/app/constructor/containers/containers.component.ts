@@ -3,7 +3,6 @@ import {Container, ContainerResponse} from "../../models/container";
 import {ContainerService} from "./container.service";
 import {ActivatedRoute} from "@angular/router";
 import {PostService} from "../../post-service";
-import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-containers',
@@ -15,9 +14,11 @@ export class ContainersComponent {
   private container: ContainerResponse;
   postId: number;
 
-  constructor(private containerService: ContainerService,
-              private  postService: PostService,
-              private route: ActivatedRoute) {
+  constructor(
+    private containerService: ContainerService,
+    private  postService: PostService,
+    private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
@@ -26,18 +27,18 @@ export class ContainersComponent {
     })
   }
 
-  add(position): void {
+  add(index: number): void {
     this.containerService
-      .addContainer(position, this.postId)
+      .addContainer(index, this.postId)
       .subscribe((response => {
           response.container.elements = [];
-          this.containers.splice(position, 0, response.container)
+          this.containers.splice(index, 0, response.container)
         }
       ));
   }
 
   delete(containerId: number): void {
-    this.containerService.deleteContainer(containerId).subscribe(response => {
+    this.containerService.deleteContainer(containerId).subscribe(() => {
       this.containers = this.containers.filter(c => c.id !== containerId);
     });
   }
