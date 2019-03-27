@@ -11,14 +11,13 @@ import {handleError} from "../../../shared/helpers";
 })
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
-  private elementsUrl = environment.apiUrl + '/v1/containers/elements';
 
   constructor(private http: HttpClient) {
   }
 
   /** POST: create new element  ------------------------------------------------*/
   createElement(kind, position, containerId): Observable<ElementResponse> {
-      return this.http.post<ElementResponse>(`${this.containersUrl}/${containerId}/elements`,
+    return this.http.post<ElementResponse>(`${this.containersUrl}/${containerId}/elements`,
       {position, kind})
       .pipe(catchError(handleError<ElementResponse>('deleteElement')))
   }

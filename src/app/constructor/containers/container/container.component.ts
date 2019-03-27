@@ -42,6 +42,7 @@ export class ContainerComponent implements OnInit {
       .createElement(elementType, position, this.container.id).subscribe(response => {
       this.elements.splice(position, 0, response.element);
       this.sidebarService.openDefault();
+      console.log(position)
     })
   }
 
