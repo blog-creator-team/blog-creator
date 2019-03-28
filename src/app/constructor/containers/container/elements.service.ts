@@ -5,20 +5,26 @@ import {Observable} from "rxjs";
 import {ElementResponse} from "../../../models/element";
 import {catchError} from "rxjs/operators";
 import {handleError} from "../../../shared/helpers";
+import {Container} from "../../../models/container";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
+  private  elementsUrl = environment.apiUrl + '/v1/elements';
 
   constructor(private http: HttpClient) {
   }
 
-  /** POST: create new element  ------------------------------------------------*/
   createElement(kind, position, containerId): Observable<ElementResponse> {
     return this.http.post<ElementResponse>(`${this.containersUrl}/${containerId}/elements`,
       {position, kind})
       .pipe(catchError(handleError<ElementResponse>('deleteElement')))
+  }
+
+  deleteElement(elementId): Observable<Element> {
+    return this.http.delete<Element>(`${this.elementsUrl}/${elementId}`)
+      .pipe(catchError(handleError<Element>('deleteElement')))
   }
 }

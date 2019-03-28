@@ -12,18 +12,18 @@
   padding: 20px;
   background: #F5F5F5;
   border: 2px solid transparent;
+  &:hover {
+    border: 2px solid #9198E5;
+    transition: .35s;
+
+    .btn--hide {
+      display: block;
+    }
+  }
 }
 
 .container__wrap {
   display: flex;
-}
-
-.element__block:hover{
-  border: 2px solid #9198E5;
-  transition: .35s;
-  .btn--hide {
-    display: block;
-  }
 }
 
 .container:hover > .container__btn {
@@ -48,6 +48,7 @@
   padding: 5px 10px;
   z-index: 1;
 }
+
 .btn--hide {
   display: none;
 }
@@ -68,18 +69,16 @@
   margin: auto;
 }
 
-.btn--hide {
-  display: none;
-}
-
-.btn--edit {
+.btn__element {
   padding: 5px;
-  top: 0;
+  top: -34px;
   right: 0;
-  transform: translateY(-100%);
+  z-index: 2;
 }
 
-
+.btn__element--edit {
+  right: 34px;
+}
 
 .svg-icon {
   width: 22px;

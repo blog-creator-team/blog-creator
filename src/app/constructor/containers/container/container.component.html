@@ -8,7 +8,7 @@
     You can start adding new elements in sidebar.
   </div>
 
-  <div class="element__block"  *ngFor="let element of elements">
+  <div class="element__block" *ngFor="let element of elements">
     <button class="btn btn--small btn--left btn--hide"
             *ngIf="elements.length < 2"
             (click)="openElements(element.position)">+
@@ -19,9 +19,15 @@
             (click)="openElements(element.position + 1)">+
     </button>
 
-    <button class="btn btn--small btn--edit btn--hide" (click)="elementEdit()">
+    <button class="btn btn--small btn__element btn__element--edit btn--hide" (click)="elementEdit()">
       <svg class="svg-icon">
         <use xlink:href="../../../../assets/icons/constructor-svg/icons.svg#icon-pencil"></use>
+      </svg>
+    </button>
+
+    <button class="btn btn--small btn__element btn--hide" (click)="delete(element.id)">
+      <svg class="svg-icon">
+        <use xlink:href="../../../../assets/icons/constructor-svg/icons.svg#icon-bin"></use>
       </svg>
     </button>
     <app-element [element]="element" class="app-element"></app-element>
