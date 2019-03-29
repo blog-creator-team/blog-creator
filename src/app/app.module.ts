@@ -15,14 +15,12 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {SidebarElemTextComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
 import {SidebarElemImageComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
 import {SidebarElemLinkComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-link/sidebar-elem-link.component';
-import {SidebarElemBlankComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-blank/sidebar-elem-blank.component';
 import {ContainersComponent} from './constructor/containers/containers.component';
 import {ElementComponent} from './constructor/containers/element/element.component';
 import {ContainerComponent} from './constructor/containers/container/container.component';
 import {TextComponent} from './constructor/containers/element/text/text.component';
 import {ImageComponent} from './constructor/containers/element/image/image.component';
 import {LinkComponent} from './constructor/containers/element/link/link.component';
-import {BlankComponent} from './constructor/containers/element/blank/blank.component';
 import { HttpClientModule } from '@angular/common/http';
 import {PostService} from "./post-service";
 import {ContainerService} from "./constructor/services/container.service";
@@ -41,14 +39,12 @@ import {ContainerService} from "./constructor/services/container.service";
     SidebarElemTextComponent,
     SidebarElemImageComponent,
     SidebarElemLinkComponent,
-    SidebarElemBlankComponent,
     ContainersComponent,
     ElementComponent,
     ContainerComponent,
     TextComponent,
     ImageComponent,
     LinkComponent,
-    BlankComponent,
   ],
   imports: [
     BrowserModule,

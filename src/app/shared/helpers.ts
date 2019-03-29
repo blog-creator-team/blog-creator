@@ -1,5 +1,5 @@
 import {ELEMENTS_TYPE} from "../models/elements-type";
-import {ElementBlank, ElementImage, ElementLink, ElementText} from "../models/elements-classes";
+import {ElementImage, ElementLink, ElementText} from "../models/elements-classes";
 import {Observable, of} from "rxjs";
 
 
@@ -13,9 +13,6 @@ export   function getElementConstructor(elementKind: ELEMENTS_TYPE) {
 
     case ELEMENTS_TYPE.LINK:
       return ElementLink;
-
-    case ELEMENTS_TYPE.BLANK:
-      return ElementBlank;
   }
 }
 

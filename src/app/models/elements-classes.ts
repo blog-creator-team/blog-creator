@@ -32,12 +32,3 @@ export class ElementText extends Element {
     };
   }
 }
-
-export class ElementBlank extends Element {
-  constructor(params) {
-    super(params);
-    this.kind = ELEMENTS_TYPE.BLANK;
-    this.main_settings = {};
-  }
-}
-

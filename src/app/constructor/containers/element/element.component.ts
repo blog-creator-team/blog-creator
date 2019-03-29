@@ -17,13 +17,13 @@ export class ElementComponent implements OnInit {
 
   ngOnInit() {}
 
-  public edit(){
+  public edit(element){
     // this.sidebarService.sidebar = new SidebarRequest(
     //   SIDEBARS.ELEMENT,
     //   this.onElementSelect.bind(this)
     // );
     const request = new SidebarRequest(SIDEBARS.ELEMENT);
-    request.onChange = this._onSettingsChange.bind(this);
+    request.onChange = this._onSettingsChange.bind(this, element);
     this.sidebarService.sidebar = request;
   }
 
