@@ -4,7 +4,8 @@ import {Element} from "../../../models/element";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
-import {ElementsService} from "./elements.service";
+import {ElementsService} from "../../services/elements.service";
+import {ELEMENTS_TYPE} from "../../../models/elements-type";
 
 @Component({
   selector: 'app-container',
@@ -17,7 +18,7 @@ export class ContainerComponent implements OnInit {
   showButton = true;
 
   @Input() container: Container;
-
+  elementType:ELEMENTS_TYPE;
 
   constructor(
     public sidebarService: SidebarService,
@@ -55,8 +56,5 @@ export class ContainerComponent implements OnInit {
       }
     });
   }
-
-  /*--------------  Element Edit  --------------------*/
-  elementEdit(elementType) {
-  }
 }
+

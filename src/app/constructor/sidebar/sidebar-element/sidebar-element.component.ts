@@ -11,9 +11,12 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 export class SidebarElementComponent {
   elementKind = ELEMENTS_TYPE;
   onSubmit: (kind: string) => void;
+  onChange: (element: Element) => void;
+  onCansel: () => void;
   element: Element;
 
-  @Input() set request({onSubmit}: ElementSidebarRequest) {
+  @Input() set request({onSubmit, onChange, onCansel}: ElementSidebarRequest) {
+    this.onChange = onChange;
     this.onSubmit = onSubmit
   }
 }

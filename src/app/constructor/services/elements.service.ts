@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../../../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ElementResponse} from "../../../models/element";
+import {ElementResponse} from "../../models/element";
 import {catchError} from "rxjs/operators";
-import {handleError} from "../../../shared/helpers";
-import {Container} from "../../../models/container";
+import {handleError} from "../../shared/helpers";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +25,10 @@ export class ElementsService {
   deleteElement(elementId): Observable<Element> {
     return this.http.delete<Element>(`${this.elementsUrl}/${elementId}`)
       .pipe(catchError(handleError<Element>('deleteElement')))
+  }
+
+  updateElement(element, elementId): Observable<Element> {
+    return this.http.put<Element>(`${this.elementsUrl}/${elementId}`,element) // JSON.stringify(element)?????//
+      .pipe(catchError(handleError<Element>('updateElement')))
   }
 }

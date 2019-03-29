@@ -19,7 +19,7 @@
             (click)="openElements(element.position + 1)">+
     </button>
 
-    <button class="btn btn--small btn__element btn__element--edit btn--hide" (click)="elementEdit()">
+    <button class="btn btn--small btn__element btn__element--edit btn--hide" (click)="elementComponent.edit(element)">
       <svg class="svg-icon">
         <use xlink:href="../../../../assets/icons/constructor-svg/icons.svg#icon-pencil"></use>
       </svg>
@@ -30,7 +30,7 @@
         <use xlink:href="../../../../assets/icons/constructor-svg/icons.svg#icon-bin"></use>
       </svg>
     </button>
-    <app-element [element]="element" class="app-element"></app-element>
+    <app-element #elementComponent [element]="element" class="app-element"></app-element>
 
   </div>
 </div>

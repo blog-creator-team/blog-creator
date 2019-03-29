@@ -9,12 +9,13 @@ export interface ElementParams {
   container_id: number;
   kind: ELEMENTS_TYPE;
   main_settings: {};
+
 }
 
 export class Element {
   bg_image: string;
   bg_color: string;
-  size: number
+  size: number;
   position: number;
   offset_top: number;
   offset_right: number;

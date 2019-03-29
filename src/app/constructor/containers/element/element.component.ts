@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Element} from "../../../models/element";
+import {SidebarRequest} from "../../../models/sidebar-request";
+import {SIDEBARS} from "../../sidebar/const";
+import {SidebarService} from "../../sidebar/sidebar.service";
 
 @Component({
   selector: 'app-element',
@@ -8,13 +11,24 @@ import {Element} from "../../../models/element";
 })
 export class ElementComponent implements OnInit {
   @Input() element: Element;
-  elements: Element[];
 
-  constructor() {
+  constructor(private sidebarService: SidebarService) {
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  public edit(){
+    // this.sidebarService.sidebar = new SidebarRequest(
+    //   SIDEBARS.ELEMENT,
+    //   this.onElementSelect.bind(this)
+    // );
+    const request = new SidebarRequest(SIDEBARS.ELEMENT);
+    request.onChange = this._onSettingsChange.bind(this);
+    this.sidebarService.sidebar = request;
   }
 
+  _onSettingsChange(){}
+  // onElementSelect(){
+  //
+  // }
 }

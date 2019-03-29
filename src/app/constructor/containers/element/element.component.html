@@ -1,4 +1,4 @@
-<div [ngSwitch]="element.kind" style="width: 100%">
+<div  [ngSwitch]="element.kind" style="width: 100%">
   <app-text class="element__content" *ngSwitchCase="'text'" [element]="element"></app-text>
 
   <app-link class="element__content" *ngSwitchCase="'link'" [element]="element"></app-link>

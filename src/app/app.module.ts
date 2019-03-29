@@ -25,7 +25,7 @@ import {LinkComponent} from './constructor/containers/element/link/link.componen
 import {BlankComponent} from './constructor/containers/element/blank/blank.component';
 import { HttpClientModule } from '@angular/common/http';
 import {PostService} from "./post-service";
-import {ContainerService} from "./constructor/containers/container.service";
+import {ContainerService} from "./constructor/services/container.service";
 
 @NgModule({
   declarations: [
