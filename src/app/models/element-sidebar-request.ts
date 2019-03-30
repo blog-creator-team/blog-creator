@@ -6,8 +6,8 @@ import {Element} from "./element";
 export class ElementSidebarRequest extends SidebarRequest {
   public onSubmit: (kind: string) => void;
   public onChange: (element: Element) => void;
-  public onCansel: () => void;
-  constructor(public payload: Element) {
+  public onCancel: () => void;
+  constructor(public element: Element) {
     super(SIDEBARS.ELEMENT);
   }
 }

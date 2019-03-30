@@ -3,6 +3,7 @@ import {Element} from "../../../models/element";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
+import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 
 @Component({
   selector: 'app-element',
@@ -18,17 +19,13 @@ export class ElementComponent implements OnInit {
   ngOnInit() {}
 
   public edit(element){
-    // this.sidebarService.sidebar = new SidebarRequest(
-    //   SIDEBARS.ELEMENT,
-    //   this.onElementSelect.bind(this)
-    // );
-    const request = new SidebarRequest(SIDEBARS.ELEMENT);
-    request.onChange = this._onSettingsChange.bind(this, element);
+    const request = new ElementSidebarRequest(element);
+    request.onChange = this._onSettingsChange.bind(this);
     this.sidebarService.sidebar = request;
   }
 
-  _onSettingsChange(){}
-  // onElementSelect(){
-  //
-  // }
+  _onSettingsChange(){
+
+    this.sidebarService.openDefault();
+  }
 }
