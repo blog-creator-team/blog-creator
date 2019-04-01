@@ -24,6 +24,8 @@ import {LinkComponent} from './constructor/containers/element/link/link.componen
 import { HttpClientModule } from '@angular/common/http';
 import {PostService} from "./post-service";
 import {ContainerService} from "./constructor/services/container.service";
+import {FormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import {ContainerService} from "./constructor/services/container.service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PreviewModule
+    PreviewModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     SidebarService,

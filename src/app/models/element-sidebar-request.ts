@@ -7,7 +7,7 @@ export class ElementSidebarRequest extends SidebarRequest {
   public onSubmit: (kind: string) => void;
   public onChange: (element: Element) => void;
   public onCancel: () => void;
-  constructor(public element: Element) {
+  constructor(public payload: Element) {
     super(SIDEBARS.ELEMENT);
   }
 }

@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Element} from "../../../models/element";
-import {SidebarRequest} from "../../../models/sidebar-request";
-import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
 import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
 
@@ -24,7 +22,9 @@ export class ElementComponent implements OnInit {
     this.sidebarService.sidebar = request;
   }
 
-  _onSettingsChange(){
+  _onSettingsChange(element){
+
+
 
     this.sidebarService.openDefault();
   }

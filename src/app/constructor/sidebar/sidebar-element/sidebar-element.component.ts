@@ -15,10 +15,10 @@ export class SidebarElementComponent {
   onCancel: Function;
   element: Element;
 
-  @Input() set request({onSubmit, onChange, onCancel, element}: ElementSidebarRequest) {
+  @Input() set request({onSubmit, onChange, onCancel, payload}: ElementSidebarRequest) {
     this.onChange = onChange;
     this.onSubmit = onSubmit;
     this.onCancel = onCancel;
-    this.element = element;
+    this.element = payload;
   }
 }

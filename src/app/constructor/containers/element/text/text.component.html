@@ -1,1 +1,1 @@
-<p [innerHTML]="element.main_settings.content"></p>
+<p [innerHTML]="element.attrs.block.text" (onChanged)="onChanged($event)">{{settingsTextForm.value | json}}</p>
