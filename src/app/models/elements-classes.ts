@@ -17,7 +17,7 @@ export class ElementLink extends Element {
     super(params);
     this.kind = ELEMENTS_TYPE.LINK;
     this.attrs.block = {
-      text: "Example link"
+      content: "Example link"
     };
   }
 }

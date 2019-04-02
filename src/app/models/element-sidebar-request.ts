@@ -4,9 +4,10 @@ import {Element} from "./element";
 
 
 export class ElementSidebarRequest extends SidebarRequest {
-  public onSubmit: (kind: string) => void;
+  public onSubmit: () => void;
   public onChange: (element: Element) => void;
   public onCancel: () => void;
+
   constructor(public payload: Element) {
     super(SIDEBARS.ELEMENT);
   }

@@ -1,22 +1,15 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
-import {Element} from "../../../../models/element";
-
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sidebar-elem-text',
   templateUrl: './sidebar-elem-text.component.html',
   styleUrls: ['./sidebar-elem-text.component.scss']
 })
+
 export class SidebarElemTextComponent implements OnInit {
-
-  @Output() onChanged = new EventEmitter<Element>();
-  change(attrs: string) {
-    this.onChanged.emit(attrs);
-  }
-
-  settingsTextForm = this.fb.group({
-    content: ['', Validators.required],
+  attrsTextForm: FormGroup = this.fb.group({
+    content: ['Your text', Validators.required],
     offsets: this.fb.group({
       top: ['20'],
       left: ['10'],
@@ -25,8 +18,14 @@ export class SidebarElemTextComponent implements OnInit {
     })
   });
 
-  constructor(private  fb: FormBuilder) {
+  @Output()changed = new EventEmitter<FormGroup>();
+
+  onChanged(): void {
+    const value = this.attrsTextForm.value;
+    this.changed.emit(value);
+
   }
+  constructor(private  fb: FormBuilder) {}
 
   ngOnInit() {
   }

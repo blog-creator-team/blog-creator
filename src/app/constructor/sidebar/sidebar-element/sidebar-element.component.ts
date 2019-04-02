@@ -20,5 +20,6 @@ export class SidebarElementComponent {
     this.onSubmit = onSubmit;
     this.onCancel = onCancel;
     this.element = payload;
+    console.log(onChange, onSubmit)
   }
 }

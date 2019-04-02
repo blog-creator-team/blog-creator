@@ -1,7 +1,8 @@
-<form [textFormGroup]="settingsTextForm" required (click)="change()">
-     <label for="text_content">Enter your text</label>
-    <input type="text" class="form-control" name="content" formControlName="content" id="text_content">
+<form [formGroup]="attrsTextForm" (submit)="onChanged()">
+  <label for="text_content">Enter your text</label>
+  <input type="text" class="form-control" name="content" formControlName="content" id="text_content">
 
+  <div class="" formGroupName="offsets">
     <label for="padding_top">Padding top</label>
     <input type="text" class="form-control" formControlName="top" id="padding_top">
 
@@ -13,4 +14,7 @@
 
     <label for="padding_right">Padding right</label>
     <input type="text" class="form-control" formControlName="right" id="padding_right">
+  </div>
+  <!--<button (click)="onCancel()" type="button">Cancel</button>-->
+  <button type="submit">Submit</button>
 </form>>

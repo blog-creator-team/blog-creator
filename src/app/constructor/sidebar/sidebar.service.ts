@@ -6,6 +6,7 @@ import {SidebarRequest} from "../../models/sidebar-request";
 @Injectable({
   providedIn: 'root'
 })
+
 export class SidebarService {
   private _sidebar$ = new BehaviorSubject<SidebarRequest>(new SidebarRequest(SIDEBARS.DEFAULT));
 

@@ -8,13 +8,10 @@ import {ElementText} from "../../../../models/elements-classes";
 })
 export class TextComponent implements OnInit {
   @Input() element: ElementText;
-  settingsTextForm: string;
+  attrsTextForm: any;
   constructor() { }
 
   ngOnInit() {
   }
 
-  onChanged($event) {
-    
-  }
 }

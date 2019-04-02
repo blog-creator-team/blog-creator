@@ -27,8 +27,10 @@ export class ElementsService {
       .pipe(catchError(handleError<Element>('deleteElement')))
   }
 
+
+
   updateElement(element, elementId): Observable<Element> {
-    return this.http.put<Element>(`${this.elementsUrl}/${elementId}`,element) // JSON.stringify(element)?????//
+    return this.http.put<Element>(`${this.elementsUrl}/${elementId}`, element)
       .pipe(catchError(handleError<Element>('updateElement')))
   }
 }
