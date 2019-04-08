@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -9,7 +9,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 export class SidebarElemTextComponent implements OnInit {
   attrsTextForm: FormGroup = this.fb.group({
-    content: ['Your text', Validators.required],
+    block: this.fb.group({
+      content: ['Your text', Validators.required]
+    }),
     offsets: this.fb.group({
       top: ['20'],
       left: ['10'],
@@ -18,15 +20,22 @@ export class SidebarElemTextComponent implements OnInit {
     })
   });
 
-  @Output()changed = new EventEmitter<FormGroup>();
+  @Output() changed = new EventEmitter<FormGroup>();
+  @Output() cancel = new EventEmitter();
 
   onChanged(): void {
     const value = this.attrsTextForm.value;
     this.changed.emit(value);
+  }
+
+  onCancel() {
 
   }
-  constructor(private  fb: FormBuilder) {}
+
+  constructor(private  fb: FormBuilder) {
+  }
 
   ngOnInit() {
   }
 }
+

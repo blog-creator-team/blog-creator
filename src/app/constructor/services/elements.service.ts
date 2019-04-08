@@ -5,13 +5,14 @@ import {Observable} from "rxjs";
 import {ElementResponse} from "../../models/element";
 import {catchError} from "rxjs/operators";
 import {handleError} from "../../shared/helpers";
+import {del} from "selenium-webdriver/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
-  private  elementsUrl = environment.apiUrl + '/v1/elements';
+  private elementsUrl = environment.apiUrl + '/v1/elements';
 
   constructor(private http: HttpClient) {
   }
@@ -27,9 +28,8 @@ export class ElementsService {
       .pipe(catchError(handleError<Element>('deleteElement')))
   }
 
-
-
-  updateElement(element, elementId): Observable<Element> {
+  updateElement(element: {}, elementId: number): Observable<Element> {
+    console.log(element)
     return this.http.put<Element>(`${this.elementsUrl}/${elementId}`, element)
       .pipe(catchError(handleError<Element>('updateElement')))
   }

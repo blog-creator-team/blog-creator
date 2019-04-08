@@ -21,11 +21,11 @@ import {ContainerComponent} from './constructor/containers/container/container.c
 import {TextComponent} from './constructor/containers/element/text/text.component';
 import {ImageComponent} from './constructor/containers/element/image/image.component';
 import {LinkComponent} from './constructor/containers/element/link/link.component';
-import { HttpClientModule } from '@angular/common/http';
-import {PostService} from "./post-service";
-import {ContainerService} from "./constructor/services/container.service";
-import {FormsModule} from "@angular/forms";
-import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {PostService} from './post-service';
+import {ContainerService} from './constructor/services/container.service';
+import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
