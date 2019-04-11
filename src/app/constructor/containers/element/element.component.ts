@@ -12,13 +12,14 @@ import {ElementsService} from '../../services/elements.service';
 export class ElementComponent implements OnInit {
   @Input() element: Element;
   currentElement: Element;
+  private element_type: string;
 
   constructor(
     private sidebarService: SidebarService,
     private elementsService: ElementsService
   ) {
     this.currentElement = this.element;
-  }
+   }
 
   ngOnInit() {
   }
@@ -32,11 +33,12 @@ export class ElementComponent implements OnInit {
 
   _onSubmit(element: any) {
     this.elementsService
-      .updateElement(element, this.element.id)
+      .updateElementText(element, this.element.id)
       .subscribe((response: any) => {
         this.element.attrs = {
           ...this.element.attrs,
-          ...element
+          ...element,
+          response
         };
       });
     this.sidebarService.openDefault();

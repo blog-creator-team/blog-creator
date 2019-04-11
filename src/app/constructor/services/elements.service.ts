@@ -5,7 +5,6 @@ import {Observable} from "rxjs";
 import {ElementResponse} from "../../models/element";
 import {catchError} from "rxjs/operators";
 import {handleError} from "../../shared/helpers";
-import {del} from "selenium-webdriver/http";
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +27,9 @@ export class ElementsService {
       .pipe(catchError(handleError<Element>('deleteElement')))
   }
 
-  updateElement(element: {}, elementId: number): Observable<Element> {
-    console.log(element)
-    return this.http.put<Element>(`${this.elementsUrl}/${elementId}`, element)
-      .pipe(catchError(handleError<Element>('updateElement')))
+  updateElementText(element: ElementResponse, element_id: number): Observable<ElementResponse> {
+    console.log(element, element_id);
+    return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/text`, element)
+      .pipe(catchError(handleError<ElementResponse>('updateElement')))
   }
 }

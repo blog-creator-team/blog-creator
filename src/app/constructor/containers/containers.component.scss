@@ -50,11 +50,14 @@
   margin: auto;
 }
 
-.btn--delete {
-  background: #eb3941;
-  &:hover {
-    background-color: rgba(242, 97, 103, .8);
-  }
+.btn--delete{
+  padding: 5px;
+  bottom: 0;
+  left: 0;
 }
 
-
+.svg-icon {
+  width: 22px;
+  height: 18px;
+  fill: #FFF;
+}

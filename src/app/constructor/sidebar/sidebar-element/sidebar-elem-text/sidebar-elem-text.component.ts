@@ -8,16 +8,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 
 export class SidebarElemTextComponent implements OnInit {
+
   attrsTextForm: FormGroup = this.fb.group({
     block: this.fb.group({
-      content: ['Your text', Validators.required]
+      content: ['', Validators.required]
     }),
     offsets: this.fb.group({
       top: ['20'],
       left: ['10'],
       right: ['10'],
       bottom: ['20'],
-    })
+    }),
+    bg_color: ['#FFF']
   });
 
   @Output() changed = new EventEmitter<FormGroup>();
