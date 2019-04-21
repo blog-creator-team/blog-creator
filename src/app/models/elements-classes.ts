@@ -13,6 +13,7 @@ export class ElementImage extends Element {
 }
 
 export class ElementLink extends Element {
+
   constructor(params) {
     super(params);
     this.kind = ELEMENTS_TYPE.LINK;
@@ -24,11 +25,11 @@ export class ElementLink extends Element {
 
 
 export class ElementText extends Element {
+  block: {
+    content: "Hey! Your text will be here"
+  };
   constructor(params) {
     super(params);
     this.kind = ELEMENTS_TYPE.TEXT;
-    this.attrs.block = {
-      content: "Hey! Your text will be here"
-    };
   }
 }

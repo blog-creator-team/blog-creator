@@ -1,6 +1,9 @@
 <div [ngSwitch]="element.kind" class="sidebar">
 
-  <app-sidebar-elem-text *ngSwitchCase="elementKind.TEXT" (changed)="onSubmit($event)" (cancel)="onCancel($event)">
+  <app-sidebar-elem-text *ngSwitchCase="elementKind.TEXT"
+                         [submit]="onSubmit"
+                         [el]="element"
+                         (changed)="onChanged($event, element)">
   </app-sidebar-elem-text>
 
   <app-sidebar-elem-image *ngSwitchCase="elementKind.IMAGE">
@@ -8,5 +11,4 @@
 
   <app-sidebar-elem-link *ngSwitchCase="elementKind.LINK">
   </app-sidebar-elem-link>
-
 </div>

@@ -11,17 +11,15 @@ import {ELEMENTS_TYPE} from '../../../models/elements-type';
 export class SidebarElementComponent {
   elementKind = ELEMENTS_TYPE;
   onSubmit: Function;
-  onChange: (element: Element) => void;
+  onChanged: (element: Element) => void;
   onCancel: Function;
   element: Element;
 
   @Input() set request({onSubmit, onChange, onCancel, payload}: ElementSidebarRequest) {
-    this.onChange = onChange;
+    this.onChanged = onChange;
     this.onSubmit = onSubmit;
     this.onCancel = onCancel;
     this.element = payload;
-    console.log(onChange);
-    console.log(onCancel);
   }
 }
 

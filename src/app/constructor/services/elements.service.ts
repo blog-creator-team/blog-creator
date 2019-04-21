@@ -12,7 +12,6 @@ import {handleError} from "../../shared/helpers";
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
   private elementsUrl = environment.apiUrl + '/v1/elements';
-
   constructor(private http: HttpClient) {
   }
 
@@ -27,9 +26,9 @@ export class ElementsService {
       .pipe(catchError(handleError<Element>('deleteElement')))
   }
 
-  updateElementText(element: ElementResponse, element_id: number): Observable<ElementResponse> {
-    console.log(element, element_id);
-    return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/text`, element)
-      .pipe(catchError(handleError<ElementResponse>('updateElement')))
+  updateElement(element: ElementResponse, kind: string, element_id: number): Observable<ElementResponse> {
+    console.log(element);
+    return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/${kind}`, {...element})
+      .pipe(catchError(handleError<ElementResponse>('updateElement')));
   }
 }

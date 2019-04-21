@@ -12,28 +12,33 @@ import {ElementsService} from '../../services/elements.service';
 export class ElementComponent implements OnInit {
   @Input() element: Element;
   currentElement: Element;
-  private element_type: string;
 
   constructor(
     private sidebarService: SidebarService,
     private elementsService: ElementsService
   ) {
     this.currentElement = this.element;
-   }
+  }
 
   ngOnInit() {
   }
 
   public edit(element) {
     const request = new ElementSidebarRequest(element);
+    request.onChange = this._onSettingsChange.bind(this);
     request.onSubmit = this._onSubmit.bind(this);
-
-      this.sidebarService.sidebar = request;
+    this.sidebarService.sidebar = request;
   }
 
-  _onSubmit(element: any) {
+  _onSettingsChange(el){
+    this.element.attrs = el;
+  }
+
+
+ _onSubmit(element: any, kind: string, element_id: number) {
+    console.log(element.value);
     this.elementsService
-      .updateElementText(element, this.element.id)
+      .updateElement(element, kind, element_id)
       .subscribe((response: any) => {
         this.element.attrs = {
           ...this.element.attrs,

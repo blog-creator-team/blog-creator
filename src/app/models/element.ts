@@ -1,6 +1,7 @@
 import {ELEMENTS_TYPE} from "./elements-type";
 
 export interface ElementResponse {
+  kind: string;
   element: Element;
 }
 
@@ -38,7 +39,7 @@ export class Element {
       left: number;
     }
     block: {};
-  }
+  };
 
   constructor(params: ElementParams) {
     this.id = params.id;
