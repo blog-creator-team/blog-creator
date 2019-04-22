@@ -12,7 +12,6 @@ import {debounceTime} from "rxjs/operators";
 export class SidebarElemTextComponent implements OnInit {
 
   @Output() changed = new EventEmitter<FormGroup>();
-  // @Output() cancel = new EventEmitter<FormGroup>();
   @Input() submit;
   @Input() el: any;
   @Input() cancel;

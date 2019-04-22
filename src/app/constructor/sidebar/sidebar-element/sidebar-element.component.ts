@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {ElementSidebarRequest} from '../../../models/element-sidebar-request';
 import {Element} from '../../../models/element';
 import {ELEMENTS_TYPE} from '../../../models/elements-type';
-import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-sidebar-element',
