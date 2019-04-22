@@ -12,19 +12,26 @@ import {debounceTime} from "rxjs/operators";
 export class SidebarElemTextComponent implements OnInit {
 
   @Output() changed = new EventEmitter<FormGroup>();
-  @Output() cancel = new EventEmitter<FormGroup>();
+  // @Output() cancel = new EventEmitter<FormGroup>();
   @Input() submit;
   @Input() el: any;
+  @Input() cancel;
 
   private attrsTextForm: FormGroup;
   private value: any;
-  private _storedSettings: any;
-  private element: any;
+  private storedSettings: any;
 
   constructor(private  fb: FormBuilder) {
   }
 
   ngOnInit() {
+    this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
+
+    this.setFormValue();
+    this.onChanged();
+  }
+
+  setFormValue(): void {
     this.attrsTextForm = this.fb.group({
       block: this.fb.group({
         content: [this.el.attrs.block.content, Validators.required]
@@ -35,12 +42,8 @@ export class SidebarElemTextComponent implements OnInit {
         right: [this.el.attrs.offsets.right],
         bottom: [this.el.attrs.offsets.bottom],
       }),
-      bg_color: ['#FFF']
+      bg_color: [this.el.attrs.bg_color]
     });
-
-    this.onChanged();
-
-    // this._storedSettings = JSON.stringify(this.element);
   }
 
   onChanged(): void {
@@ -54,12 +57,11 @@ export class SidebarElemTextComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.submit)
-    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id)
+    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id);
   }
 
   onCancel() {
-    // this.element = JSON.parse(this._storedSettings);
+    this.cancel(this.storedSettings);
+    this.setFormValue();
   }
 }
-

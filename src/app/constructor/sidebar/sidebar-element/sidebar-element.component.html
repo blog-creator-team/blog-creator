@@ -3,7 +3,8 @@
   <app-sidebar-elem-text *ngSwitchCase="elementKind.TEXT"
                          [submit]="onSubmit"
                          [el]="element"
-                         (changed)="onChanged($event, element)">
+                         (changed)="onChanged($event, element)"
+                         [cancel]="onCancel">
   </app-sidebar-elem-text>
 
   <app-sidebar-elem-image *ngSwitchCase="elementKind.IMAGE">

@@ -1,4 +1,4 @@
-<form [formGroup]="attrsTextForm" (submit)="onSubmit()" (change)="onChanged()" (click)="onCancel()">
+<form [formGroup]="attrsTextForm" (submit)="onSubmit()" (change)="onChanged()" >
   <div class="" formGroupName="block">
     <label for="text_content">Enter your text</label>
     <input type="text" class="form-control" name="content" formControlName="content" id="text_content" >
@@ -6,20 +6,20 @@
 
   <div class="" formGroupName="offsets">
     <label for="padding_top">Padding top</label>
-    <input type="text" class="form-control" formControlName="top" id="padding_top">
+    <input type="number" class="form-control" formControlName="top" id="padding_top">
 
     <label for="padding_bottom">Padding bottom</label>
-    <input type="text" class="form-control" formControlName="bottom" id="padding_bottom">
+    <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
 
     <label for="padding_left">Padding left</label>
-    <input type="text" class="form-control" formControlName="left" id="padding_left">
+    <input type="number" class="form-control" formControlName="left" id="padding_left">
 
     <label for="padding_right">Padding right</label>
-    <input type="text" class="form-control" formControlName="right" id="padding_right">
+    <input type="number" class="form-control" formControlName="right" id="padding_right">
   </div>
 
   <label for="bg_color">Background color</label>
   <input type="color" class="form-control" formControlName="bg_color" id="bg_color">
   <button type="submit">Save</button>
-  <button type="button">Cancel</button>
+  <button type="button" (click)="onCancel($event)">Cancel</button>
 </form>

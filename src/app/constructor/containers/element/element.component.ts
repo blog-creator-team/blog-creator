@@ -4,6 +4,7 @@ import {SidebarService} from '../../sidebar/sidebar.service';
 import {ElementSidebarRequest} from '../../../models/element-sidebar-request';
 import {ElementsService} from '../../services/elements.service';
 
+
 @Component({
   selector: 'app-element',
   templateUrl: './element.component.html',
@@ -12,6 +13,7 @@ import {ElementsService} from '../../services/elements.service';
 export class ElementComponent implements OnInit {
   @Input() element: Element;
   currentElement: Element;
+  private _storedElement: Element;
 
   constructor(
     private sidebarService: SidebarService,
@@ -24,19 +26,19 @@ export class ElementComponent implements OnInit {
   }
 
   public edit(element) {
+    this._storedElement = JSON.parse(JSON.stringify(this.element));
     const request = new ElementSidebarRequest(element);
     request.onChange = this._onSettingsChange.bind(this);
     request.onSubmit = this._onSubmit.bind(this);
+    request.onCancel = this.onCancel.bind(this);
     this.sidebarService.sidebar = request;
   }
 
-  _onSettingsChange(el){
+  _onSettingsChange(el) {
     this.element.attrs = el;
   }
 
-
- _onSubmit(element: any, kind: string, element_id: number) {
-    console.log(element.value);
+  _onSubmit(element: any, kind: string, element_id: number) {
     this.elementsService
       .updateElement(element, kind, element_id)
       .subscribe((response: any) => {
@@ -46,6 +48,11 @@ export class ElementComponent implements OnInit {
           response
         };
       });
+    this.sidebarService.openDefault();
+  }
+
+  onCancel(settings: any) {
+    this.element.attrs = settings;
     this.sidebarService.openDefault();
   }
 }
