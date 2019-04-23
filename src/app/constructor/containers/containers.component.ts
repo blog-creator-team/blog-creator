@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Container, ContainerResponse} from "../../models/container";
-import {ContainerService} from "./container.service";
+import {ContainerService} from "../services/container.service";
 import {ActivatedRoute} from "@angular/router";
 import {PostService} from "../../post-service";
 

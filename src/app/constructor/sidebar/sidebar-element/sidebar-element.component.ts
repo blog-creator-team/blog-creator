@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {ElementSidebarRequest} from "../../../models/element-sidebar-request";
-import {Element} from "../../../models/element"
-import {ELEMENTS_TYPE} from "../../../models/elements-type";
+import {ElementSidebarRequest} from '../../../models/element-sidebar-request';
+import {Element} from '../../../models/element';
+import {ELEMENTS_TYPE} from '../../../models/elements-type';
 
 @Component({
   selector: 'app-sidebar-element',
@@ -10,10 +10,18 @@ import {ELEMENTS_TYPE} from "../../../models/elements-type";
 })
 export class SidebarElementComponent {
   elementKind = ELEMENTS_TYPE;
-  onSubmit: (kind: string) => void;
+  onSubmit: Function;
+  onChanged: (element: Element) => void;
+  onCancel: Function;
   element: Element;
 
-  @Input() set request({onSubmit}: ElementSidebarRequest) {
-    this.onSubmit = onSubmit
+  @Input() set request({onSubmit, onChange, onCancel, payload}: ElementSidebarRequest) {
+    this.onChanged = onChange;
+    this.onSubmit = onSubmit;
+    this.onCancel = onCancel;
+    this.element = payload;
+    console.log(onCancel)
   }
 }
+
+

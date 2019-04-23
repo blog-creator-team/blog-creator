@@ -1,26 +1,25 @@
-<form action="#">
-  <div class="form-group">
-    <label for="paddingTop">Padding top</label>
-    <input type="text" class="form-control" id="paddingTop">
+<form [formGroup]="attrsTextForm" (submit)="onSubmit()" (change)="onChanged()" >
+  <div class="" formGroupName="block">
+    <label for="text_content">Enter your text</label>
+    <input type="text" class="form-control" name="content" formControlName="content" id="text_content" >
   </div>
-  <div class="form-group">
-    <label for="paddingBottom">Padding bottom</label>
-    <input type="text" class="form-control" id="paddingBottom">
+
+  <div class="" formGroupName="offsets">
+    <label for="padding_top">Padding top</label>
+    <input type="number" class="form-control" formControlName="top" id="padding_top">
+
+    <label for="padding_bottom">Padding bottom</label>
+    <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
+
+    <label for="padding_left">Padding left</label>
+    <input type="number" class="form-control" formControlName="left" id="padding_left">
+
+    <label for="padding_right">Padding right</label>
+    <input type="number" class="form-control" formControlName="right" id="padding_right">
   </div>
-  <div class="form-group">
-    <label for="paddingLeft">Padding left</label>
-    <input type="text" class="form-control" id="paddingLeft">
-  </div>
-  <div class="form-group">
-  <label for="paddingRight">Padding right</label>
-  <input type="text" class="form-control" id="paddingRight">
-</div>
-  <div class="form-group">
-    <label for="colorText">Text color</label>
-    <input type="color" class="form-control" id="colorText">
-  </div>
-  <div class="form-group">
-    <label for="backgroundColor">Background color</label>
-    <input type="color" class="form-control" id="backgroundColor">
-  </div>
+
+  <label for="bg_color">Background color</label>
+  <input type="color" class="form-control" formControlName="bg_color" id="bg_color">
+  <button type="submit">Save</button>
+  <button type="button" (click)="onCancel($event)">Cancel</button>
 </form>

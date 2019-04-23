@@ -4,7 +4,7 @@ import {Element} from "../../../models/element";
 import {SidebarRequest} from "../../../models/sidebar-request";
 import {SIDEBARS} from "../../sidebar/const";
 import {SidebarService} from "../../sidebar/sidebar.service";
-import {ElementsService} from "./elements.service";
+import {ElementsService} from "../../services/elements.service";
 
 @Component({
   selector: 'app-container',
@@ -17,7 +17,6 @@ export class ContainerComponent implements OnInit {
   showButton = true;
 
   @Input() container: Container;
-
 
   constructor(
     public sidebarService: SidebarService,
@@ -44,7 +43,7 @@ export class ContainerComponent implements OnInit {
       .createElement(elementType, position, this.container.id).subscribe(response => {
       this.elements.splice(position, 0, response.element);
       this.sidebarService.openDefault();
-    })
+    });
   }
 
   delete(elementId: number): void {
@@ -55,8 +54,5 @@ export class ContainerComponent implements OnInit {
       }
     });
   }
-
-  /*--------------  Element Edit  --------------------*/
-  elementEdit(elementType) {
-  }
 }
+

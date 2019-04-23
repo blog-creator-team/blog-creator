@@ -5,15 +5,3 @@
 .btn-sidebar {
   margin-bottom: 25px;
 }
-
-.btn-delete {
-  text-align: center;
-  border: none;
-  background-color: #eb3941;
-  border-radius: 5px;
-  transition: background-color .4s ease-in-out;
-
-  &:hover {
-    background-color: rgba(242, 97, 103, .8);
-  }
-}

@@ -5,7 +5,7 @@ export class ElementImage extends Element {
   constructor(params) {
     super(params);
     this.kind = ELEMENTS_TYPE.IMAGE;
-    this.main_settings = {
+    this.attrs.block = {
       src: "https://d1y0dpztrh9xjz.cloudfront.net/assets/placeholder.png",
       alt: "Placeholder image",
     };
@@ -13,31 +13,23 @@ export class ElementImage extends Element {
 }
 
 export class ElementLink extends Element {
+
   constructor(params) {
     super(params);
     this.kind = ELEMENTS_TYPE.LINK;
-    this.main_settings = {
-      text: "Example link"
+    this.attrs.block = {
+      content: "Example link"
     };
   }
 }
 
 
 export class ElementText extends Element {
+  block: {
+    content: "Hey! Your text will be here"
+  };
   constructor(params) {
     super(params);
     this.kind = ELEMENTS_TYPE.TEXT;
-    this.main_settings = {
-      content: "Hey! Your text will be here"
-    };
   }
 }
-
-export class ElementBlank extends Element {
-  constructor(params) {
-    super(params);
-    this.kind = ELEMENTS_TYPE.BLANK;
-    this.main_settings = {};
-  }
-}
-
