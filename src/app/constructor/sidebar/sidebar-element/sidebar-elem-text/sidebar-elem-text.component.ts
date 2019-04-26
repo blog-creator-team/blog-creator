@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {debounceTime} from "rxjs/operators";
-
+import {NgxSmartModalService} from "ngx-smart-modal";
 
 @Component({
   selector: 'app-sidebar-elem-text',
@@ -17,24 +17,23 @@ export class SidebarElemTextComponent implements OnInit {
   @Input() cancel;
 
   private attrsTextForm: FormGroup;
-  private value: any;
-  private storedSettings: any;
+  private value: string;
+  private storedSettings: string;
+  content: string;
 
-  constructor(private  fb: FormBuilder) {
+  constructor(private  fb: FormBuilder,
+              public ngxSmartModalService: NgxSmartModalService
+  ) {
   }
 
   ngOnInit() {
     this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
-
     this.setFormValue();
     this.onChanged();
   }
 
   setFormValue(): void {
     this.attrsTextForm = this.fb.group({
-      block: this.fb.group({
-        content: [this.el.attrs.block.content, Validators.required]
-      }),
       offsets: this.fb.group({
         top: [this.el.attrs.offsets.top],
         left: [this.el.attrs.offsets.left],
@@ -64,3 +63,4 @@ export class SidebarElemTextComponent implements OnInit {
     this.setFormValue();
   }
 }
+

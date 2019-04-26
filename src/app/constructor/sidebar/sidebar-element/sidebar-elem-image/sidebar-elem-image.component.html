@@ -1,23 +1,25 @@
-<div>
+<h3 class="sidebar__title">Sidebar Image-element</h3>
+<form>
   <input type="file" class="myFile">
 
-  <div class="form-group">
-    <label for="paddingTop">Padding top</label>
-    <input type="text" class="form-control" id="paddingTop">
+  <div>
+    <label class="label" for="padding_top">Padding top, px</label>
+    <input type="number" class="form-control" formControlName="top" id="padding_top">
+
+    <label class="label" for="padding_bottom">Padding bottom, px</label>
+    <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
+
+    <label class="label" for="padding_left">Padding left, %</label>
+    <input type="number" class="form-control" formControlName="left" id="padding_left">
+
+    <label class="label" for="padding_right">Padding right, %</label>
+    <input type="number" class="form-control" formControlName="right" id="padding_right">
   </div>
 
-  <div class="form-group">
-    <label for="paddingBottom">Padding bottom</label>
-    <input type="text" class="form-control" id="paddingBottom">
+  <label class="label" for="bg_color">Background color</label>
+  <input type="color" class="form-control-bg" formControlName="bg_color" id="bg_color">
+  <div class="wrap__btn--sidebar">
+    <button class="btn btn--sidebar" type="submit">Save</button>
+    <button class="btn btn--sidebar" type="button" (click)="onCancel($event)">Cancel</button>
   </div>
-
-  <div class="form-group">
-    <label for="paddingLeft">Padding left</label>
-    <input type="text" class="form-control" id="paddingLeft">
-  </div>
-
-  <div class="form-group">
-    <label for="paddingRight">Padding right</label>
-    <input type="text" class="form-control" id="paddingRight">
-  </div>
-</div>
+</form>

@@ -26,6 +26,11 @@ import {PostService} from './post-service';
 import {ContainerService} from './constructor/services/container.service';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NgxSmartModalModule, NgxSmartModalService} from "ngx-smart-modal";
+import {BaseModalComponent} from './constructor/sidebar/modals/base-modal/base-modal.component';
+import {AngularEditorModule} from "@kolkov/angular-editor";
+import {TextEditorModalComponent} from './constructor/sidebar/modals/text-editor-modal/text-editor-modal.component';
+import { EditorModalComponent } from './constructor/sidebar/modals/editor-modal/editor-modal.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +52,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     TextComponent,
     ImageComponent,
     LinkComponent,
+    BaseModalComponent,
+    TextEditorModalComponent,
+    EditorModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,11 +63,13 @@ import {ReactiveFormsModule} from '@angular/forms';
     PreviewModule,
     FormsModule,
     ReactiveFormsModule,
-  ],
+    AngularEditorModule,
+    NgxSmartModalModule.forRoot()],
   providers: [
     SidebarService,
     PostService,
     ContainerService,
+    NgxSmartModalService,
   ],
   bootstrap: [AppComponent]
 })

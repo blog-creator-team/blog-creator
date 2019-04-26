@@ -1,7 +1,4 @@
 <aside [ngSwitch]="request.type" class="sidebar">
-  <button routerLink="/preview" routerLinkActive="active" class="btn-sidebar">Preview</button>
-  <button class="btn-sidebar">Publish</button>
-
   <app-sidebar-container *ngSwitchCase="sidebars.CONTAINER">
   </app-sidebar-container>
 
@@ -12,5 +9,8 @@
   </app-sidebar-element>
 
   <app-sidebar-default *ngSwitchDefault></app-sidebar-default>
-
+  <div class="wrap__btn--sidebar">
+    <button class="btn btn--sidebar" routerLink="/preview" routerLinkActive="active">Preview</button>
+    <button class="btn btn--sidebar">Publish</button>
+  </div>
 </aside>

@@ -27,7 +27,6 @@ export class ElementsService {
   }
 
   updateElement(element: ElementResponse, kind: string, element_id: number): Observable<ElementResponse> {
-    console.log(element);
     return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/${kind}`, {...element})
       .pipe(catchError(handleError<ElementResponse>('updateElement')));
   }
