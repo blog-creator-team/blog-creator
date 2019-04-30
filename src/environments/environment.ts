@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost/api',
-  actionCableUrl: 'ws://localhost:3000/events/action_cable'
+  apiUrl: 'http://18.184.84.119/api',
+  actionCableUrl: 'ws://18.184.84.119/events'
 };
 
 /*
