@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://blog-creator-api.herokuapp.com'
+  apiUrl: 'http://localhost/api',
+  actionCableUrl: 'ws://localhost:3000/events/action_cable'
 };
 
 /*

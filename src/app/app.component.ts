@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ServerNotificationService} from './services/server-notification.service';
+import {ServerNotificationService} from './notifications/server-notification.service';
 
 @Component({
   selector: 'app-root',

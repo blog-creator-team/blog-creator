@@ -28,7 +28,8 @@ import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
-import {ServerNotificationService} from './services/server-notification.service';
+import {ServerNotificationService} from './notifications/server-notification.service';
+import {ActionCableService} from 'angular2-actioncable';
 
 @NgModule({
   declarations: [
@@ -65,10 +66,10 @@ import {ServerNotificationService} from './services/server-notification.service'
     SidebarService,
     PostService,
     ContainerService,
+    ActionCableService,
     ServerNotificationService
   ],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-}
+export class AppModule {}
