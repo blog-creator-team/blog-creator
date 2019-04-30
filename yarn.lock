@@ -102,10 +102,10 @@
     "@angular-devkit/core" "7.0.7"
     rxjs "6.3.3"
 
-"@angular/animations@~7.0.0":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.0.4.tgz#f53fc9f1bce3bf1afe60dcbc08b6863472f519e4"
-  integrity sha512-QfFikT0FzYNMjdVg0LWTBijdu9JDJyzejnhCFlXxv+KR4zolpRK98/rU7CFW1Fg2jjL3/yL9PT1sf5I0fTJZYA==
+"@angular/animations@^7.2.14":
+  version "7.2.14"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.14.tgz#06ec2feac31e58f53429e673bc4c7f780a9d0710"
+  integrity sha512-K+wdq7TslmvDhrbwy65x7owE8wezI0fDdO+8SO9RU4m/w6R6vo4QS3uSdc5I2pxwm4QSXSc5eKhoWJkq0muTbQ==
   dependencies:
     tslib "^1.9.0"
 
@@ -4623,6 +4623,13 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
+
+ngx-toastr@^10.0.2:
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-10.0.2.tgz#afc51eba792fb569f82c1563fecd5c34dc0968c7"
+  integrity sha512-sHlVAzRnuGYPR24l/C8+ftgWQuAJQ7XFNY55xCrPzSK8+jPg4ZViY6xSEQ5Aw0OXmjsa5aeBqWwAg5CVb1t7cg==
+  dependencies:
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

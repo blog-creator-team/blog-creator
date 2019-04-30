@@ -26,6 +26,9 @@ import {PostService} from './post-service';
 import {ContainerService} from './constructor/services/container.service';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import {ServerNotificationService} from './services/server-notification.service';
 
 @NgModule({
   declarations: [
@@ -55,11 +58,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     PreviewModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     SidebarService,
     PostService,
     ContainerService,
+    ServerNotificationService
   ],
   bootstrap: [AppComponent]
 })
