@@ -30,4 +30,5 @@ export class ElementsService {
     return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/${kind}`, {...element})
       .pipe(catchError(handleError<ElementResponse>('updateElement')));
   }
-}
+
+ }

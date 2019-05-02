@@ -1,0 +1,10 @@
+<ngx-smart-modal [identifier]="id" #baseModal [dismissable]="false">
+  <header class="heading">{{heading}}</header>
+
+  <ng-content></ng-content>
+
+  <footer class="footer">
+    <button type="button" class="btn btn--modal" (click)="onSubmit()">Submit</button>
+    <button class="btn btn--modal" (click)="baseModal.close()">Close</button>
+  </footer>
+</ngx-smart-modal>

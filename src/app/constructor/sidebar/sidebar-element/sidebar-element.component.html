@@ -7,7 +7,11 @@
                          [cancel]="onCancel">
   </app-sidebar-elem-text>
 
-  <app-sidebar-elem-image *ngSwitchCase="elementKind.IMAGE">
+  <app-sidebar-elem-image *ngSwitchCase="elementKind.IMAGE"
+                          [submit]="onSubmit"
+                          [el]="element"
+                          (changed)="onChanged(element)"
+                          [cancel]="onCancel">
   </app-sidebar-elem-image>
 
   <app-sidebar-elem-link *ngSwitchCase="elementKind.LINK">
