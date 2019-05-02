@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {debounceTime} from "rxjs/operators";
 import {NgxSmartModalService} from "ngx-smart-modal";
@@ -53,15 +53,15 @@ export class SidebarElemTextComponent implements OnInit {
       ...el,
       attrs: {
         ...el.attrs,
-        ...value
+        ...value,
       }
     });
   }
 
   onSubmit() {
-    console.log(this.content)
 
     this.submit(this.attrsTextForm.value, this.el.kind, this.el.id, this.content);
+    console.log(this.content)
   }
 
   onCancel() {
