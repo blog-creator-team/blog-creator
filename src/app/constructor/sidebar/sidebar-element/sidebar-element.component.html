@@ -3,7 +3,7 @@
   <app-sidebar-elem-text *ngSwitchCase="elementKind.TEXT"
                          [submit]="onSubmit"
                          [el]="element"
-                         (changed)="onChanged(element)"
+                         [changed]="onChanged"
                          [cancel]="onCancel">
   </app-sidebar-elem-text>
 

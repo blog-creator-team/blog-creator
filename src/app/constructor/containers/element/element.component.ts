@@ -35,7 +35,7 @@ export class ElementComponent implements OnInit {
   }
 
   _onSettingsChange(el) {
-    this.element.attrs = el;
+    this.element = el;
   }
 
   _onSubmit(element: any, kind: string, element_id: number) {

@@ -10,8 +10,7 @@ import {NgxSmartModalService} from "ngx-smart-modal";
 })
 
 export class SidebarElemTextComponent implements OnInit {
-
-  @Output() changed = new EventEmitter<FormGroup>();
+  @Input() changed;
   @Input() submit;
   @Input() el: any;
   @Input() cancel;
@@ -29,7 +28,6 @@ export class SidebarElemTextComponent implements OnInit {
   ngOnInit() {
     this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
     this.setFormValue();
-    this.onChanged();
   }
 
   setFormValue(): void {
@@ -44,19 +42,26 @@ export class SidebarElemTextComponent implements OnInit {
     });
   }
 
-  onChanged(): void {
+  onChanged(el: any): void {
     const value = this.attrsTextForm.value;
-      this.attrsTextForm.valueChanges.pipe(
-      debounceTime(400))
+    this.attrsTextForm.valueChanges.pipe(
+      debounceTime(200))
       .subscribe((value) => {
         this.value = value;
       });
-
-    this.changed.emit(value);
+    this.changed({
+      ...el,
+      attrs: {
+        ...el.attrs,
+        ...value
+      }
+    });
   }
 
   onSubmit() {
-    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id);
+    console.log(this.content)
+
+    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id, this.content);
   }
 
   onCancel() {

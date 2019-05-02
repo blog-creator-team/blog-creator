@@ -1,7 +1,7 @@
-<p [innerHTML]="element.attrs.block.content"
+<p *ngIf="element" [innerHTML]="element.attrs.block.content"
    [ngStyle]="{'padding-top.px':element.attrs.offsets.top,
     'padding-left.%':element.attrs.offsets.left,
     'padding-right.%':element.attrs.offsets.right,
     'padding-bottom.px':element.attrs.offsets.bottom,
-    'background-color': element.attrs.bg_color}">{{content}}
+    'background-color': element.attrs.bg_color}">
 </p>
