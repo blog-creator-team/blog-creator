@@ -32,10 +32,12 @@ export class ElementComponent implements OnInit {
     request.onSubmit = this._onSubmit.bind(this);
     request.onCancel = this.onCancel.bind(this);
     this.sidebarService.sidebar = request;
+
   }
 
   _onSettingsChange(el) {
     this.element = el;
+    console.log(this.element)
   }
 
   _onSubmit(element: any, kind: string, element_id: number) {

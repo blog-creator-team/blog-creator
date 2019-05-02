@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ElementText} from "../../../../models/elements-classes";
-import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-text',
@@ -14,6 +13,7 @@ export class TextComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+
   }
 
 }

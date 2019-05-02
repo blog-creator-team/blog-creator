@@ -53,16 +53,16 @@ export class SidebarElemTextComponent implements OnInit {
       ...el,
       attrs: {
         ...el.attrs,
-        ...value,
+        ...value
       }
     });
   }
 
   onSubmit() {
-
-    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id, this.content);
-    console.log(this.content)
+    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id);
+    this.submit(this.content);
   }
+
 
   onCancel() {
     this.cancel(this.storedSettings);
