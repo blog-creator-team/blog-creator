@@ -51,7 +51,6 @@ export class ElementComponent implements OnInit {
     this.elementsService
       .updateElement(updatedElementSettings, kind, element_id)
       .subscribe((response: any) => {
-        console.log({response})
         this.element.attrs = response.element.attrs;
       });
 
