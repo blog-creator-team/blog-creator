@@ -30,6 +30,7 @@ import {NgxSmartModalModule, NgxSmartModalService} from "ngx-smart-modal";
 import {BaseModalComponent} from './constructor/sidebar/modals/base-modal/base-modal.component';
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import {TextEditorModalComponent} from './constructor/sidebar/modals/text-editor-modal/text-editor-modal.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {TextEditorModalComponent} from './constructor/sidebar/modals/text-editor
     LinkComponent,
     BaseModalComponent,
     TextEditorModalComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,

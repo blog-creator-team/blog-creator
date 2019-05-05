@@ -12,6 +12,9 @@ import {handleError} from "../../shared/helpers";
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
   private elementsUrl = environment.apiUrl + '/v1/elements';
+  // private uploadFileUrl = environment.apiUrl + '/v1/images';
+  // private selectedFile: null;
+
   constructor(private http: HttpClient) {
   }
 
@@ -30,5 +33,15 @@ export class ElementsService {
     return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/${kind}`, {...element})
       .pipe(catchError(handleError<ElementResponse>('updateElement')));
   }
+
+  // onUpload() {
+    // let input = new FormData();
+    // input.append("file", fileToUpload);
+  //   const fb = new FormData();
+  //   fb.append('image', this.selectedFile, this.selectedFile.name)
+  //   this.http.post(`${this.uploadFileUrl}`, fb).subscribe(res => {
+  //     console.log(res)
+  //   });
+  // }
 
  }
