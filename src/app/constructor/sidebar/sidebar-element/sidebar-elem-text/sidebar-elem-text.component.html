@@ -27,5 +27,4 @@
     <button class="btn btn--sidebar btn--cancel" type="button" (click)="onCancel($event)">Cancel</button>
   </div>
 </form>
-
-<app-text-editor-modal (submit)="content = $event" [content]="content"></app-text-editor-modal>
+<app-text-editor-modal [submit]="contentSubmit" [content]="content"></app-text-editor-modal>

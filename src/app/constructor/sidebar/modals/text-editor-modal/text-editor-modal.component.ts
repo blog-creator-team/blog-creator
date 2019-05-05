@@ -10,13 +10,13 @@ import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 export class TextEditorModalComponent {
   @Input() el: any;
   @Input() content: string;
-  @Output() submit = new EventEmitter();
-  // @Input() submit: Function;
+  @Input() submit: Function;
+  // @Output() submit = new EventEmitter();
   @ViewChild('editor') editor: TextEditorModalComponent;
   id: string = 'editor_modal';
 
   onSubmit() {
-    this.submit.emit(this.editor.content);
+    this.submit(this.content);
   }
 
 }

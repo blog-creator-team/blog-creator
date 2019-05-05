@@ -37,19 +37,24 @@ export class ElementComponent implements OnInit {
 
   _onSettingsChange(el) {
     this.element = el;
-    console.log(this.element)
   }
 
-  _onSubmit(element: any, kind: string, element_id: number) {
+  _onSubmit(element: any, kind: string, element_id: number, content: string) {
+    const updatedElementSettings = {
+      ...element,
+      block: {
+        ...this.element.attrs.block,
+        content
+      },
+    };
+
     this.elementsService
-      .updateElement(element, kind, element_id)
+      .updateElement(updatedElementSettings, kind, element_id)
       .subscribe((response: any) => {
-        this.element.attrs = {
-          ...this.element.attrs,
-          ...element,
-          response
-        };
+        console.log({response})
+        this.element.attrs = response.element.attrs;
       });
+
     this.sidebarService.openDefault();
   }
 

@@ -28,6 +28,7 @@ export class SidebarElemTextComponent implements OnInit {
   ngOnInit() {
     this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
     this.setFormValue();
+    this.content = this.el.attrs.block.content;
   }
 
   setFormValue(): void {
@@ -41,6 +42,11 @@ export class SidebarElemTextComponent implements OnInit {
       bg_color: [this.el.attrs.bg_color]
     });
   }
+
+  contentSubmit = (val: string) => {
+    this.el.attrs.block.content = val;
+    this.content = val;
+  };
 
   onChanged(el: any): void {
     const value = this.attrsTextForm.value;
@@ -57,6 +63,7 @@ export class SidebarElemTextComponent implements OnInit {
         ...value,
       }
     });
+    console.log(el)
   }
 
   onSubmit() {
