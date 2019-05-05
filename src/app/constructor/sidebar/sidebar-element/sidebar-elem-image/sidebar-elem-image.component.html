@@ -1,14 +1,20 @@
 <h3 class="sidebar__title">Sidebar Image-element</h3>
 
-<button class="btn btn--editor form-control"
-        (click)="this.ngxSmartModalService.getModal('image_modal').open()">Edit content
-</button>
-
-<form [formGroup]="attrsImgForm" (submit)="onSubmit()" (change)="onChanged()" >
-
-  <!--<div class="" formGroupName="block">-->
-   <!---->
-  <!--</div>-->
+<form [formGroup]="attrsImgForm" (submit)="onSubmit($event)" (change)="onChanged($event)">
+  <div class="" formGroupName="block">
+    <input class="form-control" formControlName="alt"/>
+    <input
+      style="display: none;"
+      type="file"
+      name="image"
+      formControlName="src"
+      (change)="onFileSelect($event)"
+      #fileInput>
+    <div class="wrap__btn--sidebar">
+      <button class="btn btn--sidebar" type="button" (click)="fileInput.click()">Pick File</button>
+      <button class="btn btn--sidebar" type="button" (click)="onUpload()">Upload</button>
+    </div>
+  </div>
   <div class="" formGroupName="offsets">
     <label class="label" for="padding_top">Padding top, px</label>
     <input type="number" class="form-control" formControlName="top" id="padding_top">
