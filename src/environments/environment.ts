@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://blog-creator-api.herokuapp.com'
+  apiUrl: 'http://18.184.84.119/api',
+  actionCableUrl: 'ws://18.184.84.119/events'
 };
 
 /*
