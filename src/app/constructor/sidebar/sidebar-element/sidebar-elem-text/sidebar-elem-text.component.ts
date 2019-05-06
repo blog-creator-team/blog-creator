@@ -50,7 +50,6 @@ export class SidebarElemTextComponent implements OnInit {
 
   onChanged(el: any): void {
     const value = this.attrsTextForm.value;
-
     this.attrsTextForm.valueChanges.pipe(
       debounceTime(200))
       .subscribe((value) => {
@@ -63,7 +62,6 @@ export class SidebarElemTextComponent implements OnInit {
         ...value,
       }
     });
-    console.log(el)
   }
 
   onSubmit() {

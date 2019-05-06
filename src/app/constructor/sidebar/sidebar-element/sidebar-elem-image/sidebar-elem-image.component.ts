@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {debounceTime} from "rxjs/operators";
 import {HttpClient, HttpEventType} from "@angular/common/http";
-import {ElementsService} from "../../../services/elements.service";
 import {environment} from "../../../../../environments/environment";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-sidebar-elem-image',
@@ -19,12 +19,12 @@ export class SidebarElemImageComponent implements OnInit {
   private value: string;
   private storedSettings: string;
   content: string;
+  
 
-  private uploadFileUrl = environment.apiUrl + '/v1/images';
+  private uploadFileUrl = environment.apiUrl + 'assets/v1/images';
   selectedFile: File = null;
 
   constructor(private  fb: FormBuilder,
-              // private elementsService: ElementsService,
              private http: HttpClient) {
   }
 
@@ -36,8 +36,8 @@ export class SidebarElemImageComponent implements OnInit {
   setFormValue(): void {
     this.attrsImgForm = this.fb.group({
       block: this.fb.group({
-        src: [''],
-        alt: [''],
+        src: [this.el.attrs.block.src],
+        alt: [this.el.attrs.block.alt],
       }),
       offsets: this.fb.group({
         top: [this.el.attrs.offsets.top],
@@ -50,20 +50,20 @@ export class SidebarElemImageComponent implements OnInit {
   }
 
   onFileSelect(event) {
-    // console.log(event)
-    // if (event.target.files.length > 0) {
-    //   const file = event.target.files[0];
-    //   this.attrsImgForm.get('src').setValue(file);
-    //   console.log(this.file)
-    // }
-    this.selectedFile =<File> event.target.file[0];
+    console.log(event)
+
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.attrsImgForm.get('url').setValue(file);
+    }
+    // this.selectedFile =<File> event.target.file[0];
   }
 
 
   onUpload() {
-    const fd = new FormData();
-    fd.append('image', this.selectedFile, this.selectedFile.name)
-    this.http.post(`${this.uploadFileUrl}`, fd, {reportProgress: true,
+    const formData = new FormData();
+    formData.append('image', this.selectedFile, this.selectedFile.name);
+    this.http.post(`${this.uploadFileUrl}`, formData, {reportProgress: true,
   observe: 'events'})
   .subscribe(event => {
     if (event.type === HttpEventType.UploadProgress){
