@@ -4,6 +4,7 @@ import {environment} from '../../environments/environment';
 import {ActionCableService, Cable} from 'angular2-actioncable';
 import {Notification} from './notification';
 import {NotificationType} from './notification-type';
+import {EventChannel} from './event-channel';
 
 @Injectable({ providedIn: 'root' })
 export class ServerNotificationService {
@@ -15,7 +16,8 @@ export class ServerNotificationService {
 
   public listen(): void {
     const params = { token: localStorage.getItem('auth token') };
-    this.events.channel('NotificationsChannel', params).received().subscribe(this.showNotification.bind(this));
+    const channel = this.events.channel(EventChannel.NOTIFICATIONS, params);
+    channel.received().subscribe(this.showNotification.bind(this));
   }
 
   private showNotification(notification: Notification): void {
