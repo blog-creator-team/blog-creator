@@ -4,7 +4,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {PreviewModule} from './preview/preview.module';
 import {AppComponent} from './app.component';
 import {SidebarComponent} from './constructor/sidebar/sidebar.component';
-import {SidebarContainerComponent} from './constructor/sidebar/sidebar-container/sidebar-container.component';
 import {SidebarElementsComponent} from './constructor/sidebar/sidebar-elements/sidebar-elements.component';
 import {SidebarElementComponent} from './constructor/sidebar/sidebar-element/sidebar-element.component';
 import {SidebarDefaultComponent} from './constructor/sidebar/sidebar-default/sidebar-default.component';
@@ -30,13 +29,16 @@ import {NgxSmartModalModule, NgxSmartModalService} from "ngx-smart-modal";
 import {BaseModalComponent} from './constructor/sidebar/modals/base-modal/base-modal.component';
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import {TextEditorModalComponent} from './constructor/sidebar/modals/text-editor-modal/text-editor-modal.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+import {FileUploadComponent} from './file-upload/file-upload.component';
+import {ActionCableService} from "angular2-actioncable";
+import {ServerNotificationService} from "./notifications/server-notification.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    SidebarContainerComponent,
     SidebarElementsComponent,
     SidebarElementComponent,
     SidebarDefaultComponent,
@@ -46,12 +48,16 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     SidebarElemTextComponent,
     SidebarElemImageComponent,
     SidebarElemLinkComponent,
+    ElementComponent,
     ContainersComponent,
     ElementComponent,
     ContainerComponent,
     TextComponent,
     ImageComponent,
     LinkComponent,
+    BaseModalComponent,
+    TextEditorModalComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,11 +66,20 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     PreviewModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularEditorModule,
+    NgxSmartModalModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
+
   providers: [
     SidebarService,
     PostService,
     ContainerService,
+    NgxSmartModalService,
+    ActionCableService,
+    ServerNotificationService,
+
   ],
   bootstrap: [AppComponent]
 })

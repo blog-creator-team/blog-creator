@@ -48,7 +48,6 @@ export class SidebarElemImageComponent implements OnInit {
 
   fileChange(event) {
     const fileList: FileList = event.target.files;
-
     if (fileList.length > 0) {
       const file: File = fileList[0];
       const formData: FormData = new FormData();
@@ -60,12 +59,11 @@ export class SidebarElemImageComponent implements OnInit {
           if (event.type === HttpEventType.Response) {
             this.src = event.body.url;
           }
-        });console.log(event)
+        });
     }
   }
 
   onChanged(el: any): void {
-    console.log(el)
     const value = this.attrsImgForm.value;
     this.attrsImgForm.valueChanges.pipe(
       debounceTime(200))
@@ -87,6 +85,9 @@ export class SidebarElemImageComponent implements OnInit {
 
   onSubmit() {
     this.submit(this.attrsImgForm.value, this.el.kind, this.el.id, this.src);
+    console.log(this.src);
+    console.log(this.submit)
+
   }
 
   onCancel() {

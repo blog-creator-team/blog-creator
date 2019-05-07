@@ -43,7 +43,7 @@ export class SidebarElemTextComponent implements OnInit {
     });
   }
 
-  contentSubmit = (val: string) => {
+  onContentChange(val: string): void {
     this.el.attrs.block.content = val;
     this.content = val;
   };

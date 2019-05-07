@@ -44,7 +44,8 @@ export class ElementComponent implements OnInit {
       ...element,
       block: {
         ...this.element.attrs.block,
-        content
+        content,
+
       },
     };
 
