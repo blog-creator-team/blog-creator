@@ -52,9 +52,6 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     TextComponent,
     ImageComponent,
     LinkComponent,
-    BaseModalComponent,
-    TextEditorModalComponent,
-    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,13 +60,11 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     PreviewModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularEditorModule,
-    NgxSmartModalModule.forRoot()],
+  ],
   providers: [
     SidebarService,
     PostService,
     ContainerService,
-    NgxSmartModalService,
   ],
   bootstrap: [AppComponent]
 })
