@@ -8,12 +8,13 @@ import {environment} from "../../../../../environments/environment";
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-  imgSrc: string ='';
-@Input() element: ElementImage;
+  imgSrc: string;
+  alt: string;
+  @Input() element: ElementImage;
   constructor() { }
 
   ngOnInit() {
-    this.imgSrc = environment.apiUrl + '/assets/' + this.element.attrs.block.src
+    const src = this.element.attrs.block.src;
+    this.imgSrc = environment.appUrl + '/assets/' + (src[0] === '/' ? src.replace('/', '') : src);
   }
-
 }

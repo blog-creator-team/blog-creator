@@ -1,19 +1,21 @@
 <h3 class="sidebar__title">Settings Image-element</h3>
 
-<form [formGroup]="attrsImgForm" (submit)="onSubmit($event)" (change)="onChanged($event)">
+<input #fileInput
+       type="file"
+       accept="image/*"
+       name="uploadFile"
+       style="display: none;"
+       (change)="fileChange($event)">
+
+<div class="wrap__btn--sidebar">
+  <button class="btn btn--sidebar" type="button" (click)="fileInput.click()">Chose File</button>
+</div>
+
+<form [formGroup]="attrsImgForm" (submit)="onSubmit($event)" (change)="onChanged(el)">
   <div class="" formGroupName="block">
-    <input class="form-control" formControlName="alt"/>
-    <input
-      style="display: none;"
-      type="file"
-      name="image"
-      formControlName="src"
-      (change)="onFileSelect($event)"
-      #fileInput>
-    <div class="wrap__btn--sidebar">
-      <button class="btn btn--sidebar" type="button" (click)="fileInput.click()">Pick File</button>
-      <button class="btn btn--sidebar" type="button" (click)="onUpload()">Upload</button>
-    </div>
+    <label class="label">Add "alt" to image
+      <input class="form-control" formControlName="alt">
+    </label>
   </div>
   <div class="" formGroupName="offsets">
     <label class="label" for="padding_top">Padding top, px</label>

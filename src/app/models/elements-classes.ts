@@ -6,7 +6,7 @@ export class ElementImage extends Element {
     super(params);
     this.kind = ELEMENTS_TYPE.IMAGE;
     this.attrs.block = {
-      src: "https://d1y0dpztrh9xjz.cloudfront.net/assets/placeholder.png",
+      src: "https:// http://18.184.84.119/assets/placeholder.png",
       alt: "Placeholder image",
     };
   }

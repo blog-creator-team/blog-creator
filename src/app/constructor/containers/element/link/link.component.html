@@ -1,1 +1,5 @@
-<a class="fake-link">{{element.attrs.block.text}}</a>
+<a class="fake-link" [ngStyle]="{'padding-top.px':element.attrs.offsets.top,
+    'padding-left.%':element.attrs.offsets.left,
+    'padding-right.%':element.attrs.offsets.right,
+    'padding-bottom.px':element.attrs.offsets.bottom,
+    'background-color': element.attrs.bg_color}">{{element.attrs.block.text}}</a>
