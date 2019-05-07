@@ -8,8 +8,8 @@ import {PreviewComponent} from './preview/preview.component';
 const routes: Routes = [
   {
     path: 'posts/:id', children: [
-      { path: 'constructor', component: ConstructorComponent  },
-      { path: 'preview', component: PreviewComponent }
+      {path: 'constructor', component: ConstructorComponent},
+      {path: 'preview', component: PreviewComponent}
     ]
   },
   {

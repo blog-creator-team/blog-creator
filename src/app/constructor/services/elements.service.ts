@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {environment} from "../../../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpEventType} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ElementResponse} from "../../models/element";
 import {catchError} from "rxjs/operators";
@@ -12,6 +12,7 @@ import {handleError} from "../../shared/helpers";
 export class ElementsService {
   private containersUrl = environment.apiUrl + '/v1/containers';
   private elementsUrl = environment.apiUrl + '/v1/elements';
+
   constructor(private http: HttpClient) {
   }
 
@@ -27,7 +28,6 @@ export class ElementsService {
   }
 
   updateElement(element: ElementResponse, kind: string, element_id: number): Observable<ElementResponse> {
-    console.log(element);
     return this.http.put<ElementResponse>(`${this.elementsUrl}/${element_id}/${kind}`, {...element})
       .pipe(catchError(handleError<ElementResponse>('updateElement')));
   }

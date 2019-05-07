@@ -8,10 +8,12 @@ import {ElementText} from "../../../../models/elements-classes";
 })
 export class TextComponent implements OnInit {
   @Input() element: ElementText;
+  content: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+
   }
 
 }

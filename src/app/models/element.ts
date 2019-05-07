@@ -18,7 +18,8 @@ export interface ElementParams {
       bottom: number;
       left: number;
     }
-    block: {}
+    // block: {}
+    block: any
   }
 
 }
@@ -38,7 +39,8 @@ export class Element {
       bottom: number;
       left: number;
     }
-    block: {};
+    // block: {};
+    block: any
   };
 
   constructor(params: ElementParams) {

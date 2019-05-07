@@ -1,3 +1,8 @@
-<div class="photo__wrap">
-  <img [src]="element.attrs.block.src" [alt]="element.attrs.block.alt" class="img-default">
+<div class="photo__wrap"
+     [ngStyle]="{'padding-top.px':element.attrs.offsets.top,
+    'padding-left.px':element.attrs.offsets.left,
+    'padding-right.px':element.attrs.offsets.right,
+    'padding-bottom.px':element.attrs.offsets.bottom,
+    'background-color': element.attrs.bg_color}">
+  <img [src]="imgSrc" [alt]="element.attrs.block.alt" class="img-default">
 </div>

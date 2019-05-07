@@ -14,13 +14,14 @@ export class SidebarElementComponent {
   onChanged: (element: Element) => void;
   onCancel: Function;
   element: Element;
+  myModal: string;
+  content: string;
 
   @Input() set request({onSubmit, onChange, onCancel, payload}: ElementSidebarRequest) {
     this.onChanged = onChange;
     this.onSubmit = onSubmit;
     this.onCancel = onCancel;
     this.element = payload;
-    console.log(onCancel)
   }
 }
 

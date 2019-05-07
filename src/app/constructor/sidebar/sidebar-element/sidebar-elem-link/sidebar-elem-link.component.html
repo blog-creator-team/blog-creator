@@ -11,26 +11,41 @@
     <!--<option selected>Open this for select link</option>-->
   <!--</select>-->
 <!--</div>-->
+<h3 class="sidebar__title">Sidebar Link-element</h3>
 
-<div class="form-group">
-  <label for="link" class="">Settings link</label>
-  <select name="link" id="link"
-          class="form-control">
-    <option value="link">lorem</option>
-    <option value="link">lorem</option>
-    <option value="link">lorem</option>
-  </select>
-</div>
+  <form [formGroup]="attrsLinkForm" (submit)="onSubmit()" (change)="onChanged(el)">
+    <label for="text" class="label">Add text link</label>
+    <input type="text" class="form-control" id="text" placeholder="Example link">
+    <div class="form-group">
+      <label for="link" class="">Settings link</label>
+      <select name="link" id="link"
+              class="form-control">
+        <option value="link">"http://example-link</option>
+        <option value="link">external</option>
+      </select>
+    </div>
+    <div class="" formGroupName="offsets">
+      <label class="label" for="padding_top">Padding top, px</label>
+      <input type="number" class="form-control" formControlName="top" id="padding_top">
 
-<div class="form-group">
-  <label for="colorText">Text color</label>
-  <input type="color" class="form-control" id="colorText">
-</div>
+      <label class="label" for="padding_bottom">Padding bottom, px</label>
+      <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
 
-<div class="form-group">
-  <label for="backgroundColor">Background color</label>
-  <input type="color" class="form-control" id="backgroundColor">
-</div>
+      <label class="label" for="padding_left">Padding left, %</label>
+      <input type="number" class="form-control" formControlName="left" id="padding_left">
+
+      <label class="label" for="padding_right">Padding right, %</label>
+      <input type="number" class="form-control" formControlName="right" id="padding_right">
+    </div>
+
+    <label class="label" for="bg_color">Background color</label>
+    <input type="color" class="form-control-bg" formControlName="bg_color" id="bg_color">
+
+    <div class="wrap__btn--sidebar">
+      <button class="btn btn--sidebar" type="submit">Save</button>
+      <button class="btn btn--sidebar btn--cancel" type="button" (click)="onCancel($event)">Cancel</button>
+    </div>
+  </form>
 
 
 
