@@ -29,8 +29,6 @@ export class SidebarElemImageComponent implements OnInit {
   ngOnInit() {
     this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
     this.setFormValue();
-    // this.el.attrs.block.src = this.val;
-    // this.src = this.val;
   }
 
   setFormValue(): void {
@@ -62,7 +60,7 @@ export class SidebarElemImageComponent implements OnInit {
           if (event.type === HttpEventType.Response) {
             this.src = event.body.url;
           }
-        });
+        });console.log(event)
     }
   }
 
@@ -88,11 +86,15 @@ export class SidebarElemImageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submit(this.attrsImgForm.value, this.el.kind, this.el.id);
+    this.submit(this.attrsImgForm.value, this.el.kind, this.el.id, this.src);
   }
 
   onCancel() {
     this.cancel(this.storedSettings);
     this.setFormValue();
+  }
+
+  onUpload() {
+
   }
 }

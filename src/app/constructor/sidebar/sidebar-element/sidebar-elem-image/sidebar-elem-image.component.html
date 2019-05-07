@@ -9,6 +9,7 @@
 
 <div class="wrap__btn--sidebar">
   <button class="btn btn--sidebar" type="button" (click)="fileInput.click()">Chose File</button>
+  <button class="btn btn--sidebar" type="button" (click)="onUpload()">Upload</button>
 </div>
 
 <form [formGroup]="attrsImgForm" (submit)="onSubmit($event)" (change)="onChanged(el)">
