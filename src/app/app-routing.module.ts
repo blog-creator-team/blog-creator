@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'posts/:id', children: [
       { path: 'constructor', component: ConstructorComponent  },
-      { path: 'prevew', component: PreviewComponent }
+      { path: 'preview', component: PreviewComponent }
     ]
   },
   {
