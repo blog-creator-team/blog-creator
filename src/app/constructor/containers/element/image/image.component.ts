@@ -15,6 +15,6 @@ export class ImageComponent implements OnInit {
 
   ngOnInit() {
     const src = this.element.attrs.block.src;
-    this.imgSrc = environment.appUrl + '/assets/' + (src[0] === '/' ? src.replace('/', '') : src);
+    this.imgSrc = environment.apiUrl + '/assets/' + (src[0] === '/' ? src.replace('/', '') : src);
   }
 }

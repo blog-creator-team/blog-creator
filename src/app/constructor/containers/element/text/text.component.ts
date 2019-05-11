@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ElementText} from "../../../../models/elements-classes";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-text',
@@ -8,11 +9,12 @@ import {ElementText} from "../../../../models/elements-classes";
 })
 export class TextComponent implements OnInit {
   @Input() element: ElementText;
-  content: string;
 
-  constructor() {}
-
-  ngOnInit() {
+  constructor(private sanitizer: DomSanitizer) {}
+get saveContent() {
+    return this.sanitizer.bypassSecurityTrustHtml(this.element.attrs.block.content)
+}
+    ngOnInit() {
 
   }
 

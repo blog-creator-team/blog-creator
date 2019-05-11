@@ -29,7 +29,6 @@ import {NgxSmartModalModule, NgxSmartModalService} from "ngx-smart-modal";
 import {BaseModalComponent} from './constructor/sidebar/modals/base-modal/base-modal.component';
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import {TextEditorModalComponent} from './constructor/sidebar/modals/text-editor-modal/text-editor-modal.component';
-import {FileUploadComponent} from './file-upload/file-upload.component';
 import {ActionCableService} from "angular2-actioncable";
 import {ServerNotificationService} from "./notifications/server-notification.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -57,7 +56,6 @@ import {ToastrModule} from "ngx-toastr";
     LinkComponent,
     BaseModalComponent,
     TextEditorModalComponent,
-    FileUploadComponent,
   ],
   imports: [
     BrowserModule,

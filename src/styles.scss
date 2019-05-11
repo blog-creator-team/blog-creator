@@ -45,7 +45,7 @@ p {
 }
 
 app-constructor {
-  height: 100%;
+  height: calc(100% - 85px);
 }
 
 .btn {
