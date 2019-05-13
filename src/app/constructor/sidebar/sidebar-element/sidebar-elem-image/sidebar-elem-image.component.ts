@@ -34,7 +34,7 @@ export class SidebarElemImageComponent implements OnInit {
   setFormValue(): void {
     this.attrsImgForm = this.fb.group({
       block: this.fb.group({
-        alt: [this.el.attrs.block.alt],
+        alt: [this.el.attrs.block.alt]
       }),
       offsets: this.fb.group({
         top: [this.el.attrs.offsets.top],
@@ -58,6 +58,7 @@ export class SidebarElemImageComponent implements OnInit {
         .subscribe((event: any) => {
           if (event.type === HttpEventType.Response) {
             this.src = event.body.url;
+            this.onChanged(this.el)
           }
         });
     }
@@ -70,6 +71,7 @@ export class SidebarElemImageComponent implements OnInit {
       .subscribe((value) => {
         this.value = value;
       });
+
     this.changed({
       ...el,
       attrs: {
@@ -77,7 +79,7 @@ export class SidebarElemImageComponent implements OnInit {
         ...value,
         block: {
           ...el.block,
-          src: this.src
+          src: this.src,
         }
       }
     });
@@ -85,17 +87,10 @@ export class SidebarElemImageComponent implements OnInit {
 
   onSubmit() {
     this.submit(this.attrsImgForm.value, this.el.kind, this.el.id, this.src);
-    console.log(this.src);
-    console.log(this.submit)
-
   }
 
   onCancel() {
     this.cancel(this.storedSettings);
     this.setFormValue();
-  }
-
-  onUpload() {
-
   }
 }

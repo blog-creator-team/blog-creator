@@ -39,13 +39,11 @@ export class ElementComponent implements OnInit {
     this.element = el;
   }
 
-  _onSubmit(element: any, kind: string, element_id: number, content: string) {
+  _onSubmit(element: any, kind: string, element_id: number) {
     const updatedElementSettings = {
       ...element,
       block: {
-        ...this.element.attrs.block,
-        content,
-
+        ...this.element.attrs.block
       },
     };
 
