@@ -9,6 +9,7 @@ import {handleError} from "./shared/helpers";
 @Injectable()
 export class PostService {
   private postsUrl = environment.apiUrl + '/v1/posts';
+  private id: number;
 
   public getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.postsUrl)
@@ -19,9 +20,21 @@ export class PostService {
   constructor(private http: HttpClient) {
 
   }
+
   getPost(id): Observable<{ post: Post }> {
     return this.http.get<{ post: Post }>(`${this.postsUrl}/${id}`)
       .pipe(catchError(handleError<{ post: Post }>('getPost id=${id}'))
       );
+  }
+
+  addPost(title: string): Observable<Post> {
+    return this.http.post<Post>(`${this.postsUrl}/${this.id}`, title)
+      .pipe(catchError(handleError<Post>('addPost'))
+      );
+  }
+
+  deletePost(id: number): Observable<Post> {
+    return this.http.delete<Post>(`${this.postsUrl}/${id}`)
+      .pipe(catchError(handleError<Post>('deletePost')))
   }
 }

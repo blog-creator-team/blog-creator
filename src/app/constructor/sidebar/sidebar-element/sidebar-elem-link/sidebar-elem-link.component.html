@@ -1,51 +1,57 @@
-<!--<div class="form-group">-->
-  <!--<label for="link">Settings link</label>-->
-  <!--<select class="form-control" id="link"-->
-          <!--required-->
-          <!--[(ngModel)]="model.link" name="link">-->
-    <!--<option *ngFor="let link of links" [value]="link">{{link}}</option>-->
-  <!--</select>-->
-<!--</div>-->
-<!--<div>-->
-  <!--<select class="custom-select">-->
-    <!--<option selected>Open this for select link</option>-->
-  <!--</select>-->
-<!--</div>-->
 <h3 class="sidebar__title">Sidebar Link-element</h3>
 
-  <form [formGroup]="attrsLinkForm" (submit)="onSubmit()" (change)="onChanged(el)">
-    <label for="text" class="label">Add text link</label>
-    <input type="text" class="form-control" id="text" placeholder="Example link">
-    <div class="form-group">
-      <label for="link" class="">Settings link</label>
-      <select name="link" id="link"
-              class="form-control">
-        <option value="link">"http://example-link</option>
-        <option value="link">external</option>
+<form [formGroup]="attrsLinkForm" (submit)="onSubmit()" (change)="onChanged(el)">
+  <div class="" formGroupName="block">
+    <label for="text" class="label">Settings link</label>
+    <label class="label">
+      <select formControlName="destination_type" class="form-control">
+        <option *ngFor="let destination_type of destination_types"
+                [ngValue]="el.attrs.block.destination_type">{{destination_type}}
+        </option>
       </select>
-    </div>
-    <div class="" formGroupName="offsets">
-      <label class="label" for="padding_top">Padding top, px</label>
-      <input type="number" class="form-control" formControlName="top" id="padding_top">
+    </label>
 
-      <label class="label" for="padding_bottom">Padding bottom, px</label>
-      <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
-
-      <label class="label" for="padding_left">Padding left, %</label>
-      <input type="number" class="form-control" formControlName="left" id="padding_left">
-
-      <label class="label" for="padding_right">Padding right, %</label>
-      <input type="number" class="form-control" formControlName="right" id="padding_right">
+    <div [ngSwitch]="attrsLinkForm.value.block.destination_type">
+    <div *ngSwitchCase="'post'">
+      <label class="label">
+        <select formControlName="destination" id="" class="form-control">
+          <option *ngFor="let post of posts"
+                  [ngValue]="el.attrs.block.destination">{{post}}>Select post
+          </option>
+        </select>
+      </label>
     </div>
 
-    <label class="label" for="bg_color">Background color</label>
-    <input type="color" class="form-control-bg" formControlName="bg_color" id="bg_color">
-
-    <div class="wrap__btn--sidebar">
-      <button class="btn btn--sidebar" type="submit">Save</button>
-      <button class="btn btn--sidebar btn--cancel" type="button" (click)="onCancel($event)">Cancel</button>
+    <div *ngSwitchCase="'external'">
+      <input type="text" class="form-control" name="text" formControlName="text" id="text">
     </div>
-  </form>
+
+    <div *ngSwitchCase="'homepage'"></div>
+  </div>
+  </div>
+
+  <div class="" formGroupName="offsets">
+    <label class="label" for="padding_top">Padding top, px</label>
+    <input type="number" class="form-control" formControlName="top" id="padding_top">
+
+    <label class="label" for="padding_bottom">Padding bottom, px</label>
+    <input type="number" class="form-control" formControlName="bottom" id="padding_bottom">
+
+    <label class="label" for="padding_left">Padding left, px</label>
+    <input type="number" class="form-control" formControlName="left" id="padding_left">
+
+    <label class="label" for="padding_right">Padding right, px</label>
+    <input type="number" class="form-control" formControlName="right" id="padding_right">
+  </div>
+
+  <label class="label" for="bg_color">Background color</label>
+  <input type="color" class="form-control-bg" formControlName="bg_color" id="bg_color">
+
+  <div class="wrap__btn--sidebar">
+    <button class="btn btn--sidebar" type="submit">Save</button>
+    <button class="btn btn--sidebar btn--cancel" type="button" (click)="onCancel($event)">Cancel</button>
+  </div>
+</form>
 
 
 

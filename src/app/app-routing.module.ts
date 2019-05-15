@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {ConstructorComponent} from './constructor/constructor.component';
-import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {PreviewComponent} from './preview/preview.component';
+import {PostsListComponent} from "./posts-list/posts-list.component";
+import {HomePageComponent} from "./home-page/home-page.component";
 
 const routes: Routes = [
+  {
+    path: 'home-page', component: HomePageComponent
+  },
   {
     path: 'posts/:id', children: [
       {path: 'constructor', component: ConstructorComponent},
@@ -13,7 +17,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'blog', component: BlogComponent
+    path: 'posts-list', component: PostsListComponent
   },
   {
     path: '**', component: NotFoundComponent

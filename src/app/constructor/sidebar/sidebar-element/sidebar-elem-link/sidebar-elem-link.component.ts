@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {NgxSmartModalService} from "ngx-smart-modal";
 import {debounceTime} from "rxjs/operators";
+import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-sidebar-elem-link',
@@ -14,22 +14,30 @@ export class SidebarElemLinkComponent implements OnInit {
   @Input() el: any;
   @Input() cancel;
 
-  private attrsTextForm: FormGroup;
+  private attrsLinkForm: FormGroup;
   private value: string;
   private storedSettings: string;
-  content: string;
+  private text: string;
+  private destination_types: any = ['external', 'homepage', 'post'];
+  private posts: any = [];
 
-  constructor(private  fb: FormBuilder) {
+  constructor(private  fb: FormBuilder
+  ) {
   }
 
   ngOnInit() {
     this.storedSettings = JSON.parse(JSON.stringify(this.el.attrs));
     this.setFormValue();
-    this.content = this.el.attrs.block.content;
+    console.log(this.attrsLinkForm)
   }
 
   setFormValue(): void {
-    this.attrsTextForm = this.fb.group({
+    this.attrsLinkForm = this.fb.group({
+      block: this.fb.group({
+        text: [this.el.attrs.block.text],
+        destination_type: ['external'],
+        destination: [''],
+      }),
       offsets: this.fb.group({
         top: [this.el.attrs.offsets.top],
         left: [this.el.attrs.offsets.left],
@@ -41,8 +49,9 @@ export class SidebarElemLinkComponent implements OnInit {
   }
 
   onChanged(el: any): void {
-    const value = this.attrsTextForm.value;
-    this.attrsTextForm.valueChanges.pipe(
+    const value = this.attrsLinkForm.value;
+    console.log(value)
+    this.attrsLinkForm.valueChanges.pipe(
       debounceTime(200))
       .subscribe((value) => {
         this.value = value;
@@ -52,12 +61,18 @@ export class SidebarElemLinkComponent implements OnInit {
       attrs: {
         ...el.attrs,
         ...value,
+        block: {
+          ...el.block,
+        }
       }
     });
   }
 
+
+
   onSubmit() {
-    this.submit(this.attrsTextForm.value, this.el.kind, this.el.id);
+    this.submit(this.attrsLinkForm.value, this.el.kind, this.el.id, this.text);
+    console.log(this.text)
   }
 
   onCancel() {

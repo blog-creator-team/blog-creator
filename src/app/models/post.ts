@@ -33,11 +33,11 @@ export class Post {
       bottom: number;
       left: number;
     }
-  }
+  };
 
   constructor(params: PostParams) {
-    this.title = params.title,
-    this.published = params.published,
+    this.title = params.title;
+    this.published = params.published;
     this.containers = params.containers;
     this.description = params.description;
     this.attrs = {

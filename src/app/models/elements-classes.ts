@@ -1,5 +1,6 @@
 import {Element} from "./element"
 import {ELEMENTS_TYPE} from "./elements-type";
+import {DESTINATION_TYPE} from "./destination-type";
 
 export class ElementImage extends Element {
   constructor(params) {
@@ -18,7 +19,8 @@ export class ElementLink extends Element {
     super(params);
     this.kind = ELEMENTS_TYPE.LINK;
     this.attrs.block = {
-      content: "Example link"
+      text: "Example link",
+      destination_type: DESTINATION_TYPE
     };
   }
 }

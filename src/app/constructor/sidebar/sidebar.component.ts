@@ -16,6 +16,7 @@ export class SidebarComponent implements OnDestroy, OnInit {
   currentPostId = 0;
   private _sidebarChangeListener: Subscription;
 
+
   constructor(
     private sidebarService: SidebarService,
     private activatedRoute: ActivatedRoute,

@@ -1,5 +1,7 @@
-<a class="fake-link" [ngStyle]="{'padding-top.px':element.attrs.offsets.top,
-    'padding-left.%':element.attrs.offsets.left,
-    'padding-right.%':element.attrs.offsets.right,
+<a [href]="" target="_blank" class="fake-link"  [innerHTML]="element.attrs.block.text"
+   [ngStyle]="{'padding-top.px':element.attrs.offsets.top,
+    'padding-left.px':element.attrs.offsets.left,
+    'padding-right.px':element.attrs.offsets.right,
     'padding-bottom.px':element.attrs.offsets.bottom,
-    'background-color': element.attrs.bg_color}">{{element.attrs.block.text}}</a>
+    'background-color': element.attrs.bg_color}">
+</a>

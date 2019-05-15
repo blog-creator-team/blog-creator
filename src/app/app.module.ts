@@ -9,7 +9,6 @@ import {SidebarElementComponent} from './constructor/sidebar/sidebar-element/sid
 import {SidebarDefaultComponent} from './constructor/sidebar/sidebar-default/sidebar-default.component';
 import {ConstructorComponent} from './constructor/constructor.component';
 import {SidebarService} from './constructor/sidebar/sidebar.service';
-import {BlogComponent} from './blog/blog.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {SidebarElemTextComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-text/sidebar-elem-text.component';
 import {SidebarElemImageComponent} from './constructor/sidebar/sidebar-element/sidebar-elem-image/sidebar-elem-image.component';
@@ -33,6 +32,8 @@ import {ActionCableService} from "angular2-actioncable";
 import {ServerNotificationService} from "./notifications/server-notification.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,6 @@ import {ToastrModule} from "ngx-toastr";
     SidebarElementComponent,
     SidebarDefaultComponent,
     ConstructorComponent,
-    BlogComponent,
     NotFoundComponent,
     SidebarElemTextComponent,
     SidebarElemImageComponent,
@@ -56,6 +56,8 @@ import {ToastrModule} from "ngx-toastr";
     LinkComponent,
     BaseModalComponent,
     TextEditorModalComponent,
+    PostsListComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
