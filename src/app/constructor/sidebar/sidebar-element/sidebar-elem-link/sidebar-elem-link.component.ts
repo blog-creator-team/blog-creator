@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {debounceTime} from "rxjs/operators";
-import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-sidebar-elem-link',
@@ -36,7 +35,6 @@ export class SidebarElemLinkComponent implements OnInit {
       block: this.fb.group({
         text: [this.el.attrs.block.text],
         destination_type: ['external'],
-        destination: [''],
       }),
       offsets: this.fb.group({
         top: [this.el.attrs.offsets.top],
@@ -50,7 +48,6 @@ export class SidebarElemLinkComponent implements OnInit {
 
   onChanged(el: any): void {
     const value = this.attrsLinkForm.value;
-    console.log(value)
     this.attrsLinkForm.valueChanges.pipe(
       debounceTime(200))
       .subscribe((value) => {

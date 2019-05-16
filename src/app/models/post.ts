@@ -19,6 +19,7 @@ export interface PostParams {
 }
 
 export class Post {
+  id?: string;
   title: string;
   published: boolean;
   description: null;

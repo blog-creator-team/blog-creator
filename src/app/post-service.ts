@@ -11,9 +11,9 @@ export class PostService {
   private postsUrl = environment.apiUrl + '/v1/posts';
   private id: number;
 
-  public getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postsUrl)
-      .pipe(catchError(handleError<Post[]>('getPosts', []))
+  public getPosts(): Observable<{posts: Post[]}> {
+    return this.http.get<{posts: Post[]}>(this.postsUrl)
+      .pipe(catchError(handleError<{posts: Post[]}>('getPosts', {posts: []}))
       );
   }
 
