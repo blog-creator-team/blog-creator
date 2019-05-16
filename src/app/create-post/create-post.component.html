@@ -1,12 +1,15 @@
 <div class="container">
-  <form (submit)="onTitleSubmit()">
-    <label class="label">Add title to your post
-      <input type="text" [(ngModel)]="title" name="title">
-    </label>
+  <h1 class="main-heading">Create new post</h1>
+  <form (submit)="onTitleSubmit()" class="new-post-form">
+    <h2 class="new-post-form__title">Add title to your post</h2>
 
-    <button class=" btn btn--big btn--center">
-      Create new
-    </button>
+    <div class="form-control-group">
+      <input type="text" [(ngModel)]="title" name="title" class="new-post-form__input">
+
+      <button class=" btn btn--big btn--center new-post-form__submit">
+        Create new
+      </button>
+    </div>
   </form>
 </div>
 

@@ -1,0 +1,26 @@
+.new-post-form {
+  padding: 15px;
+  box-shadow: #a2a2a2 2px 2px 15px;
+  background-color: #fff;
+  &__title {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+  }
+  &__submit {
+    flex-shrink: 0;
+  }
+}
+
+.form-control-group {
+  display: flex;
+  width: 100%;
+}
+
+.main-heading {
+  margin: 30px 0;
+  text-align: center;
+}
