@@ -1,10 +1,11 @@
 <div class="wrap--page">
   <header class="header">
     <h1 class="title">Posts</h1>
-    <button [routerLink]="'/posts/constructor'"
+    <button [routerLink]="'/new-post'"
             routerLinkActive="active" class="btn btn--toolbar">New Post
     </button>
   </header>
+
   <ul class="post-list">
     <li class="post-item" *ngFor="let post of posts">
       <h3 class="title-post">{{post.title}}</h3>

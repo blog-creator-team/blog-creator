@@ -5,16 +5,37 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {PreviewComponent} from './preview/preview.component';
 import {PostsListComponent} from "./posts-list/posts-list.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {CreatePostComponent} from "./create-post/create-post.component";
 
 const routes: Routes = [
   {
     path: 'home-page', component: HomePageComponent
   },
+  // {
+  //   path: 'posts/:id?', children: [
+  //     {path: 'constructor', component: ConstructorComponent},
+  //     {path: 'preview', component: PreviewComponent},
+  //     {path: 'new', component: CreatePostComponent}
+  //     // {path: 'publish', component: }
+  //   ]
+  // },
   {
-    path: 'posts/:id', children: [
-      {path: 'constructor', component: ConstructorComponent},
-      {path: 'preview', component: PreviewComponent}
+    path: 'posts',
+    children: [
+      {
+        path: ':id',
+        children: [
+          {path: 'constructor', component: ConstructorComponent},
+          {path: 'preview', component: PreviewComponent},
+        ]
+      }
+
+      // {path: 'publish', component: }
     ]
+  },
+  {
+    path: 'new-post',
+    component: CreatePostComponent
   },
   {
     path: 'posts-list', component: PostsListComponent

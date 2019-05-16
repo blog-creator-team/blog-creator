@@ -11,14 +11,13 @@ export class PostService {
   private postsUrl = environment.apiUrl + '/v1/posts';
   private id: number;
 
-  public getPosts(): Observable<{posts: Post[]}> {
-    return this.http.get<{posts: Post[]}>(this.postsUrl)
-      .pipe(catchError(handleError<{posts: Post[]}>('getPosts', {posts: []}))
+  public getPosts(): Observable<{ posts: Post[] }> {
+    return this.http.get<{ posts: Post[] }>(this.postsUrl)
+      .pipe(catchError(handleError<{ posts: Post[] }>('getPosts', {posts: []}))
       );
   }
 
   constructor(private http: HttpClient) {
-
   }
 
   getPost(id): Observable<{ post: Post }> {
@@ -27,13 +26,13 @@ export class PostService {
       );
   }
 
-  addPost(title: string): Observable<Post> {
-    return this.http.post<Post>(`${this.postsUrl}/${this.id}`, title)
-      .pipe(catchError(handleError<Post>('addPost'))
+  addPost(title: string): Observable<{ post: Post }> {
+    return this.http.post<{ post: Post }>(`${this.postsUrl}`, {title})
+      .pipe(catchError(handleError<{ post: Post }>('addPost'))
       );
   }
 
-  deletePost(id: number): Observable<Post> {
+  deletePost(id: string): Observable<Post> {
     return this.http.delete<Post>(`${this.postsUrl}/${id}`)
       .pipe(catchError(handleError<Post>('deletePost')))
   }

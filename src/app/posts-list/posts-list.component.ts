@@ -41,10 +41,10 @@ export class PostsListComponent implements OnInit {
     return `/posts/${post.id}/constructor`
   }
 
-  // delete(postId: number): void {
-  //   this.postService.deletePost(postId).subscribe(() => {
-  //     this.posts = this.posts.filter(id => this.id !== postId);
-  //   });
-  // }
+  delete(postId: string): void {
+    this.postService.deletePost(postId).subscribe(() => {
+      this.posts = this.posts.filter(post => post.id !== postId);
+    });
+  }
 }
 

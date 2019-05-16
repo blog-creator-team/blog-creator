@@ -34,6 +34,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     TextEditorModalComponent,
     PostsListComponent,
     HomePageComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,

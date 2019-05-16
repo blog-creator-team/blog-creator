@@ -1,0 +1,36 @@
+.wrap--link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wrap--img {
+  width: 25%;
+  overflow: hidden;
+  margin-right: 50px;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+}
+
+.post-list {
+  padding: 25px 0 0 0;
+  margin: 0 0 40px 0;
+  list-style-type: none;
+}
+
+.post-item {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.link-prev {
+  display: block;
+  font-size: 22px;
+  color: #7453E5;
+  &:hover {
+    text-decoration: none;
+  }
+}
