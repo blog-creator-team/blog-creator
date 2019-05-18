@@ -1,5 +1,8 @@
 <div class="sidebar_default">
   <h3 class="sidebar__title">Settings page</h3>
-  <input type="text" class="form-control" placeholder="Blog name">
-  <input type="text" class="form-control" placeholder="Author">
+  <form name="blogForm" (submit)="setBlogInfo()">
+    <input type="text" class="form-control" [(ngModel)]="blogName" name="blogName" placeholder="Blog name">
+    <input type="text" class="form-control" [(ngModel)]="author" name="author" placeholder="Author">
+    <button class="btn" type="submit">Save</button>
+  </form>
 </div>

@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.logo__site {
+.logo-site {
   position: relative;
   display: block;
   width: 85px;
@@ -28,22 +28,19 @@
   font-size: 18px;
   font-style: italic;
   color: #fff;
-}
-
-.img__logo {
-  width: 40px;
-  display: inline-block;
-
-  border-radius: 100%;
-}
-
-.logo__text {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  color: #9a39ab;
-  margin: 0;
-  font-weight: bold;
+  &__img{
+    width: 40px;
+    display: inline-block;
+    border-radius: 100%;
+  }
+  &__text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #9a39ab;
+    margin: 0;
+    font-weight: bold;
+  }
 }
 
 .title__site {
@@ -95,3 +92,4 @@
   width: 100%;
   background: #ebfbff;
 }
+

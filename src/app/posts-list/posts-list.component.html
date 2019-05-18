@@ -7,14 +7,13 @@
   </header>
 
   <ul class="post-list">
-    <li class="post-item" *ngFor="let post of posts">
+    <li class="post-list__item" *ngFor="let post of posts">
       <h3 class="title-post">{{post.title}}</h3>
       <div class="toolbar">
         <a [routerLink]="getPostUrl(post)"
            routerLinkActive="active"
            class="btn btn--toolbar" (click)="getPosts()">Edit post
         </a>
-        <!--<a [routerLink]="'/posts/1/constructor'" routerLinkActive="active" class="btn btn&#45;&#45;toolbar" >Edit post</a>-->
         <button class="btn btn--toolbar btn--delete" (click)="delete(post.id)">Delete</button>
       </div>
     </li>

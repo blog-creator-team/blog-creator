@@ -18,12 +18,11 @@
   padding: 25px 0 0 0;
   margin: 0 0 40px 0;
   list-style-type: none;
-}
-
-.post-item {
-  display: flex;
-  padding-top: 50px;
-  padding-bottom: 25px;
+  &__item {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
 }
 
 .link-prev {

@@ -14,7 +14,6 @@ export class SidebarElementComponent {
   onChanged: (element: Element) => void;
   onCancel: Function;
   element: Element;
-  myModal: string;
   content: string;
 
   @Input() set request({onSubmit, onChange, onCancel, payload}: ElementSidebarRequest) {

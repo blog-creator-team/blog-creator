@@ -14,6 +14,8 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 export class ConstructorComponent implements OnInit {
   post: Post;
+  public title: string = '';
+
   constructor(private http: HttpClient,
               private  postService: PostService,
               private route: ActivatedRoute) {
@@ -35,6 +37,6 @@ export class ConstructorComponent implements OnInit {
         } else {
           console.log("Server-side error occured.");
         }
-      })
+      });
   }
 }

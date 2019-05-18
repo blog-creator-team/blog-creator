@@ -11,14 +11,6 @@ const routes: Routes = [
   {
     path: 'home-page', component: HomePageComponent
   },
-  // {
-  //   path: 'posts/:id?', children: [
-  //     {path: 'constructor', component: ConstructorComponent},
-  //     {path: 'preview', component: PreviewComponent},
-  //     {path: 'new', component: CreatePostComponent}
-  //     // {path: 'publish', component: }
-  //   ]
-  // },
   {
     path: 'posts',
     children: [
@@ -27,10 +19,9 @@ const routes: Routes = [
         children: [
           {path: 'constructor', component: ConstructorComponent},
           {path: 'preview', component: PreviewComponent},
+          {path: 'publish', component: HomePageComponent},
         ]
       }
-
-      // {path: 'publish', component: }
     ]
   },
   {

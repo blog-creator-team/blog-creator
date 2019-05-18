@@ -1,12 +1,17 @@
 <div class="container">
-  <ul class="post-list">
-    <li class="post-item">
+  <ul class="post-list" >
+    <li *ngFor="let post of posts" class="post-list__item">
       <div class="wrap--img">
         <img src="../../assets/3d9cef.jpg" alt="" class="thumb">
       </div>
+
       <div class="wrap--content">
-        <h2 class="title-post">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
-        <a [routerLink]="" class="link-prev">Read more...</a>
+        <h2 class="">
+          <a [routerLink]="goToPost(post.id)"
+             routerLinkActive="active"
+             class="router__link post__title">{{post.title}}
+          </a>
+        </h2>
       </div>
     </li>
   </ul>

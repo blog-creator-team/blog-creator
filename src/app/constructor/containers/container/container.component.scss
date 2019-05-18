@@ -12,8 +12,8 @@
   flex-basis: 0;
   flex-grow: 1;
   padding: 20px;
-  //background: #F5F5F5;
   border: 2px solid transparent;
+
   &:hover {
     border: 2px solid #9198E5;
     transition: .35s;
@@ -42,33 +42,34 @@
     background: #BCA9F5;
     border: 1px solid #BCA9F5;
   }
-}
 
-.btn--small {
-  position: absolute;
-  display: none;
-  padding: 5px 10px;
-  z-index: 1;
-}
+  &--small {
+    position: absolute;
+    display: none;
+    padding: 5px 10px;
+    z-index: 1;
+  }
 
-.btn--hide {
-  display: none;
-}
+  &--hide {
+    display: none;
+  }
 
-.btn--left {
-  left: 0;
-  top: 50%;
-  transform: translate(-100%, -50%);
-}
+  &--left {
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+  }
 
-.btn--right {
-  right: 0;
-  top: 50%;
-  transform: translate(100%, -50%);
-}
+  &--right {
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+  }
 
-.btn--center {
-  margin: auto;
+  &--center {
+    margin: auto;
+  }
+
 }
 
 .btn__element {
@@ -76,14 +77,14 @@
   top: -34px;
   right: 0;
   z-index: 2;
-}
 
-.btn__element--edit {
-  right: 34px;
+  &--edit {
+    right: 34px;
+  }
 }
 
 .svg-icon {
-   width: 22px;
-   height: 18px;
-   fill: #FFF;
- }
+  width: 22px;
+  height: 18px;
+  fill: #FFF;
+}
